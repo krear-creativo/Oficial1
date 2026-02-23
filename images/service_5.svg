@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+    <defs>
+        <radialGradient id="bg5" cx="50%" cy="50%" r="70%">
+            <stop offset="0%" stop-color="#001880"/>
+            <stop offset="60%" stop-color="#000430"/>
+            <stop offset="100%" stop-color="#000110"/>
+        </radialGradient>
+        <linearGradient id="glow5" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#D9E73C" stop-opacity="1"/>
+            <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.2"/>
+        </linearGradient>
+        <filter id="blur5">
+            <feGaussianBlur stdDeviation="30"/>
+        </filter>
+        <filter id="glow-effect5">
+            <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="800" height="1000" fill="url(#bg5)"/>
+    
+    <!-- Ambient glowing orbs -->
+    <circle cx="200" cy="800" r="150" fill="#D9E73C" opacity="0.15" filter="url(#blur5)"/>
+    <circle cx="600" cy="200" r="250" fill="#00024D" opacity="0.8" filter="url(#blur5)"/>
+
+    <!-- Abstract 3D-like Bars (Charts) -->
+    <g transform="translate(150, 650) skewY(-15)">
+        <!-- Bar 1 -->
+        <rect x="0" y="-150" width="80" height="150" fill="#000860" stroke="#D9E73C" stroke-width="2"/>
+        <polygon points="0,-150 80,-150 110,-180 30,-180" fill="#0010a0" stroke="#D9E73C" stroke-width="2"/>
+        <polygon points="80,-150 110,-180 110,-30 80,0" fill="#000430" stroke="#D9E73C" stroke-width="2"/>
+
+        <!-- Bar 2 -->
+        <rect x="140" y="-300" width="80" height="300" fill="#000860" stroke="#D9E73C" stroke-width="2"/>
+        <polygon points="140,-300 220,-300 250,-330 170,-330" fill="#0010a0" stroke="#D9E73C" stroke-width="2"/>
+        <polygon points="220,-300 250,-330 250,-30 220,0" fill="#000430" stroke="#D9E73C" stroke-width="2"/>
+
+        <!-- Bar 3 (Highlight) -->
+        <rect x="280" y="-500" width="80" height="500" fill="url(#glow5)" filter="url(#glow-effect5)"/>
+        <polygon points="280,-500 360,-500 390,-530 310,-530" fill="#eaf283" filter="url(#glow-effect5)"/>
+        <polygon points="360,-500 390,-530 390,-30 360,0" fill="#b0bd00" filter="url(#glow-effect5)"/>
+        
+        <!-- Bar 4 -->
+        <rect x="420" y="-350" width="80" height="350" fill="#000860" stroke="#D9E73C" stroke-width="2"/>
+        <polygon points="420,-350 500,-350 530,-380 450,-380" fill="#0010a0" stroke="#D9E73C" stroke-width="2"/>
+        <polygon points="500,-350 530,-380 530,-30 500,0" fill="#000430" stroke="#D9E73C" stroke-width="2"/>
+    </g>
+
+    <!-- Line chart trend -->
+    <path d="M 100,550 Q 300,300 450,150 T 650,50" fill="none" stroke="#D9E73C" stroke-width="12" filter="url(#glow-effect5)"/>
+    
+    <!-- Target / Sparkles -->
+    <circle cx="650" cy="50" r="15" fill="#FFFFFF" filter="url(#glow-effect5)"/>
+    <circle cx="650" cy="50" r="40" fill="none" stroke="#D9E73C" stroke-width="4" stroke-dasharray="8 8"/>
+</svg>

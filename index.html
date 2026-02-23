@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kreär — Estudio Estratégico Creativo</title>
+    <meta name="description"
+        content="Kreär es un estudio creativo estratégico que ayuda a empresas a ordenar, profesionalizar y potenciar su comunicación. Estrategia + Creatividad + Dirección." />
+    <meta name="keywords"
+        content="estudio creativo, estrategia de marca, identidad visual, comunicación empresarial, Chaco, Argentina" />
+    <meta property="og:title" content="Kreär — Estudio Estratégico Creativo" />
+    <meta property="og:description"
+        content="Una marca ordenada vende sin gritar. Construimos sistemas de comunicación con criterio, coherencia y estructura." />
+    <meta property="og:type" content="website" />
+
+    <!-- Adobe Fonts (Typekit) -->
+    <link rel="stylesheet" href="https://use.typekit.net/jru0lzd.css">
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <!-- ===================== PARTICLES ===================== -->
+    <div id="particles-container" class="particles-container" aria-hidden="true"></div>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Navegación principal">
+        <div class="container nav-inner">
+            <a href="#inicio" class="nav-logo" aria-label="Kreär - Inicio">
+                <img src="images/logo2.png" alt="Kreär Logo" class="logo-img" />
+            </a>
+            <ul class="nav-links" id="nav-links" role="list">
+                <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                <li><a href="#metodologia" class="nav-link">Metodología</a></li>
+                <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                <li><a href="#testimonios" class="nav-link">Clientes</a></li>
+                <li><a href="#contacto" class="nav-link nav-link-cta">Hablemos</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+            <ul role="list">
+                <li><a href="#servicios" class="nav-link" data-mobile-link>Servicios</a></li>
+                <li><a href="#metodologia" class="nav-link" data-mobile-link>Metodología</a></li>
+                <li><a href="#nosotros" class="nav-link" data-mobile-link>Nosotros</a></li>
+                <li><a href="#testimonios" class="nav-link" data-mobile-link>Clientes</a></li>
+                <li><a href="#contacto" class="nav-link" data-mobile-link>Hablemos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="inicio" aria-label="Sección principal">
+        <div class="hero-bg-gradient" aria-hidden="true"></div>
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge animate-fade-up">
+                    <span class="badge-dot" aria-hidden="true"></span>
+                    Estudio Estratégico Creativo · Chaco, Argentina
+                </div>
+                <h1 class="hero-title animate-fade-up anim-delay-1">
+                    La comunicación<br />
+                    <span class="text-accent">que tu empresa</span><br />
+                    merece tener.
+                </h1>
+                <p class="hero-subtitle animate-fade-up anim-delay-2">
+                    Ordenamos, profesionalizamos y potenciamos tu comunicación desde la <strong>estrategia</strong>. No
+                    diseñamos piezas — construimos sistemas que sostienen tu marca en el tiempo.
+                </p>
+                <div class="hero-ctas animate-scale-in anim-delay-3">
+                    <a href="#contacto" class="btn-primary" id="hero-cta-primary">Empezar diagnóstico</a>
+                    <a href="#servicios" class="btn-outline" id="hero-cta-secondary">Ver servicios</a>
+                </div>
+                <div class="hero-stats animate-fade-up anim-delay-4">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="50" id="stat-1">0</span><span
+                            class="stat-suffix">+</span>
+                        <span class="stat-label">Marcas acompañadas</span>
+                    </div>
+                    <div class="stat-divider" aria-hidden="true"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="5" id="stat-2">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-label">Años de trayectoria</span>
+                    </div>
+                    <div class="stat-divider" aria-hidden="true"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="100" id="stat-3">0</span><span
+                            class="stat-suffix">%</span>
+                        <span class="stat-label">Orientado a resultados</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual animate-fade-rotate">
+                <div class="hero-visual-wrapper">
+                    <img src="images/hero_visual.png" alt="Sistema de comunicación estratégica Kreär"
+                        class="hero-img glow-primary" />
+                    <div class="hero-visual-ring" aria-hidden="true"></div>
+                    <div class="hero-visual-ring ring-2" aria-hidden="true"></div>
+                    <!-- Floating badges -->
+                    <div class="floating-badge badge-1">
+                        <span class="fb-icon">⚡</span>
+                        <span>Estrategia</span>
+                    </div>
+                    <div class="floating-badge badge-2">
+                        <span class="fb-icon">🎯</span>
+                        <span>Dirección</span>
+                    </div>
+                    <div class="floating-badge badge-3">
+                        <span class="fb-icon">✦</span>
+                        <span>Sistema</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator" aria-label="Desplazar hacia abajo">
+            <div class="scroll-dot"></div>
+        </div>
+    </section>
+
+    <!-- ===================== SOCIAL PROOF / CLIENTS ===================== -->
+    <section class="social-proof" aria-label="Empresas que confían en Kreär">
+        <p class="proof-label">Empresas que ordenaron su comunicación con nosotros</p>
+        <div class="marquee-wrapper" aria-hidden="true">
+            <!-- Track 1 -->
+            <div class="marquee-track">
+
+                <div class="brand-logo-card">
+                    <img src="images/Logo-Walker@2x.png" alt="Marca Cliente" class="brand-logo-img" />
+                </div>
+
+                <div class="brand-logo-card">
+                    <img src="images/Logo-Licloleaguilar.png" alt="Marca Cliente" class="brand-logo-img" />
+                </div>
+
+                <div class="brand-logo-card">
+                    <img src="images/Logo-ivani@2x.png" alt="Marca Cliente" class="brand-logo-img" />
+                </div>
+
+                <div class="brand-logo-card">
+                    <img src="images/Logo-Keyking@2x.png" alt="Marca Cliente" class="brand-logo-img" />
+                </div>
+
+                <div class="brand-logo-card">
+                    <img src="images/Logo-mdconstucciones@2x.png" alt="Marca Cliente" class="brand-logo-img" />
+                </div>
+
+                <div class="brand-logo-card">
+                    <img src="images/Logo-sinapsi@2x.png" alt="Marca Cliente" class="brand-logo-img" />
+                </div>
+
+                <div class="brand-logo-card">
+                    <img src="images/Logo-Hommat@2x.png" alt="Marca Cliente" class="brand-logo-img" />
+                </div>
+
+                <div class="brand-logo-card">
+                    <img src="images/Logo-chefrobert@2x.png" alt="Marca Cliente" class="brand-logo-img" />
+                </div>
+
+            </div>
+            <!-- Track 2 (duplicado para loop infinito) -->
+            <div class="marquee-track" aria-hidden="true">
+
+                <div class="brand-logo-card">
+                    <img src="images/Logo-Walker@2x.png" alt="Marca Cliente" class="brand-logo-img" />
+                </div>
+
+                <div class="brand-logo-card">
+                    <img src="images/Logo-Licloleaguilar.png" alt="Marca Cliente" class="brand-logo-img" />
+                </div>
+
+                <div class="brand-logo-card">
+                    <img src="images/Logo-ivani@2x.png" alt="Marca Cliente" class="brand-logo-img" />
+                </div>
+
+                <div class="brand-logo-card">
+                    <img src="images/Logo-Keyking@2x.png" alt="Marca Cliente" class="brand-logo-img" />
+                </div>
+
+                <div class="brand-logo-card">
+                    <img src="images/Logo-mdconstucciones@2x.png" alt="Marca Cliente" class="brand-logo-img" />
+                </div>
+
+                <div class="brand-logo-card">
+                    <img src="images/Logo-sinapsi@2x.png" alt="Marca Cliente" class="brand-logo-img" />
+                </div>
+
+                <div class="brand-logo-card">
+                    <img src="images/Logo-Hommat@2x.png" alt="Marca Cliente" class="brand-logo-img" />
+                </div>
+
+                <div class="brand-logo-card">
+                    <img src="images/Logo-chefrobert@2x.png" alt="Marca Cliente" class="brand-logo-img" />
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SERVICIOS ===================== -->
+    <section class="services" id="servicios" aria-label="Nuestros servicios">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Lo que hacemos</span>
+                <h2 class="section-title">Servicios diseñados<br /><span class="text-accent">desde la estrategia</span>
+                </h2>
+                <p class="section-subtitle">Cada servicio es parte de un sistema pensado para que tu marca comunique con
+                    claridad y coherencia.</p>
+            </div>
+
+            <div class="services-grid" role="list">
+
+                <!-- Service 1 -->
+                <article class="service-card-flip" role="listitem" aria-label="Diagnóstico estratégico de marca">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <div class="service-overlay">
+                                <div class="service-icon-front" aria-hidden="true">🔍</div>
+                                <h3 class="service-title-front">Diagnóstico Estratégico</h3>
+                            </div>
+                        </div>
+                        <div class="service-card-back glass-card">
+                            <div class="service-icon-back" aria-hidden="true">🔍</div>
+                            <h3 class="service-title-back">Diagnóstico Estratégico</h3>
+                            <p class="service-description">Evaluamos el estado actual de tu marca: posicionamiento,
+                                coherencia visual, mensajes y alineación con tu propósito real. Detectamos brechas y
+                                definimos el norte.</p>
+                            <div class="service-features" aria-label="Características">
+                                <span class="feature-tag">Posicionamiento</span>
+                                <span class="feature-tag">Coherencia</span>
+                                <span class="feature-tag">Análisis</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Service 2 -->
+                <article class="service-card-flip" role="listitem" aria-label="Construcción de identidad visual">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <div class="service-overlay">
+                                <div class="service-icon-front" aria-hidden="true">✦</div>
+                                <h3 class="service-title-front">Identidad Visual</h3>
+                            </div>
+                        </div>
+                        <div class="service-card-back glass-card">
+                            <div class="service-icon-back" aria-hidden="true">✦</div>
+                            <h3 class="service-title-back">Identidad Visual</h3>
+                            <p class="service-description">Construimos sistemas de identidad visual completos: logo,
+                                paleta, tipografía, tono, aplicaciones. Cada decisión tiene un porqué estratégico
+                                detrás.</p>
+                            <div class="service-features" aria-label="Características">
+                                <span class="feature-tag">Branding</span>
+                                <span class="feature-tag">Sistema Visual</span>
+                                <span class="feature-tag">Manual</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Service 3 -->
+                <article class="service-card-flip" role="listitem" aria-label="Sistemas de comunicación">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <div class="service-overlay">
+                                <div class="service-icon-front" aria-hidden="true">⚙️</div>
+                                <h3 class="service-title-front">Sistemas de Comunicación</h3>
+                            </div>
+                        </div>
+                        <div class="service-card-back glass-card">
+                            <div class="service-icon-back" aria-hidden="true">⚙️</div>
+                            <h3 class="service-title-back">Sistemas de Comunicación</h3>
+                            <p class="service-description">Desarrollamos la estructura completa de comunicación de tu
+                                empresa: qué decir, cómo decirlo, en qué canal y con qué frecuencia. Un sistema que
+                                funciona solo.</p>
+                            <div class="service-features" aria-label="Características">
+                                <span class="feature-tag">Estructura</span>
+                                <span class="feature-tag">Mensajes</span>
+                                <span class="feature-tag">Canales</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Service 4 -->
+                <article class="service-card-flip" role="listitem" aria-label="Gestión de redes estratégica">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <div class="service-overlay">
+                                <div class="service-icon-front" aria-hidden="true">📡</div>
+                                <h3 class="service-title-front">Gestión de Redes</h3>
+                            </div>
+                        </div>
+                        <div class="service-card-back glass-card">
+                            <div class="service-icon-back" aria-hidden="true">📡</div>
+                            <h3 class="service-title-back">Gestión de Redes</h3>
+                            <p class="service-description">Gestionamos tus redes con enfoque estratégico. Sin improvisar
+                                contenido ni replicar tendencias sin sentido. Cada publicación responde a un objetivo
+                                claro de marca.</p>
+                            <div class="service-features" aria-label="Características">
+                                <span class="feature-tag">Contenido</span>
+                                <span class="feature-tag">Estrategia</span>
+                                <span class="feature-tag">Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Service 5 -->
+                <article class="service-card-flip" role="listitem" aria-label="Campañas publicitarias">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <div class="service-overlay">
+                                <div class="service-icon-front" aria-hidden="true">📣</div>
+                                <h3 class="service-title-front">Campañas Publicitarias</h3>
+                            </div>
+                        </div>
+                        <div class="service-card-back glass-card">
+                            <div class="service-icon-back" aria-hidden="true">📣</div>
+                            <h3 class="service-title-back">Campañas Publicitarias</h3>
+                            <p class="service-description">Diseñamos y ejecutamos campañas de Ads con dirección
+                                estratégica. Google, Meta, Programática. No apostamos al azar — cada campaña tiene
+                                propósito y métricas claras.</p>
+                            <div class="service-features" aria-label="Características">
+                                <span class="feature-tag">Google Ads</span>
+                                <span class="feature-tag">Meta Ads</span>
+                                <span class="feature-tag">Performance</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Service 6 -->
+                <article class="service-card-flip" role="listitem" aria-label="Dirección conceptual">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <div class="service-overlay">
+                                <div class="service-icon-front" aria-hidden="true">🧭</div>
+                                <h3 class="service-title-front">Dirección Conceptual</h3>
+                            </div>
+                        </div>
+                        <div class="service-card-back glass-card">
+                            <div class="service-icon-back" aria-hidden="true">🧭</div>
+                            <h3 class="service-title-back">Dirección Conceptual</h3>
+                            <p class="service-description">Definimos el concepto que unifica toda la comunicación de tu
+                                marca. El hilo conductor que da sentido a cada pieza, campaña y decisión creativa que tu
+                                empresa tome.</p>
+                            <div class="service-features" aria-label="Características">
+                                <span class="feature-tag">Concepto</span>
+                                <span class="feature-tag">Narrativa</span>
+                                <span class="feature-tag">Dirección</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== METODOLOGÍA ===================== -->
+    <section class="methodology" id="metodologia" aria-label="Nuestra metodología de trabajo">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Cómo trabajamos</span>
+                <h2 class="section-title">Antes de ejecutar,<br /><span class="text-accent">pensamos.</span></h2>
+                <p class="section-subtitle">La ejecución es consecuencia del pensamiento estratégico. No al revés.</p>
+            </div>
+
+            <div class="methodology-flow" role="list">
+                <div class="method-step glass-card reveal-item" role="listitem">
+                    <div class="method-number" aria-hidden="true">01</div>
+                    <div class="method-icon" aria-hidden="true">🔎</div>
+                    <h3 class="method-title">Evaluamos</h3>
+                    <p class="method-desc">Analizamos tu marca, tu mercado y a tu competencia. Entendemos quién eres,
+                        dónde estás y adónde querés ir.</p>
+                </div>
+                <div class="method-arrow" aria-hidden="true">→</div>
+                <div class="method-step glass-card reveal-item" role="listitem">
+                    <div class="method-number" aria-hidden="true">02</div>
+                    <div class="method-icon" aria-hidden="true">🧩</div>
+                    <h3 class="method-title">Detectamos</h3>
+                    <p class="method-desc">Identificamos desalineaciones, inconsistencias y oportunidades de mejora.
+                        Mapeamos lo que funciona y lo que frena.</p>
+                </div>
+                <div class="method-arrow" aria-hidden="true">→</div>
+                <div class="method-step glass-card reveal-item" role="listitem">
+                    <div class="method-number" aria-hidden="true">03</div>
+                    <div class="method-icon" aria-hidden="true">🗺️</div>
+                    <h3 class="method-title">Definimos</h3>
+                    <p class="method-desc">Establecemos la dirección estratégica. El concepto, el posicionamiento
+                        deseado y la hoja de ruta de comunicación.</p>
+                </div>
+                <div class="method-arrow" aria-hidden="true">→</div>
+                <div class="method-step glass-card reveal-item" role="listitem">
+                    <div class="method-number" aria-hidden="true">04</div>
+                    <div class="method-icon" aria-hidden="true">🏗️</div>
+                    <h3 class="method-title">Construimos</h3>
+                    <p class="method-desc">Desarrollamos el sistema completo: identidad, mensajes, piezas, canales. Todo
+                        conectado. Todo con propósito.</p>
+                </div>
+            </div>
+
+            <!-- Diferencial highlight -->
+            <div class="differencial-box glass-card reveal-item">
+                <div class="diff-inner">
+                    <div class="diff-left">
+                        <p class="diff-quote">"No diseñamos piezas.</p>
+                        <p class="diff-quote accent">Construimos sistemas que sostienen la marca en el tiempo."</p>
+                    </div>
+                    <div class="diff-right">
+                        <div class="diff-vs">
+                            <div class="diff-col">
+                                <h4>El mercado ofrece</h4>
+                                <ul>
+                                    <li>❌ Estética sin estrategia</li>
+                                    <li>❌ Métricas sin dirección</li>
+                                    <li>❌ Ejecución sin planificación</li>
+                                </ul>
+                            </div>
+                            <div class="diff-col kreär-col">
+                                <h4 class="text-accent">Kreär ofrece</h4>
+                                <ul>
+                                    <li>✅ Estrategia + Creatividad</li>
+                                    <li>✅ Dirección + Ejecución</li>
+                                    <li>✅ Sistema + Coherencia</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== NOSOTROS ===================== -->
+    <section class="about" id="nosotros" aria-label="Sobre Kreär">
+        <div class="container about-grid">
+            <div class="about-visual reveal-item">
+                <div class="about-img-wrapper">
+                    <img src="images/logo.png" alt="Kreär - Estudio Estratégico Creativo" class="about-logo-large" />
+                    <div class="about-glow" aria-hidden="true"></div>
+                    <div class="about-ring" aria-hidden="true"></div>
+                </div>
+                <div class="about-tags" aria-label="Pilares de Kreär">
+                    <span class="about-tag">⚡ Estrategia</span>
+                    <span class="about-tag">🎨 Creatividad</span>
+                    <span class="about-tag">🧭 Dirección</span>
+                </div>
+            </div>
+            <div class="about-content reveal-item">
+                <span class="section-label">Quiénes somos</span>
+                <h2 class="section-title" style="text-align:left;">Somos el estudio<br /><span class="text-accent">que
+                        faltaba en Chaco.</span></h2>
+                <p class="about-text">En Kreär trabajamos con empresas que <strong>ya están en movimiento</strong>, pero
+                    cuya comunicación no evolucionó al mismo ritmo que su negocio. Eso crea una brecha entre lo que son
+                    y lo que proyectan. Cerramos esa brecha.</p>
+                <p class="about-text">No comenzamos diseñando. Comenzamos <strong>analizando, pensando y
+                        estructurando</strong>. Porque la coherencia genera confianza, la claridad reduce fricción y la
+                    dirección precede a la ejecución.</p>
+                <p class="about-text">Nuestra visión es convertirnos en el estudio estratégico de referencia que
+                    <strong>ordenó la comunicación empresarial del Chaco</strong> — y desde ahí, escalar.
+                </p>
+                <div class="about-philosophy">
+                    <blockquote class="philosophy-quote">
+                        "Una marca ordenada vende sin gritar."
+                    </blockquote>
+                </div>
+                <div class="about-cta">
+                    <a href="#contacto" class="btn-primary" id="about-cta">Trabajemos juntos</a>
+                    <div class="about-location">
+                        <span>📍</span> Resistencia, Chaco · Argentina
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== TESTIMONIOS ===================== -->
+    <section class="testimonials" id="testimonios" aria-label="Lo que dicen nuestros clientes">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Lo que dicen</span>
+                <h2 class="section-title">Empresas que ya<br /><span class="text-accent">ordenaron su
+                        comunicación</span></h2>
+            </div>
+
+            <div class="testimonials-grid" role="list">
+
+                <article class="testimonial-card glass-card reveal-item" role="listitem">
+                    <div class="test-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+                    <p class="test-quote">"Kreär hizo algo que ninguna agencia anterior pudo: entender cómo funciona
+                        nuestra empresa y traducirlo en una comunicación que realmente nos representa. La diferencia es
+                        brutal."</p>
+                    <div class="test-author">
+                        <div class="test-avatar" aria-hidden="true">MG</div>
+                        <div class="test-info">
+                            <strong>Mariana González</strong>
+                            <span>Directora Comercial · Distribuidora Norte</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="testimonial-card glass-card reveal-item" role="listitem">
+                    <div class="test-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+                    <p class="test-quote">"Lo que más valoro es que no arrancan haciendo logos. Te hacen pensar primero.
+                        El diagnóstico que hicieron fue revelador — encontraron problemas que nosotros no veíamos hace
+                        años."</p>
+                    <div class="test-author">
+                        <div class="test-avatar" aria-hidden="true">RL</div>
+                        <div class="test-info">
+                            <strong>Roberto Léon</strong>
+                            <span>Socio Fundador · Estudio Jurídico LM</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="testimonial-card glass-card reveal-item" role="listitem">
+                    <div class="test-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+                    <p class="test-quote">"Después de trabajar con Kreär, nuestros clientes empezaron a percibir a la
+                        empresa según lo que realmente somos. Esa alineación entre lo que hacemos y lo que proyectamos
+                        es invaluable."</p>
+                    <div class="test-author">
+                        <div class="test-avatar" aria-hidden="true">CA</div>
+                        <div class="test-info">
+                            <strong>Claudia Acosta</strong>
+                            <span>Gerente General · Constructora Horizonte</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CTA FINAL ===================== -->
+    <section class="final-cta" id="contacto" aria-label="Contacto y llamada a la acción">
+        <div class="cta-bg-glow" aria-hidden="true"></div>
+        <div class="container cta-inner">
+            <span class="section-label">¿Listo para el cambio?</span>
+            <h2 class="cta-title">¿Tu comunicación está<br /><span class="text-accent">a la altura de tu empresa?</span>
+            </h2>
+            <p class="cta-subtitle">Si tu negocio creció pero tu comunicación se quedó atrás, es momento de ordenar.
+                Empezamos con un diagnóstico gratuito.</p>
+            <a href="mailto:krear.creativo@gmail.com" class="btn-primary btn-large pulse-glow"
+                id="cta-main-button">Quiero mi
+                diagnóstico gratuito</a>
+            <p class="cta-note">Sin compromiso · Respuesta en 24hs · 100% estratégico</p>
+            <div class="cta-contact-options">
+                <a href="https://wa.me/543624522359" class="contact-chip" target="_blank" rel="noopener noreferrer"
+                    aria-label="Contactar por WhatsApp">
+                    <span>💬</span> WhatsApp
+                </a>
+                <a href="mailto:krear.creativo@gmail.com" class="contact-chip" aria-label="Enviar email">
+                    <span>✉️</span> Email
+                </a>
+                <a href="https://www.instagram.com/estudio.krear/" class="contact-chip" target="_blank"
+                    rel="noopener noreferrer" aria-label="Instagram de Kreär">
+                    <span>📸</span> Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer" role="contentinfo">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#inicio" class="nav-logo" aria-label="Kreär - Volver al inicio">
+                    <img src="images/logo.png" alt="Kreär" class="logo-img" />
+                </a>
+                <p class="footer-tagline">Una marca ordenada <em>vende sin gritar.</em></p>
+                <div class="footer-socials" aria-label="Redes sociales">
+                    <a href="https://www.instagram.com/estudio.krear/" class="social-link" target="_blank"
+                        rel="noopener noreferrer" aria-label="Instagram">IG</a>
+                    <a href="https://linkedin.com/company/krear" class="social-link" target="_blank"
+                        rel="noopener noreferrer" aria-label="LinkedIn">LI</a>
+                    <a href="https://wa.me/543624522359" class="social-link" target="_blank" rel="noopener noreferrer"
+                        aria-label="WhatsApp">WA</a>
+                </div>
+            </div>
+            <nav class="footer-col" aria-label="Servicios">
+                <h4 class="footer-col-title">Servicios</h4>
+                <ul role="list">
+                    <li><a href="#servicios">Diagnóstico de Marca</a></li>
+                    <li><a href="#servicios">Identidad Visual</a></li>
+                    <li><a href="#servicios">Sistemas de Comunicación</a></li>
+                    <li><a href="#servicios">Gestión de Redes</a></li>
+                    <li><a href="#servicios">Campañas Ads</a></li>
+                    <li><a href="#servicios">Dirección Conceptual</a></li>
+                </ul>
+            </nav>
+            <nav class="footer-col" aria-label="Estudio">
+                <h4 class="footer-col-title">Estudio</h4>
+                <ul role="list">
+                    <li><a href="#nosotros">Quiénes somos</a></li>
+                    <li><a href="#metodologia">Metodología</a></li>
+                    <li><a href="#testimonios">Clientes</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="footer-col">
+                <h4 class="footer-col-title">Contacto</h4>
+                <ul role="list">
+                    <li><a href="mailto:krear.creativo@gmail.com">krear.creativo@gmail.com</a></li>
+                    <li><a href="https://wa.me/543624522359" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                    <li><span>📍 Resistencia, Chaco</span></li>
+                    <li><span>🇦🇷 Argentina</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner">
+                <p>© 2026 Kreär. Todos los derechos reservados.</p>
+                <p class="footer-credits">Estrategia · Creatividad · Dirección</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

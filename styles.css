@@ -38,10 +38,13 @@
     --accent-200: #f2f7b0;
 
     /* --- Backgrounds --- */
-    --bg-primary: #000000;
-    --bg-secondary: #020208;
-    --bg-tertiary: #080810;
-    --bg-card: #0a0a18;
+    --bg-primary: #00024D;
+    --bg-secondary: #00024D;
+    /* Unified to primary */
+    --bg-tertiary: #00024D;
+    /* Unified to primary */
+    --bg-card: rgba(255, 255, 255, 0.05);
+    /* Transparent cards for better flow */
 
     /* --- Text --- */
     --text-primary: #FFFFFF;
@@ -487,7 +490,7 @@ body {
 }
 
 .navbar.scrolled {
-    background: rgba(0, 0, 8, 0.85);
+    background: rgba(var(--primary-rgb), 0.85);
     backdrop-filter: blur(24px) saturate(180%);
     -webkit-backdrop-filter: blur(24px) saturate(180%);
     border-bottom: 1px solid rgba(var(--accent-rgb), 0.08);
@@ -591,7 +594,7 @@ body {
     top: 100%;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 8, 0.95);
+    background: rgba(var(--primary-rgb), 0.95);
     backdrop-filter: blur(24px);
     border-top: 1px solid rgba(var(--accent-rgb), 0.1);
     padding: 16px 0;
@@ -636,9 +639,9 @@ body {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse at 30% 20%, rgba(var(--primary-rgb), 0.5) 0%, transparent 60%),
-        radial-gradient(ellipse at 70% 80%, rgba(var(--accent-rgb), 0.06) 0%, transparent 50%),
-        radial-gradient(ellipse at 50% 0%, rgba(var(--primary-rgb), 0.3) 0%, transparent 40%);
+        radial-gradient(ellipse at 30% 20%, rgba(var(--primary-rgb), 0.5) 0%, rgba(var(--primary-rgb), 0) 60%),
+        radial-gradient(ellipse at 70% 80%, rgba(var(--accent-rgb), 0.06) 0%, rgba(var(--primary-rgb), 0) 50%),
+        radial-gradient(ellipse at 50% 0%, rgba(var(--primary-rgb), 0.3) 0%, rgba(var(--primary-rgb), 0) 40%);
     pointer-events: none;
 }
 
@@ -724,7 +727,15 @@ body {
     line-height: 1;
 }
 
-.stat-suffix {
+.stat-value-group {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.stat-suffix,
+.stat-prefix {
     font-family: "mundial", sans-serif;
     font-size: 24px;
     font-weight: 800;
@@ -852,8 +863,6 @@ body {
    ============================================================ */
 .social-proof {
     padding: 60px 0;
-    border-top: 1px solid rgba(var(--accent-rgb), 0.06);
-    border-bottom: 1px solid rgba(var(--accent-rgb), 0.06);
     position: relative;
     z-index: 1;
     overflow: hidden;
@@ -1138,7 +1147,7 @@ body {
     transform: translate(-50%, -50%);
     width: 800px;
     height: 800px;
-    background: radial-gradient(ellipse, rgba(var(--primary-rgb), 0.3) 0%, transparent 70%);
+    background: radial-gradient(ellipse, rgba(var(--primary-rgb), 0.3) 0%, rgba(var(--primary-rgb), 0) 70%);
     pointer-events: none;
 }
 
@@ -1297,7 +1306,7 @@ body {
 .about-glow {
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse, rgba(var(--primary-rgb), 0.25) 0%, transparent 70%);
+    background: radial-gradient(ellipse, rgba(var(--primary-rgb), 0.25) 0%, rgba(var(--primary-rgb), 0) 70%);
     border-radius: 50%;
     animation: orb-pulse 3s ease-in-out infinite;
 }
@@ -1460,8 +1469,8 @@ body {
     width: 1000px;
     height: 600px;
     background:
-        radial-gradient(ellipse at center, rgba(var(--primary-rgb), 0.6) 0%, transparent 60%),
-        radial-gradient(ellipse at 40% 60%, rgba(var(--accent-rgb), 0.06) 0%, transparent 50%);
+        radial-gradient(ellipse at center, rgba(var(--primary-rgb), 0.6) 0%, rgba(var(--primary-rgb), 0) 60%),
+        radial-gradient(ellipse at 40% 60%, rgba(var(--accent-rgb), 0.06) 0%, rgba(var(--primary-rgb), 0) 50%);
     pointer-events: none;
 }
 
@@ -1543,8 +1552,7 @@ body {
    12. FOOTER
    ============================================================ */
 .footer {
-    background: var(--bg-secondary);
-    border-top: 1px solid rgba(var(--accent-rgb), 0.08);
+    background: var(--bg-primary);
     padding-top: 72px;
 }
 
@@ -1779,30 +1787,43 @@ body {
 
     .hero-stats {
         flex-direction: row;
-        gap: 8px;
+        gap: 4px;
         text-align: center;
         justify-content: center;
         margin-top: 32px;
+        width: 100%;
+    }
+
+    .stat-item {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .stat-value-group {
+        justify-content: center;
+        gap: 2px;
     }
 
     .stat-number {
-        font-size: 26px;
+        font-size: 24px;
     }
 
-    .stat-suffix {
-        font-size: 18px;
+    .stat-suffix,
+    .stat-prefix {
+        font-size: 16px;
     }
 
     .stat-label {
-        font-size: 10px;
-        max-width: 80px;
-        margin: 0 auto;
-        line-height: 1.2;
+        font-size: 9px;
+        max-width: 100%;
+        margin: 4px auto 0;
+        line-height: 1.1;
+        display: block;
     }
 
     .stat-divider {
         width: 1px;
-        height: 30px;
+        height: 25px;
     }
 
     .scroll-indicator {

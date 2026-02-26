@@ -1178,16 +1178,15 @@ body {
 
 .method-number {
     font-family: "mundial", sans-serif;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 800;
     letter-spacing: 0.15em;
     color: #D5B4FB;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 .method-icon {
-    font-size: 28px;
-    margin-bottom: 14px;
+    display: none;
 }
 
 .method-title {
@@ -1263,7 +1262,11 @@ body {
 }
 
 .diff-col.kreär-col h4 {
-    color: #D5B4FB;
+    color: var(--primary-600);
+    background: #D5B4FB;
+    padding: 6px 14px;
+    border-radius: var(--radius-sm);
+    display: inline-block;
 }
 
 .diff-col ul {
@@ -1907,6 +1910,14 @@ body {
     h4,
     .section-title {
         text-align: center !important;
+    }
+
+    .method-title,
+    .method-desc,
+    .test-quote,
+    .testimonial-card,
+    .method-step {
+        text-align: left !important;
     }
 
     .footer-brand {

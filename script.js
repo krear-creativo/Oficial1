@@ -493,14 +493,22 @@ const translations = {
     'footer.rights': '© 2026 Kreär. Todos los derechos reservados.',
     'footer.credits': 'Estrategia · Creatividad · Dirección',
 
-    // New services
-    'svc7.title': 'Sitios Web Estratégicos',
-    'svc7.desc': 'Diseñamos y desarrollamos sitios web de alto rendimiento orientados a la conversión. Cada página responde a un objetivo claro: posicionar tu marca, captar leads y generar confianza desde el primer scroll.',
-    'svc7.tag1': 'Landing Pages', 'svc7.tag2': 'SEO Técnico', 'svc7.tag3': 'Conversión',
+    // 4 service pillars
+    'pillar1.title': 'Dirección',
+    'pillar1.desc': 'Antes de ejecutar, pensamos. Definimos el norte estratégico de tu marca desde el diagnóstico hasta la arquitectura de sistema completa.',
+    'pillar1.t1': 'Diagnóstico', 'pillar1.t2': 'Posicionamiento', 'pillar1.t3': 'Arquitectura de marca', 'pillar1.t4': 'Definición de sistema',
 
-    'svc8.title': 'Automatizaciones & IA',
-    'svc8.desc': 'Implementamos infraestructura digital inteligente: chatbots entrenados con tu marca, flujos de automatización y agentes con IA. Reducís costos operativos y escalás sin sumar personal.',
-    'svc8.tag1': 'Chatbots', 'svc8.tag2': 'Automatizaciones', 'svc8.tag3': 'IA Aplicada',
+    'pillar2.title': 'Activo Central',
+    'pillar2.desc': 'Tu plataforma digital estratégica. Diseñamos y desarrollamos el activo digital que convierte visitantes en clientes y consolida tu presencia online.',
+    'pillar2.t1': 'Sitio web estratégico', 'pillar2.t2': 'E-commerce', 'pillar2.t3': 'Landing systems',
+
+    'pillar3.title': 'Automatización',
+    'pillar3.desc': 'Infraestructura digital inteligente que trabaja mientras dormís. Implementamos sistemas de IA y automatización que escalan tu negocio sin escalar tu equipo.',
+    'pillar3.t1': 'CRM', 'pillar3.t2': 'Email flows', 'pillar3.t3': 'IA aplicada', 'pillar3.t4': 'Chatbots', 'pillar3.t5': 'Integraciones',
+
+    'pillar4.title': 'Expansión',
+    'pillar4.desc': 'Una vez que el sistema está armado, lo escalamos. Generamos presencia, audiencia y conversiones con contenido, campañas y optimización continua.',
+    'pillar4.t1': 'Contenido', 'pillar4.t2': 'Campañas', 'pillar4.t3': 'Redes', 'pillar4.t4': 'Optimización continua',
   },
 
   en: {
@@ -639,14 +647,22 @@ const translations = {
     'footer.rights': '© 2026 Kreär. All rights reserved.',
     'footer.credits': 'Strategy · Creativity · Direction',
 
-    // New services
-    'svc7.title': 'Strategic Websites',
-    'svc7.desc': 'We design and develop high-performance websites focused on conversion. Every page serves a clear goal: position your brand, capture leads and build trust from the first scroll.',
-    'svc7.tag1': 'Landing Pages', 'svc7.tag2': 'Technical SEO', 'svc7.tag3': 'Conversion',
+    // 4 service pillars
+    'pillar1.title': 'Direction',
+    'pillar1.desc': 'Before executing, we think. We define the strategic north of your brand from diagnosis through to full system architecture.',
+    'pillar1.t1': 'Diagnosis', 'pillar1.t2': 'Positioning', 'pillar1.t3': 'Brand architecture', 'pillar1.t4': 'System definition',
 
-    'svc8.title': 'Automation & AI',
-    'svc8.desc': "We implement intelligent digital infrastructure: chatbots trained with your brand's voice, automation flows and AI agents. Reduce operating costs and scale without adding headcount.",
-    'svc8.tag1': 'Chatbots', 'svc8.tag2': 'Automation', 'svc8.tag3': 'Applied AI',
+    'pillar2.title': 'Core Asset',
+    'pillar2.desc': 'Your strategic digital platform. We design and develop the digital asset that turns visitors into clients and consolidates your online presence.',
+    'pillar2.t1': 'Strategic website', 'pillar2.t2': 'E-commerce', 'pillar2.t3': 'Landing systems',
+
+    'pillar3.title': 'Automation',
+    'pillar3.desc': 'Intelligent digital infrastructure that works while you sleep. We implement AI and automation systems that scale your business without scaling your team.',
+    'pillar3.t1': 'CRM', 'pillar3.t2': 'Email flows', 'pillar3.t3': 'Applied AI', 'pillar3.t4': 'Chatbots', 'pillar3.t5': 'Integrations',
+
+    'pillar4.title': 'Expansion',
+    'pillar4.desc': 'Once the system is built, we scale it. We generate presence, audience and conversions through content, campaigns and continuous optimization.',
+    'pillar4.t1': 'Content', 'pillar4.t2': 'Campaigns', 'pillar4.t3': 'Social Media', 'pillar4.t4': 'Continuous optimization',
   },
 };
 
@@ -770,3 +786,47 @@ function initLanguageSwitcher() {
   }
 
 })();
+
+/* ============================================================
+   Footer service links — click → flip card → auto unflip
+   ============================================================ */
+function initFooterServiceLinks() {
+  const FLIP_CLASS = 'flipped';
+  const FLIP_DURATION = 2800; // ms before auto-unflip
+  let activeTimer = null;
+
+  document.querySelectorAll('.footer-svc-link[data-target-card]').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const cardId = this.getAttribute('data-target-card');
+      const card = document.getElementById(cardId);
+      if (!card) return;
+
+      // scroll directly to the specific card with offset for sticky nav
+      const navHeight = 80;
+      const cardTop = card.getBoundingClientRect().top + window.pageYOffset - navHeight;
+      window.scrollTo({ top: cardTop, behavior: 'smooth' });
+
+      // wait for scroll then flip
+      setTimeout(() => {
+        // unflip any previously flipped card
+        document.querySelectorAll('.service-card-flip.' + FLIP_CLASS).forEach(c => {
+          c.classList.remove(FLIP_CLASS);
+        });
+        if (activeTimer) clearTimeout(activeTimer);
+
+        // flip the target card
+        card.classList.add(FLIP_CLASS);
+
+        // auto-unflip after duration
+        activeTimer = setTimeout(() => {
+          card.classList.remove(FLIP_CLASS);
+          activeTimer = null;
+        }, FLIP_DURATION);
+      }, 600);
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initFooterServiceLinks);

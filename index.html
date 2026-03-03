@@ -24,14 +24,96 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title data-i18n-title="true">Kreär — Estudio Estratégico Creativo</title>
+
+    <!-- SEO Core -->
     <meta name="description"
-        content="Kreär es un estudio creativo estratégico que ayuda a empresas a ordenar, profesionalizar y potenciar su comunicación. Estrategia + Creatividad + Dirección." />
+        content="Kreär es un estudio creativo estratégico que ordena, profesionaliza y potencia la comunicación de empresas. Diseño web, automatizaciones con IA, identidad de marca y campañas digitales." />
     <meta name="keywords"
-        content="estudio creativo, estrategia de marca, identidad visual, comunicación empresarial, Chaco, Argentina" />
+        content="estudio creativo, estrategia de marca, identidad visual, diseño web, automatizaciones IA, chatbots, comunicación empresarial, Argentina" />
+    <meta name="author" content="Kreär Estudio Creativo" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href="https://www.estudiokrear.com/" />
+    <link rel="alternate" hreflang="es" href="https://www.estudiokrear.com/" />
+    <link rel="alternate" hreflang="en" href="https://www.estudiokrear.com/?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="https://www.estudiokrear.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.estudiokrear.com/" />
     <meta property="og:title" content="Kreär — Estudio Estratégico Creativo" />
     <meta property="og:description"
-        content="Una marca ordenada vende sin gritar. Construimos sistemas de comunicación con criterio, coherencia y estructura." />
-    <meta property="og:type" content="website" />
+        content="Una marca ordenada vende sin gritar. Construimos infraestructura digital estratégica: web, automatizaciones con IA, identidad y campañas." />
+    <meta property="og:image" content="https://www.estudiokrear.com/images/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:site_name" content="Kreär" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kreär — Estudio Estratégico Creativo" />
+    <meta name="twitter:description"
+        content="Infraestructura digital estratégica para empresas. Diseño web, IA, identidad de marca y expansión digital." />
+    <meta name="twitter:image" content="https://www.estudiokrear.com/images/og-cover.png" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.estudiokrear.com/#organization",
+          "name": "Kreär",
+          "url": "https://www.estudiokrear.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.estudiokrear.com/images/logo.png"
+          },
+          "description": "Estudio estratégico creativo especializado en infraestructura digital: diseño web, automatizaciones con IA, identidad de marca y campañas digitales.",
+          "foundingDate": "2023",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+54-362-452-2359",
+            "contactType": "customer service",
+            "availableLanguage": ["Spanish", "English"]
+          },
+          "sameAs": [
+            "https://www.instagram.com/estudio.krear/",
+            "https://www.linkedin.com/in/kre%C3%A4r-estudio-creativo-0416b73a7/"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Servicios de Infraestructura Digital",
+            "itemListElement": [
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Dirección Estratégica de Marca"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Diseño Web Estratégico"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Automatizaciones e Inteligencia Artificial"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Expansión y Campañas Digitales"}}
+            ]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.estudiokrear.com/#website",
+          "url": "https://www.estudiokrear.com/",
+          "name": "Kreär — Estudio Estratégico Creativo",
+          "publisher": {"@id": "https://www.estudiokrear.com/#organization"},
+          "inLanguage": ["es-AR", "en"]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.estudiokrear.com/#webpage",
+          "url": "https://www.estudiokrear.com/",
+          "name": "Kreär — Infraestructura Digital Estratégica",
+          "description": "Ordenamos, profesionalizamos y potenciamos tu comunicación digital desde la estrategia.",
+          "isPartOf": {"@id": "https://www.estudiokrear.com/#website"},
+          "about": {"@id": "https://www.estudiokrear.com/#organization"}
+        }
+      ]
+    }
+    </script>
 
     <!-- Adobe Fonts (Typekit) -->
     <link rel="stylesheet" href="https://use.typekit.net/jru0lzd.css">
@@ -283,195 +365,105 @@
 
             <div class="services-grid" role="list">
 
-                <!-- Service 7 — Infraestructura Web -->
-                <article class="service-card-flip service-card-featured" role="listitem"
-                    aria-label="Desarrollo de sitios web estratégicos">
+                <!-- Pilar 1 — Dirección -->
+                <article class="service-card-flip" id="svc-pillar-1" role="listitem"
+                    aria-label="Dirección estratégica de marca">
                     <div class="service-card-inner">
                         <div class="service-card-front">
                             <div class="service-overlay">
                                 <div class="service-icon-front" aria-hidden="true"></div>
-                                <h3 class="service-title-front" data-i18n="svc7.title">Sitios Web Estratégicos</h3>
+                                <h3 class="service-title-front" data-i18n="pillar1.title">Dirección</h3>
                             </div>
                         </div>
                         <div class="service-card-back glass-card">
                             <div class="service-icon-back" aria-hidden="true"></div>
-                            <h3 class="service-title-back" data-i18n="svc7.title">Sitios Web Estratégicos</h3>
-                            <p class="service-description" data-i18n="svc7.desc">Diseñamos y desarrollamos sitios web de
-                                alto rendimiento orientados a la conversión. Cada página responde a un objetivo claro:
-                                posicionar tu marca, captar leads y generar confianza desde el primer scroll.</p>
-                            <div class="service-features" aria-label="Características">
-                                <span class="feature-tag" data-i18n="svc7.tag1">Landing Pages</span>
-                                <span class="feature-tag" data-i18n="svc7.tag2">SEO Técnico</span>
-                                <span class="feature-tag" data-i18n="svc7.tag3">Conversión</span>
+                            <h3 class="service-title-back" data-i18n="pillar1.title">Dirección</h3>
+                            <p class="service-description" data-i18n="pillar1.desc">Antes de ejecutar, pensamos.
+                                Definimos el norte estratégico de tu marca desde el diagnóstico hasta la arquitectura de
+                                sistema completa.</p>
+                            <div class="service-features" aria-label="Incluye">
+                                <span class="feature-tag" data-i18n="pillar1.t1">Diagnóstico</span>
+                                <span class="feature-tag" data-i18n="pillar1.t2">Posicionamiento</span>
+                                <span class="feature-tag" data-i18n="pillar1.t3">Arquitectura de marca</span>
+                                <span class="feature-tag" data-i18n="pillar1.t4">Definición de sistema</span>
                             </div>
                         </div>
                     </div>
                 </article>
 
-                <!-- Service 8 — Automatizaciones IA -->
-                <article class="service-card-flip service-card-featured" role="listitem"
-                    aria-label="Automatizaciones e IA para empresas">
+                <!-- Pilar 2 — Activo Central -->
+                <article class="service-card-flip" id="svc-pillar-2" role="listitem"
+                    aria-label="Activo central digital de marca">
                     <div class="service-card-inner">
                         <div class="service-card-front">
                             <div class="service-overlay">
                                 <div class="service-icon-front" aria-hidden="true"></div>
-                                <h3 class="service-title-front" data-i18n="svc8.title">Automatizaciones & IA</h3>
+                                <h3 class="service-title-front" data-i18n="pillar2.title">Activo Central</h3>
                             </div>
                         </div>
                         <div class="service-card-back glass-card">
                             <div class="service-icon-back" aria-hidden="true"></div>
-                            <h3 class="service-title-back" data-i18n="svc8.title">Automatizaciones & IA</h3>
-                            <p class="service-description" data-i18n="svc8.desc">Implementamos infraestructura digital
-                                inteligente: chatbots entrenados con tu marca, flujos de automatización y agentes con
-                                IA. Reducís costos operativos y escalás sin sumar personal.</p>
-                            <div class="service-features" aria-label="Características">
-                                <span class="feature-tag" data-i18n="svc8.tag1">Chatbots</span>
-                                <span class="feature-tag" data-i18n="svc8.tag2">Automatizaciones</span>
-                                <span class="feature-tag" data-i18n="svc8.tag3">IA Aplicada</span>
+                            <h3 class="service-title-back" data-i18n="pillar2.title">Activo Central</h3>
+                            <p class="service-description" data-i18n="pillar2.desc">Tu plataforma digital estratégica.
+                                Diseñamos y desarrollamos el activo digital que convierte visitantes en clientes y
+                                consolida tu presencia online.</p>
+                            <div class="service-features" aria-label="Incluye">
+                                <span class="feature-tag" data-i18n="pillar2.t1">Sitio web estratégico</span>
+                                <span class="feature-tag" data-i18n="pillar2.t2">E-commerce</span>
+                                <span class="feature-tag" data-i18n="pillar2.t3">Landing systems</span>
                             </div>
                         </div>
                     </div>
                 </article>
 
-                <!-- Service 1 -->
-                <article class="service-card-flip" role="listitem" aria-label="Diagnóstico estratégico de marca">
+                <!-- Pilar 3 — Automatización -->
+                <article class="service-card-flip" id="svc-pillar-3" role="listitem"
+                    aria-label="Automatización e inteligencia artificial">
                     <div class="service-card-inner">
                         <div class="service-card-front">
                             <div class="service-overlay">
                                 <div class="service-icon-front" aria-hidden="true"></div>
-                                <h3 class="service-title-front" data-i18n="svc1.title">Diagnóstico Estratégico</h3>
+                                <h3 class="service-title-front" data-i18n="pillar3.title">Automatización</h3>
                             </div>
                         </div>
                         <div class="service-card-back glass-card">
                             <div class="service-icon-back" aria-hidden="true"></div>
-                            <h3 class="service-title-back" data-i18n="svc1.title">Diagnóstico Estratégico</h3>
-                            <p class="service-description" data-i18n="svc1.desc">Evaluamos el estado actual de tu marca:
-                                posicionamiento, coherencia visual, mensajes y alineación con tu propósito real.
-                                Detectamos brechas y definimos el norte.</p>
-                            <div class="service-features" aria-label="Características">
-                                <span class="feature-tag" data-i18n="svc1.tag1">Posicionamiento</span>
-                                <span class="feature-tag" data-i18n="svc1.tag2">Coherencia</span>
-                                <span class="feature-tag" data-i18n="svc1.tag3">Análisis</span>
+                            <h3 class="service-title-back" data-i18n="pillar3.title">Automatización</h3>
+                            <p class="service-description" data-i18n="pillar3.desc">Infraestructura digital inteligente
+                                que trabaja mientras dormís. Implementamos sistemas de IA y automatización que escalan
+                                tu negocio sin escalar tu equipo.</p>
+                            <div class="service-features" aria-label="Incluye">
+                                <span class="feature-tag" data-i18n="pillar3.t1">CRM</span>
+                                <span class="feature-tag" data-i18n="pillar3.t2">Email flows</span>
+                                <span class="feature-tag" data-i18n="pillar3.t3">IA aplicada</span>
+                                <span class="feature-tag" data-i18n="pillar3.t4">Chatbots</span>
+                                <span class="feature-tag" data-i18n="pillar3.t5">Integraciones</span>
                             </div>
                         </div>
                     </div>
                 </article>
 
-                <!-- Service 2 -->
-                <article class="service-card-flip" role="listitem" aria-label="Construcción de identidad visual">
+                <!-- Pilar 4 — Expansión -->
+                <article class="service-card-flip" id="svc-pillar-4" role="listitem"
+                    aria-label="Expansión y crecimiento de marca">
                     <div class="service-card-inner">
                         <div class="service-card-front">
                             <div class="service-overlay">
                                 <div class="service-icon-front" aria-hidden="true"></div>
-                                <h3 class="service-title-front" data-i18n="svc2.title">Identidad Visual</h3>
+                                <h3 class="service-title-front" data-i18n="pillar4.title">Expansión</h3>
                             </div>
                         </div>
                         <div class="service-card-back glass-card">
                             <div class="service-icon-back" aria-hidden="true"></div>
-                            <h3 class="service-title-back" data-i18n="svc2.title">Identidad Visual</h3>
-                            <p class="service-description" data-i18n="svc2.desc">Construimos sistemas de identidad
-                                visual completos: logo, paleta, tipografía, tono, aplicaciones. Cada decisión tiene un
-                                porqué estratégico detrás.</p>
-                            <div class="service-features" aria-label="Características">
-                                <span class="feature-tag" data-i18n="svc2.tag1">Branding</span>
-                                <span class="feature-tag" data-i18n="svc2.tag2">Sistema Visual</span>
-                                <span class="feature-tag" data-i18n="svc2.tag3">Manual</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Service 3 -->
-                <article class="service-card-flip" role="listitem" aria-label="Sistemas de comunicación">
-                    <div class="service-card-inner">
-                        <div class="service-card-front">
-                            <div class="service-overlay">
-                                <div class="service-icon-front" aria-hidden="true"></div>
-                                <h3 class="service-title-front" data-i18n="svc3.title">Sistemas de Comunicación</h3>
-                            </div>
-                        </div>
-                        <div class="service-card-back glass-card">
-                            <div class="service-icon-back" aria-hidden="true"></div>
-                            <h3 class="service-title-back" data-i18n="svc3.title">Sistemas de Comunicación</h3>
-                            <p class="service-description" data-i18n="svc3.desc">Desarrollamos la estructura completa de
-                                comunicación de tu empresa: qué decir, cómo decirlo, en qué canal y con qué frecuencia.
-                                Un sistema que funciona solo.</p>
-                            <div class="service-features" aria-label="Características">
-                                <span class="feature-tag" data-i18n="svc3.tag1">Estructura</span>
-                                <span class="feature-tag" data-i18n="svc3.tag2">Mensajes</span>
-                                <span class="feature-tag" data-i18n="svc3.tag3">Canales</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Service 4 -->
-                <article class="service-card-flip" role="listitem" aria-label="Gestión de redes estratégica">
-                    <div class="service-card-inner">
-                        <div class="service-card-front">
-                            <div class="service-overlay">
-                                <div class="service-icon-front" aria-hidden="true"></div>
-                                <h3 class="service-title-front" data-i18n="svc4.title">Gestión de Redes</h3>
-                            </div>
-                        </div>
-                        <div class="service-card-back glass-card">
-                            <div class="service-icon-back" aria-hidden="true"></div>
-                            <h3 class="service-title-back" data-i18n="svc4.title">Gestión de Redes</h3>
-                            <p class="service-description" data-i18n="svc4.desc">Gestionamos tus redes con enfoque
-                                estratégico. Sin improvisar contenido ni replicar tendencias sin sentido. Cada
-                                publicación responde a un objetivo claro de marca.</p>
-                            <div class="service-features" aria-label="Características">
-                                <span class="feature-tag" data-i18n="svc4.tag1">Contenido</span>
-                                <span class="feature-tag" data-i18n="svc4.tag2">Estrategia</span>
-                                <span class="feature-tag" data-i18n="svc4.tag3">Analytics</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Service 5 -->
-                <article class="service-card-flip" role="listitem" aria-label="Campañas publicitarias">
-                    <div class="service-card-inner">
-                        <div class="service-card-front">
-                            <div class="service-overlay">
-                                <div class="service-icon-front" aria-hidden="true"></div>
-                                <h3 class="service-title-front" data-i18n="svc5.title">Campañas Publicitarias</h3>
-                            </div>
-                        </div>
-                        <div class="service-card-back glass-card">
-                            <div class="service-icon-back" aria-hidden="true"></div>
-                            <h3 class="service-title-back" data-i18n="svc5.title">Campañas Publicitarias</h3>
-                            <p class="service-description" data-i18n="svc5.desc">Diseñamos y ejecutamos campañas de Ads
-                                con dirección estratégica. Google, Meta, Programática. No apostamos al azar — cada
-                                campaña tiene propósito y métricas claras.</p>
-                            <div class="service-features" aria-label="Características">
-                                <span class="feature-tag">Google Ads</span>
-                                <span class="feature-tag">Meta Ads</span>
-                                <span class="feature-tag" data-i18n="svc5.tag3">Performance</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Service 6 -->
-                <article class="service-card-flip" role="listitem" aria-label="Dirección conceptual">
-                    <div class="service-card-inner">
-                        <div class="service-card-front">
-                            <div class="service-overlay">
-                                <div class="service-icon-front" aria-hidden="true"></div>
-                                <h3 class="service-title-front" data-i18n="svc6.title">Dirección Conceptual</h3>
-                            </div>
-                        </div>
-                        <div class="service-card-back glass-card">
-                            <div class="service-icon-back" aria-hidden="true"></div>
-                            <h3 class="service-title-back" data-i18n="svc6.title">Dirección Conceptual</h3>
-                            <p class="service-description" data-i18n="svc6.desc">Definimos el concepto que unifica toda
-                                la comunicación de tu marca. El hilo conductor que da sentido a cada pieza, campaña y
-                                decisión creativa que tu empresa tome.</p>
-                            <div class="service-features" aria-label="Características">
-                                <span class="feature-tag" data-i18n="svc6.tag1">Concepto</span>
-                                <span class="feature-tag" data-i18n="svc6.tag2">Narrativa</span>
-                                <span class="feature-tag" data-i18n="svc6.tag3">Dirección</span>
+                            <h3 class="service-title-back" data-i18n="pillar4.title">Expansión</h3>
+                            <p class="service-description" data-i18n="pillar4.desc">Una vez que el sistema está armado,
+                                lo escalamos. Generamos presencia, audiencia y conversiones con contenido, campañas y
+                                optimización continua.</p>
+                            <div class="service-features" aria-label="Incluye">
+                                <span class="feature-tag" data-i18n="pillar4.t1">Contenido</span>
+                                <span class="feature-tag" data-i18n="pillar4.t2">Campañas</span>
+                                <span class="feature-tag" data-i18n="pillar4.t3">Redes</span>
+                                <span class="feature-tag" data-i18n="pillar4.t4">Optimización continua</span>
                             </div>
                         </div>
                     </div>
@@ -701,12 +693,14 @@
             <nav class="footer-col" aria-label="Servicios">
                 <h4 class="footer-col-title" data-i18n="footer.col1.title">Servicios</h4>
                 <ul role="list">
-                    <li><a href="#servicios" data-i18n="svc1.title.short">Diagnóstico de Marca</a></li>
-                    <li><a href="#servicios" data-i18n="svc2.title">Identidad Visual</a></li>
-                    <li><a href="#servicios" data-i18n="svc3.title">Sistemas de Comunicación</a></li>
-                    <li><a href="#servicios" data-i18n="svc4.title">Gestión de Redes</a></li>
-                    <li><a href="#servicios" data-i18n="footer.svc5">Campañas Ads</a></li>
-                    <li><a href="#servicios" data-i18n="svc6.title">Dirección Conceptual</a></li>
+                    <li><a href="#servicios" class="footer-svc-link" data-target-card="svc-pillar-1"
+                            data-i18n="pillar1.title">Dirección</a></li>
+                    <li><a href="#servicios" class="footer-svc-link" data-target-card="svc-pillar-2"
+                            data-i18n="pillar2.title">Activo Central</a></li>
+                    <li><a href="#servicios" class="footer-svc-link" data-target-card="svc-pillar-3"
+                            data-i18n="pillar3.title">Automatización</a></li>
+                    <li><a href="#servicios" class="footer-svc-link" data-target-card="svc-pillar-4"
+                            data-i18n="pillar4.title">Expansión</a></li>
                 </ul>
             </nav>
             <nav class="footer-col" aria-label="Estudio">

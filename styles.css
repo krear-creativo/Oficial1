@@ -727,9 +727,11 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 64px;
-    align-items: center;
+    align-items: start;
+    padding-top: 24px;
     position: relative;
     z-index: 1;
+    min-height: 520px;
 }
 
 .hero-badge {
@@ -1060,21 +1062,15 @@ body {
     z-index: 1;
 }
 
-/* Services Grid — layout 2-3-3
-   6 virtual columns: featured cards span 3 (= 50%), regular cards span 2 (= 33%)
-*/
+/* Services Grid — 2×2 layout */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
 }
 
-.service-card-featured {
-    grid-column: span 3;
-}
-
-.service-card-flip:not(.service-card-featured) {
-    grid-column: span 2;
+.service-card-flip {
+    grid-column: span 1;
 }
 
 /* Flip Card Wrapper */
@@ -1963,16 +1959,12 @@ body {
 
     /* Services */
     .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .service-card-featured,
-    .service-card-flip:not(.service-card-featured) {
-        grid-column: span 1;
+        grid-template-columns: 1fr;
+        /* single column on mobile */
     }
 
     .service-card-flip {
-        height: 320px;
+        height: 340px;
     }
 
     /* Testimonials */

@@ -1960,11 +1960,48 @@ body {
     /* Services */
     .services-grid {
         grid-template-columns: 1fr;
-        /* single column on mobile */
+        gap: 20px;
     }
 
+    /* On mobile, disable 3D flip and show info stacked instead */
     .service-card-flip {
-        height: 340px;
+        height: auto;
+        perspective: none;
+    }
+
+    .service-card-inner {
+        transform-style: flat;
+        transition: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .service-card-front {
+        border-radius: 20px 20px 0 0;
+        min-height: 140px;
+        backface-visibility: visible;
+        -webkit-backface-visibility: visible;
+    }
+
+    .service-card-back {
+        position: static;
+        transform: none;
+        backface-visibility: visible;
+        -webkit-backface-visibility: visible;
+        border-radius: 0 0 20px 20px;
+        border-top: 1px solid rgba(var(--accent-rgb), 0.15);
+        padding: 24px;
+        min-height: auto;
+    }
+
+    .service-card-flip:hover .service-card-inner,
+    .service-card-flip.flipped .service-card-inner {
+        transform: none;
+    }
+
+    .service-features {
+        gap: 6px;
     }
 
     /* Testimonials */

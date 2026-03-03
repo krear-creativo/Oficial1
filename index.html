@@ -635,34 +635,86 @@
     <!-- ===================== CTA FINAL ===================== -->
     <section class="final-cta" id="contacto" aria-label="Contacto y llamada a la acción">
         <div class="cta-bg-glow" aria-hidden="true"></div>
-        <div class="container cta-inner">
-            <span class="section-label" data-i18n="cta.label">¿Listo para el cambio?</span>
-            <h2 class="cta-title"><span data-i18n="cta.title">¿Tu comunicación está</span><br /><span
-                    class="text-accent" data-i18n="cta.title.accent">a la altura de tu empresa?</span>
-            </h2>
-            <p class="cta-subtitle" data-i18n="cta.subtitle">Si tu negocio creció pero tu comunicación se quedó atrás,
-                es momento de ordenar. Empezamos con un diagnóstico.</p>
-            <a href="https://wa.me/543624522359?text=Hola%2C%20les%20escribo%20desde%20la%20p%C3%A1gina%20de%20Kre%C3%A4r.%0AMe%20gustar%C3%ADa%20recibir%20informaci%C3%B3n."
-                class="btn-primary btn-large pulse-glow" id="cta-main-button" data-i18n="cta.button">Quiero mi
-                diagnóstico</a>
-            <p class="cta-note" data-i18n="cta.note">Sin compromiso · Respuesta en 24hs · 100% estratégico</p>
-            <div class="cta-contact-options">
-                <a href="https://wa.me/543624522359?text=Hola%2C%20les%20escribo%20desde%20la%20p%C3%A1gina%20de%20Kre%C3%A4r.%0AMe%20gustar%C3%ADa%20recibir%20informaci%C3%B3n."
-                    class="contact-chip" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
-                    <img src="images/logo-whatsapp_1@2x.png" alt="WhatsApp" class="contact-icon" />
-                    <span class="chip-text">WhatsApp</span>
-                </a>
-                <a href="mailto:krear.creativo@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%2C%20les%20escribo%20desde%20la%20p%C3%A1gina%20de%20Kre%C3%A4r.%0AMe%20gustar%C3%ADa%20recibir%20informaci%C3%B3n."
-                    class="contact-chip" aria-label="Enviar email">
-                    <img src="images/logo-mail_1@2x.png" alt="Email" class="contact-icon" />
-                    <span class="chip-text">Email</span>
-                </a>
-                <a href="https://www.instagram.com/estudio.krear/" class="contact-chip" target="_blank"
-                    rel="noopener noreferrer" aria-label="Instagram de Kreär">
-                    <img src="images/logo-instagram_1@2x.png" alt="Instagram" class="contact-icon" />
-                    <span class="chip-text">Instagram</span>
-                </a>
+        <div class="container cta-grid">
+
+            <!-- Columna izquierda: texto -->
+            <div class="cta-left reveal-item">
+                <span class="section-label" data-i18n="cta.label">¿Listo para el cambio?</span>
+                <h2 class="cta-title" style="text-align:left;">
+                    <span data-i18n="cta.title">¿Tu comunicación está</span><br />
+                    <span class="text-accent" data-i18n="cta.title.accent">a la altura de tu empresa?</span>
+                </h2>
+                <p class="cta-subtitle" style="text-align:left;" data-i18n="cta.subtitle">Si tu negocio creció pero tu
+                    comunicación se quedó atrás, es momento de ordenar. Empezamos con un diagnóstico.</p>
+                <p class="cta-note" style="text-align:left;" data-i18n="cta.note">Sin compromiso · Respuesta en 24hs ·
+                    100% estratégico</p>
+                <div class="cta-contact-options" style="justify-content:flex-start;">
+                    <a href="https://wa.me/543624522359?text=Hola%2C%20les%20escribo%20desde%20la%20p%C3%A1gina%20de%20Kre%C3%A4r.%0AMe%20gustar%C3%ADa%20recibir%20informaci%C3%B3n."
+                        class="contact-chip" target="_blank" rel="noopener noreferrer"
+                        aria-label="Contactar por WhatsApp">
+                        <img src="images/logo-whatsapp_1@2x.png" alt="WhatsApp" class="contact-icon" />
+                        <span class="chip-text">WhatsApp</span>
+                    </a>
+                    <a href="mailto:krear.creativo@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%2C%20les%20escribo%20desde%20la%20p%C3%A1gina%20de%20Kre%C3%A4r.%0AMe%20gustar%C3%ADa%20recibir%20informaci%C3%B3n."
+                        class="contact-chip" aria-label="Enviar email">
+                        <img src="images/logo-mail_1@2x.png" alt="Email" class="contact-icon" />
+                        <span class="chip-text">Email</span>
+                    </a>
+                    <a href="https://www.instagram.com/estudio.krear/" class="contact-chip" target="_blank"
+                        rel="noopener noreferrer" aria-label="Instagram de Kreär">
+                        <img src="images/logo-instagram_1@2x.png" alt="Instagram" class="contact-icon" />
+                        <span class="chip-text">Instagram</span>
+                    </a>
+                </div>
             </div>
+
+            <!-- Columna derecha: formulario -->
+            <div class="cta-form-wrapper reveal-item">
+                <form id="contact-form" class="cta-form" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="form-name" data-i18n="form.name.label">Nombre</label>
+                            <input type="text" id="form-name" name="nombre" autocomplete="given-name"
+                                placeholder="Tu nombre" data-i18n-placeholder="form.name.placeholder" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="form-phone" data-i18n="form.phone.label">Número</label>
+                            <input type="tel" id="form-phone" name="numero" autocomplete="tel"
+                                placeholder="+54 362 000 0000" data-i18n-placeholder="form.phone.placeholder"
+                                required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="form-email" data-i18n="form.email.label">Email</label>
+                        <input type="email" id="form-email" name="email" autocomplete="email"
+                            placeholder="tu@empresa.com" data-i18n-placeholder="form.email.placeholder" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="form-message" data-i18n="form.message.label">Consulta</label>
+                        <textarea id="form-message" name="consulta" rows="4"
+                            placeholder="Contanos sobre tu proyecto o consulta..."
+                            data-i18n-placeholder="form.message.placeholder" required></textarea>
+                    </div>
+                    <div class="form-consent">
+                        <label class="consent-label">
+                            <input type="checkbox" id="form-consent" name="consent" required />
+                            <span class="consent-checkbox" aria-hidden="true"></span>
+                            <span data-i18n="form.consent">Acepto el tratamiento de mis datos personales para recibir
+                                respuesta a mi consulta.</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-primary btn-form-submit" id="form-submit-btn">
+                        <span class="btn-text" data-i18n="form.submit">Enviar consulta</span>
+                        <span class="btn-loading" aria-hidden="true">
+                            <span class="loading-dot"></span>
+                            <span class="loading-dot"></span>
+                            <span class="loading-dot"></span>
+                        </span>
+                    </button>
+                    <div class="form-feedback" id="form-feedback" role="alert" aria-live="polite"></div>
+                </form>
+            </div>
+
         </div>
     </section>
 

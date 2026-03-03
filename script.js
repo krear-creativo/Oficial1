@@ -482,6 +482,21 @@ const translations = {
     'cta.button': 'Quiero mi diagnóstico',
     'cta.note': 'Sin compromiso · Respuesta en 24hs · 100% estratégico',
 
+    // Form
+    'form.name.label': 'Nombre',
+    'form.name.placeholder': 'Tu nombre',
+    'form.phone.label': 'Número',
+    'form.phone.placeholder': '+54 362 000 0000',
+    'form.email.label': 'Email',
+    'form.email.placeholder': 'tu@empresa.com',
+    'form.message.label': 'Consulta',
+    'form.message.placeholder': 'Contanos sobre tu proyecto o consulta...',
+    'form.consent': 'Acepto el tratamiento de mis datos personales para recibir respuesta a mi consulta.',
+    'form.submit': 'Enviar consulta',
+    'form.success': '¡Consulta enviada! Te respondemos en menos de 24hs.',
+    'form.error': 'Hubo un error al enviar. Por favor intentá de nuevo o escribinos directamente.',
+    'form.validation': 'Por favor completá todos los campos y aceptá los términos.',
+
     // Footer
     'footer.tagline': 'Una marca ordenada',
     'footer.tagline.em': 'vende sin gritar.',
@@ -636,6 +651,21 @@ const translations = {
     'cta.button': 'I want my diagnosis',
     'cta.note': 'No commitment · Response within 24h · 100% strategic',
 
+    // Form
+    'form.name.label': 'Name',
+    'form.name.placeholder': 'Your name',
+    'form.phone.label': 'Phone',
+    'form.phone.placeholder': '+1 555 000 0000',
+    'form.email.label': 'Email',
+    'form.email.placeholder': 'you@company.com',
+    'form.message.label': 'Message',
+    'form.message.placeholder': 'Tell us about your project or inquiry...',
+    'form.consent': 'I agree to the processing of my personal data to receive a response to my inquiry.',
+    'form.submit': 'Send inquiry',
+    'form.success': 'Inquiry sent! We\'ll get back to you within 24h.',
+    'form.error': 'There was an error sending the form. Please try again or contact us directly.',
+    'form.validation': 'Please fill in all fields and accept the terms.',
+
     // Footer
     'footer.tagline': 'An organized brand',
     'footer.tagline.em': 'sells without shouting.',
@@ -690,6 +720,14 @@ function applyLanguage(lang) {
 
     // Update html lang attribute
     document.documentElement.lang = lang;
+
+    // Update placeholder translations
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (dict[key] !== undefined) {
+        el.placeholder = dict[key];
+      }
+    });
 
     // Slide pill + button active state on ALL switchers (desktop + mobile)
     document.querySelectorAll('.lang-switcher').forEach(switcher => {
@@ -830,3 +868,90 @@ function initFooterServiceLinks() {
 }
 
 document.addEventListener('DOMContentLoaded', initFooterServiceLinks);
+
+/* ============================================================
+   CONTACT FORM — Submit a Google Sheets via Apps Script
+   ============================================================ */
+const SHEETS_ENDPOINT = 'TU_URL_DE_APPS_SCRIPT_AQUI';
+
+function initContactForm() {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const lang = localStorage.getItem('krear-lang') || 'es';
+    const dict = translations[lang];
+
+    const nombre = document.getElementById('form-name').value.trim();
+    const numero = document.getElementById('form-phone').value.trim();
+    const email = document.getElementById('form-email').value.trim();
+    const consulta = document.getElementById('form-message').value.trim();
+    const consent = document.getElementById('form-consent').checked;
+    const feedback = document.getElementById('form-feedback');
+    const submitBtn = document.getElementById('form-submit-btn');
+
+    // Clear previous errors
+    form.querySelectorAll('.field-error').forEach(el => el.classList.remove('field-error'));
+    feedback.className = 'form-feedback';
+    feedback.textContent = '';
+
+    // Validation
+    let isValid = true;
+    if (!nombre) { document.getElementById('form-name').classList.add('field-error'); isValid = false; }
+    if (!numero) { document.getElementById('form-phone').classList.add('field-error'); isValid = false; }
+    if (!email || !/^[^@]+@[^@]+\.[^@]+$/.test(email)) { document.getElementById('form-email').classList.add('field-error'); isValid = false; }
+    if (!consulta) { document.getElementById('form-message').classList.add('field-error'); isValid = false; }
+    if (!consent) { isValid = false; }
+
+    if (!isValid) {
+      feedback.textContent = dict['form.validation'];
+      feedback.className = 'form-feedback error visible';
+      return;
+    }
+
+    // Loading state
+    submitBtn.classList.add('loading');
+    submitBtn.disabled = true;
+
+    const payload = new FormData();
+    payload.append('nombre', nombre);
+    payload.append('numero', numero);
+    payload.append('email', email);
+    payload.append('consulta', consulta);
+    payload.append('timestamp', new Date().toISOString());
+
+    try {
+      if (SHEETS_ENDPOINT === 'TU_URL_DE_APPS_SCRIPT_AQUI') {
+        // Modo demo sin endpoint configurado
+        await new Promise(res => setTimeout(res, 1200));
+        throw new Error('ENDPOINT_NOT_SET');
+      }
+      const response = await fetch(SHEETS_ENDPOINT, {
+        method: 'POST',
+        body: payload,
+      });
+      const result = await response.json();
+      if (result.result === 'success') {
+        feedback.textContent = dict['form.success'];
+        feedback.className = 'form-feedback success visible';
+        form.reset();
+      } else {
+        throw new Error('SHEETS_ERROR');
+      }
+    } catch (err) {
+      if (err.message === 'ENDPOINT_NOT_SET') {
+        feedback.textContent = '⚠️ Endpoint no configurado. Seguí las instrucciones de Google Apps Script.';
+      } else {
+        feedback.textContent = dict['form.error'];
+      }
+      feedback.className = 'form-feedback error visible';
+    } finally {
+      submitBtn.classList.remove('loading');
+      submitBtn.disabled = false;
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initContactForm);

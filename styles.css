@@ -624,6 +624,84 @@ body {
 }
 
 /* ============================================================
+   4b. LANGUAGE SWITCHER — Sliding Pill
+   ============================================================ */
+
+/* Fade transition for translatable elements */
+[data-i18n] {
+    transition: opacity 0.18s ease;
+}
+
+[data-i18n].lang-fading {
+    opacity: 0;
+}
+
+.lang-switcher {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(var(--accent-rgb), 0.18);
+    border-radius: var(--radius-full);
+    padding: 4px;
+    margin-left: 8px;
+    overflow: hidden;
+}
+
+/* The sliding highlight pill */
+.lang-pill {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(50% - 4px);
+    height: calc(100% - 8px);
+    background: rgba(var(--accent-rgb), 0.18);
+    border: 1px solid rgba(var(--accent-rgb), 0.45);
+    border-radius: var(--radius-full);
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Slide pill to EN position */
+.lang-switcher[data-active="en"] .lang-pill {
+    transform: translateX(100%);
+}
+
+.lang-btn {
+    position: relative;
+    z-index: 1;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: "mundial", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--text-quaternary);
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    transition: color 0.25s ease;
+    line-height: 1;
+    min-width: 32px;
+    text-align: center;
+}
+
+.lang-btn:hover {
+    color: var(--text-secondary);
+}
+
+.lang-btn.lang-active {
+    color: var(--accent-500);
+}
+
+/* Mobile lang switcher */
+.lang-switcher-mobile {
+    margin: 10px 24px 16px;
+    align-self: flex-start;
+}
+
+/* ============================================================
    5. HERO
    ============================================================ */
 .hero {
@@ -982,10 +1060,21 @@ body {
     z-index: 1;
 }
 
+/* Services Grid — layout 2-3-3
+   6 virtual columns: featured cards span 3 (= 50%), regular cards span 2 (= 33%)
+*/
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 24px;
+}
+
+.service-card-featured {
+    grid-column: span 3;
+}
+
+.service-card-flip:not(.service-card-featured) {
+    grid-column: span 2;
 }
 
 /* Flip Card Wrapper */
@@ -1874,7 +1963,12 @@ body {
 
     /* Services */
     .services-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-card-featured,
+    .service-card-flip:not(.service-card-featured) {
+        grid-column: span 1;
     }
 
     .service-card-flip {

@@ -23,7 +23,7 @@
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kreär — Estudio Estratégico Creativo</title>
+    <title data-i18n-title="true">Kreär — Estudio Estratégico Creativo</title>
     <meta name="description"
         content="Kreär es un estudio creativo estratégico que ayuda a empresas a ordenar, profesionalizar y potenciar su comunicación. Estrategia + Creatividad + Dirección." />
     <meta name="keywords"
@@ -47,7 +47,7 @@
         !function (f, b, e, v, n, t, s) {
             if (f.fbq) return; n = f.fbq = function () {
                 n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
             if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
             n.queue = []; t = b.createElement(e); t.async = !0;
@@ -78,12 +78,17 @@
                 <img src="images/logo2.png" alt="Kreär Logo" class="logo-img" />
             </a>
             <ul class="nav-links" id="nav-links" role="list">
-                <li><a href="#servicios" class="nav-link">Servicios</a></li>
-                <li><a href="#metodologia" class="nav-link">Metodología</a></li>
-                <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
-                <li><a href="#testimonios" class="nav-link">Clientes</a></li>
-                <li><a href="#contacto" class="nav-link nav-link-cta">Hablemos</a></li>
+                <li><a href="#servicios" class="nav-link" data-i18n="nav.services">Servicios</a></li>
+                <li><a href="#metodologia" class="nav-link" data-i18n="nav.methodology">Metodología</a></li>
+                <li><a href="#nosotros" class="nav-link" data-i18n="nav.about">Nosotros</a></li>
+                <li><a href="#testimonios" class="nav-link" data-i18n="nav.clients">Clientes</a></li>
+                <li><a href="#contacto" class="nav-link nav-link-cta" data-i18n="nav.cta">Hablemos</a></li>
             </ul>
+            <div class="lang-switcher" id="lang-switcher" role="group" aria-label="Selector de idioma" data-active="es">
+                <div class="lang-pill" aria-hidden="true"></div>
+                <button class="lang-btn lang-active" id="btn-lang-es" data-lang="es" aria-label="Español">ES</button>
+                <button class="lang-btn" id="btn-lang-en" data-lang="en" aria-label="English">EN</button>
+            </div>
             <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
@@ -91,12 +96,19 @@
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
             <ul role="list">
-                <li><a href="#servicios" class="nav-link" data-mobile-link>Servicios</a></li>
-                <li><a href="#metodologia" class="nav-link" data-mobile-link>Metodología</a></li>
-                <li><a href="#nosotros" class="nav-link" data-mobile-link>Nosotros</a></li>
-                <li><a href="#testimonios" class="nav-link" data-mobile-link>Clientes</a></li>
-                <li><a href="#contacto" class="nav-link" data-mobile-link>Hablemos</a></li>
+                <li><a href="#servicios" class="nav-link" data-mobile-link data-i18n="nav.services">Servicios</a></li>
+                <li><a href="#metodologia" class="nav-link" data-mobile-link data-i18n="nav.methodology">Metodología</a>
+                </li>
+                <li><a href="#nosotros" class="nav-link" data-mobile-link data-i18n="nav.about">Nosotros</a></li>
+                <li><a href="#testimonios" class="nav-link" data-mobile-link data-i18n="nav.clients">Clientes</a></li>
+                <li><a href="#contacto" class="nav-link" data-mobile-link data-i18n="nav.cta">Hablemos</a></li>
             </ul>
+            <div class="lang-switcher lang-switcher-mobile" role="group" aria-label="Selector de idioma"
+                data-active="es">
+                <div class="lang-pill" aria-hidden="true"></div>
+                <button class="lang-btn lang-active" data-lang="es" aria-label="Español">ES</button>
+                <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+            </div>
         </div>
     </nav>
 
@@ -107,21 +119,25 @@
             <div class="hero-content">
                 <div class="hero-badge animate-fade-up">
                     <span class="badge-dot" aria-hidden="true"></span>
-                    Estudio Estratégico Creativo · Chaco, Argentina
+                    <span data-i18n="hero.badge">Estudio Estratégico Creativo · Chaco, Argentina</span>
                 </div>
                 <h1 class="hero-title animate-fade-up anim-delay-1">
-                    La comunicación<br />
-                    <span class="text-accent">que tu empresa</span><br />
-                    merece tener.
+                    <span data-i18n="hero.title.line1">La comunicación</span><br />
+                    <span class="text-accent" data-i18n="hero.title.line2">que tu empresa</span><br />
+                    <span data-i18n="hero.title.line3">merece tener.</span>
                 </h1>
                 <p class="hero-subtitle animate-fade-up anim-delay-2">
-                    Ordenamos, profesionalizamos y potenciamos tu comunicación desde la <strong>estrategia</strong>.
+                    <span data-i18n="hero.subtitle1">Ordenamos, profesionalizamos y potenciamos tu comunicación desde
+                        la</span> <strong data-i18n="hero.subtitle1.strong">estrategia</strong>.
                     <br>
-                    No diseñamos piezas — construimos sistemas que sostienen tu marca en el tiempo.
+                    <span data-i18n="hero.subtitle2">No diseñamos piezas — construimos sistemas que sostienen tu marca
+                        en el tiempo.</span>
                 </p>
                 <div class="hero-ctas animate-scale-in anim-delay-3">
-                    <a href="#contacto" class="btn-primary" id="hero-cta-primary">Empezar diagnóstico</a>
-                    <a href="#servicios" class="btn-outline" id="hero-cta-secondary">Ver servicios</a>
+                    <a href="#contacto" class="btn-primary" id="hero-cta-primary" data-i18n="hero.cta.primary">Empezar
+                        diagnóstico</a>
+                    <a href="#servicios" class="btn-outline" id="hero-cta-secondary" data-i18n="hero.cta.secondary">Ver
+                        servicios</a>
                 </div>
                 <div class="hero-stats animate-fade-up anim-delay-4">
                     <div class="stat-item">
@@ -129,7 +145,7 @@
                             <span class="stat-prefix">+</span><span class="stat-number" data-target="50"
                                 id="stat-1">0</span>
                         </div>
-                        <span class="stat-label">Marcas acompañadas</span>
+                        <span class="stat-label" data-i18n="hero.stat1">Marcas acompañadas</span>
                     </div>
                     <div class="stat-divider" aria-hidden="true"></div>
                     <div class="stat-item">
@@ -137,7 +153,7 @@
                             <span class="stat-prefix">+</span><span class="stat-number" data-target="5"
                                 id="stat-2">0</span>
                         </div>
-                        <span class="stat-label">Años de trayectoria</span>
+                        <span class="stat-label" data-i18n="hero.stat2">Años de trayectoria</span>
                     </div>
                     <div class="stat-divider" aria-hidden="true"></div>
                     <div class="stat-item">
@@ -145,7 +161,7 @@
                             <span class="stat-number" data-target="100" id="stat-3">0</span><span
                                 class="stat-suffix">%</span>
                         </div>
-                        <span class="stat-label">Orientado a resultados</span>
+                        <span class="stat-label" data-i18n="hero.stat3">Orientado a resultados</span>
                     </div>
                 </div>
             </div>
@@ -157,13 +173,13 @@
                     <div class="hero-visual-ring ring-2" aria-hidden="true"></div>
                     <!-- Floating badges -->
                     <div class="floating-badge badge-1">
-                        <span>Estrategia</span>
+                        <span data-i18n="badge.strategy">Estrategia</span>
                     </div>
                     <div class="floating-badge badge-2">
-                        <span>Dirección</span>
+                        <span data-i18n="badge.direction">Dirección</span>
                     </div>
                     <div class="floating-badge badge-3">
-                        <span>Sistema</span>
+                        <span data-i18n="badge.system">Sistema</span>
                     </div>
                 </div>
             </div>
@@ -176,7 +192,7 @@
 
     <!-- ===================== SOCIAL PROOF / CLIENTS ===================== -->
     <section class="social-proof" aria-label="Empresas que confían en Kreär">
-        <p class="proof-label">Empresas que ordenaron su comunicación con nosotros</p>
+        <p class="proof-label" data-i18n="proof.label">Empresas que ordenaron su comunicación con nosotros</p>
         <div class="marquee-wrapper" aria-hidden="true">
             <!-- Track 1 -->
             <div class="marquee-track">
@@ -257,14 +273,65 @@
     <section class="services" id="servicios" aria-label="Nuestros servicios">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Lo que hacemos</span>
-                <h2 class="section-title">Servicios diseñados<br /><span class="text-accent">desde la estrategia</span>
+                <span class="section-label" data-i18n="services.label">Lo que hacemos</span>
+                <h2 class="section-title"><span data-i18n="services.title">Servicios diseñados</span><br /><span
+                        class="text-accent" data-i18n="services.title.accent">desde la estrategia</span>
                 </h2>
-                <p class="section-subtitle">Cada servicio es parte de un sistema pensado para que tu marca comunique con
-                    claridad y coherencia.</p>
+                <p class="section-subtitle" data-i18n="services.subtitle">Cada servicio es parte de un sistema pensado
+                    para que tu marca comunique con claridad y coherencia.</p>
             </div>
 
             <div class="services-grid" role="list">
+
+                <!-- Service 7 — Infraestructura Web -->
+                <article class="service-card-flip service-card-featured" role="listitem"
+                    aria-label="Desarrollo de sitios web estratégicos">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <div class="service-overlay">
+                                <div class="service-icon-front" aria-hidden="true"></div>
+                                <h3 class="service-title-front" data-i18n="svc7.title">Sitios Web Estratégicos</h3>
+                            </div>
+                        </div>
+                        <div class="service-card-back glass-card">
+                            <div class="service-icon-back" aria-hidden="true"></div>
+                            <h3 class="service-title-back" data-i18n="svc7.title">Sitios Web Estratégicos</h3>
+                            <p class="service-description" data-i18n="svc7.desc">Diseñamos y desarrollamos sitios web de
+                                alto rendimiento orientados a la conversión. Cada página responde a un objetivo claro:
+                                posicionar tu marca, captar leads y generar confianza desde el primer scroll.</p>
+                            <div class="service-features" aria-label="Características">
+                                <span class="feature-tag" data-i18n="svc7.tag1">Landing Pages</span>
+                                <span class="feature-tag" data-i18n="svc7.tag2">SEO Técnico</span>
+                                <span class="feature-tag" data-i18n="svc7.tag3">Conversión</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Service 8 — Automatizaciones IA -->
+                <article class="service-card-flip service-card-featured" role="listitem"
+                    aria-label="Automatizaciones e IA para empresas">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <div class="service-overlay">
+                                <div class="service-icon-front" aria-hidden="true"></div>
+                                <h3 class="service-title-front" data-i18n="svc8.title">Automatizaciones & IA</h3>
+                            </div>
+                        </div>
+                        <div class="service-card-back glass-card">
+                            <div class="service-icon-back" aria-hidden="true"></div>
+                            <h3 class="service-title-back" data-i18n="svc8.title">Automatizaciones & IA</h3>
+                            <p class="service-description" data-i18n="svc8.desc">Implementamos infraestructura digital
+                                inteligente: chatbots entrenados con tu marca, flujos de automatización y agentes con
+                                IA. Reducís costos operativos y escalás sin sumar personal.</p>
+                            <div class="service-features" aria-label="Características">
+                                <span class="feature-tag" data-i18n="svc8.tag1">Chatbots</span>
+                                <span class="feature-tag" data-i18n="svc8.tag2">Automatizaciones</span>
+                                <span class="feature-tag" data-i18n="svc8.tag3">IA Aplicada</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
 
                 <!-- Service 1 -->
                 <article class="service-card-flip" role="listitem" aria-label="Diagnóstico estratégico de marca">
@@ -272,19 +339,19 @@
                         <div class="service-card-front">
                             <div class="service-overlay">
                                 <div class="service-icon-front" aria-hidden="true"></div>
-                                <h3 class="service-title-front">Diagnóstico Estratégico</h3>
+                                <h3 class="service-title-front" data-i18n="svc1.title">Diagnóstico Estratégico</h3>
                             </div>
                         </div>
                         <div class="service-card-back glass-card">
                             <div class="service-icon-back" aria-hidden="true"></div>
-                            <h3 class="service-title-back">Diagnóstico Estratégico</h3>
-                            <p class="service-description">Evaluamos el estado actual de tu marca: posicionamiento,
-                                coherencia visual, mensajes y alineación con tu propósito real. Detectamos brechas y
-                                definimos el norte.</p>
+                            <h3 class="service-title-back" data-i18n="svc1.title">Diagnóstico Estratégico</h3>
+                            <p class="service-description" data-i18n="svc1.desc">Evaluamos el estado actual de tu marca:
+                                posicionamiento, coherencia visual, mensajes y alineación con tu propósito real.
+                                Detectamos brechas y definimos el norte.</p>
                             <div class="service-features" aria-label="Características">
-                                <span class="feature-tag">Posicionamiento</span>
-                                <span class="feature-tag">Coherencia</span>
-                                <span class="feature-tag">Análisis</span>
+                                <span class="feature-tag" data-i18n="svc1.tag1">Posicionamiento</span>
+                                <span class="feature-tag" data-i18n="svc1.tag2">Coherencia</span>
+                                <span class="feature-tag" data-i18n="svc1.tag3">Análisis</span>
                             </div>
                         </div>
                     </div>
@@ -296,19 +363,19 @@
                         <div class="service-card-front">
                             <div class="service-overlay">
                                 <div class="service-icon-front" aria-hidden="true"></div>
-                                <h3 class="service-title-front">Identidad Visual</h3>
+                                <h3 class="service-title-front" data-i18n="svc2.title">Identidad Visual</h3>
                             </div>
                         </div>
                         <div class="service-card-back glass-card">
                             <div class="service-icon-back" aria-hidden="true"></div>
-                            <h3 class="service-title-back">Identidad Visual</h3>
-                            <p class="service-description">Construimos sistemas de identidad visual completos: logo,
-                                paleta, tipografía, tono, aplicaciones. Cada decisión tiene un porqué estratégico
-                                detrás.</p>
+                            <h3 class="service-title-back" data-i18n="svc2.title">Identidad Visual</h3>
+                            <p class="service-description" data-i18n="svc2.desc">Construimos sistemas de identidad
+                                visual completos: logo, paleta, tipografía, tono, aplicaciones. Cada decisión tiene un
+                                porqué estratégico detrás.</p>
                             <div class="service-features" aria-label="Características">
-                                <span class="feature-tag">Branding</span>
-                                <span class="feature-tag">Sistema Visual</span>
-                                <span class="feature-tag">Manual</span>
+                                <span class="feature-tag" data-i18n="svc2.tag1">Branding</span>
+                                <span class="feature-tag" data-i18n="svc2.tag2">Sistema Visual</span>
+                                <span class="feature-tag" data-i18n="svc2.tag3">Manual</span>
                             </div>
                         </div>
                     </div>
@@ -320,19 +387,19 @@
                         <div class="service-card-front">
                             <div class="service-overlay">
                                 <div class="service-icon-front" aria-hidden="true"></div>
-                                <h3 class="service-title-front">Sistemas de Comunicación</h3>
+                                <h3 class="service-title-front" data-i18n="svc3.title">Sistemas de Comunicación</h3>
                             </div>
                         </div>
                         <div class="service-card-back glass-card">
                             <div class="service-icon-back" aria-hidden="true"></div>
-                            <h3 class="service-title-back">Sistemas de Comunicación</h3>
-                            <p class="service-description">Desarrollamos la estructura completa de comunicación de tu
-                                empresa: qué decir, cómo decirlo, en qué canal y con qué frecuencia. Un sistema que
-                                funciona solo.</p>
+                            <h3 class="service-title-back" data-i18n="svc3.title">Sistemas de Comunicación</h3>
+                            <p class="service-description" data-i18n="svc3.desc">Desarrollamos la estructura completa de
+                                comunicación de tu empresa: qué decir, cómo decirlo, en qué canal y con qué frecuencia.
+                                Un sistema que funciona solo.</p>
                             <div class="service-features" aria-label="Características">
-                                <span class="feature-tag">Estructura</span>
-                                <span class="feature-tag">Mensajes</span>
-                                <span class="feature-tag">Canales</span>
+                                <span class="feature-tag" data-i18n="svc3.tag1">Estructura</span>
+                                <span class="feature-tag" data-i18n="svc3.tag2">Mensajes</span>
+                                <span class="feature-tag" data-i18n="svc3.tag3">Canales</span>
                             </div>
                         </div>
                     </div>
@@ -344,19 +411,19 @@
                         <div class="service-card-front">
                             <div class="service-overlay">
                                 <div class="service-icon-front" aria-hidden="true"></div>
-                                <h3 class="service-title-front">Gestión de Redes</h3>
+                                <h3 class="service-title-front" data-i18n="svc4.title">Gestión de Redes</h3>
                             </div>
                         </div>
                         <div class="service-card-back glass-card">
                             <div class="service-icon-back" aria-hidden="true"></div>
-                            <h3 class="service-title-back">Gestión de Redes</h3>
-                            <p class="service-description">Gestionamos tus redes con enfoque estratégico. Sin improvisar
-                                contenido ni replicar tendencias sin sentido. Cada publicación responde a un objetivo
-                                claro de marca.</p>
+                            <h3 class="service-title-back" data-i18n="svc4.title">Gestión de Redes</h3>
+                            <p class="service-description" data-i18n="svc4.desc">Gestionamos tus redes con enfoque
+                                estratégico. Sin improvisar contenido ni replicar tendencias sin sentido. Cada
+                                publicación responde a un objetivo claro de marca.</p>
                             <div class="service-features" aria-label="Características">
-                                <span class="feature-tag">Contenido</span>
-                                <span class="feature-tag">Estrategia</span>
-                                <span class="feature-tag">Analytics</span>
+                                <span class="feature-tag" data-i18n="svc4.tag1">Contenido</span>
+                                <span class="feature-tag" data-i18n="svc4.tag2">Estrategia</span>
+                                <span class="feature-tag" data-i18n="svc4.tag3">Analytics</span>
                             </div>
                         </div>
                     </div>
@@ -368,19 +435,19 @@
                         <div class="service-card-front">
                             <div class="service-overlay">
                                 <div class="service-icon-front" aria-hidden="true"></div>
-                                <h3 class="service-title-front">Campañas Publicitarias</h3>
+                                <h3 class="service-title-front" data-i18n="svc5.title">Campañas Publicitarias</h3>
                             </div>
                         </div>
                         <div class="service-card-back glass-card">
                             <div class="service-icon-back" aria-hidden="true"></div>
-                            <h3 class="service-title-back">Campañas Publicitarias</h3>
-                            <p class="service-description">Diseñamos y ejecutamos campañas de Ads con dirección
-                                estratégica. Google, Meta, Programática. No apostamos al azar — cada campaña tiene
-                                propósito y métricas claras.</p>
+                            <h3 class="service-title-back" data-i18n="svc5.title">Campañas Publicitarias</h3>
+                            <p class="service-description" data-i18n="svc5.desc">Diseñamos y ejecutamos campañas de Ads
+                                con dirección estratégica. Google, Meta, Programática. No apostamos al azar — cada
+                                campaña tiene propósito y métricas claras.</p>
                             <div class="service-features" aria-label="Características">
                                 <span class="feature-tag">Google Ads</span>
                                 <span class="feature-tag">Meta Ads</span>
-                                <span class="feature-tag">Performance</span>
+                                <span class="feature-tag" data-i18n="svc5.tag3">Performance</span>
                             </div>
                         </div>
                     </div>
@@ -392,19 +459,19 @@
                         <div class="service-card-front">
                             <div class="service-overlay">
                                 <div class="service-icon-front" aria-hidden="true"></div>
-                                <h3 class="service-title-front">Dirección Conceptual</h3>
+                                <h3 class="service-title-front" data-i18n="svc6.title">Dirección Conceptual</h3>
                             </div>
                         </div>
                         <div class="service-card-back glass-card">
                             <div class="service-icon-back" aria-hidden="true"></div>
-                            <h3 class="service-title-back">Dirección Conceptual</h3>
-                            <p class="service-description">Definimos el concepto que unifica toda la comunicación de tu
-                                marca. El hilo conductor que da sentido a cada pieza, campaña y decisión creativa que tu
-                                empresa tome.</p>
+                            <h3 class="service-title-back" data-i18n="svc6.title">Dirección Conceptual</h3>
+                            <p class="service-description" data-i18n="svc6.desc">Definimos el concepto que unifica toda
+                                la comunicación de tu marca. El hilo conductor que da sentido a cada pieza, campaña y
+                                decisión creativa que tu empresa tome.</p>
                             <div class="service-features" aria-label="Características">
-                                <span class="feature-tag">Concepto</span>
-                                <span class="feature-tag">Narrativa</span>
-                                <span class="feature-tag">Dirección</span>
+                                <span class="feature-tag" data-i18n="svc6.tag1">Concepto</span>
+                                <span class="feature-tag" data-i18n="svc6.tag2">Narrativa</span>
+                                <span class="feature-tag" data-i18n="svc6.tag3">Dirección</span>
                             </div>
                         </div>
                     </div>
@@ -418,9 +485,11 @@
     <section class="methodology" id="metodologia" aria-label="Nuestra metodología de trabajo">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Cómo trabajamos</span>
-                <h2 class="section-title">Antes de ejecutar,<br /><span class="text-accent">pensamos.</span></h2>
-                <p class="section-subtitle">La ejecución es consecuencia del pensamiento estratégico. <br> No al revés.
+                <span class="section-label" data-i18n="method.label">Cómo trabajamos</span>
+                <h2 class="section-title"><span data-i18n="method.title">Antes de ejecutar,</span><br /><span
+                        class="text-accent" data-i18n="method.title.accent">pensamos.</span></h2>
+                <p class="section-subtitle"><span data-i18n="method.subtitle">La ejecución es consecuencia del
+                        pensamiento estratégico.</span> <br> <span data-i18n="method.subtitle2">No al revés.</span>
                 </p>
             </div>
 
@@ -428,33 +497,33 @@
                 <div class="method-step reveal-item" role="listitem">
                     <div class="method-number" aria-hidden="true">01</div>
                     <div class="method-icon" aria-hidden="true"></div>
-                    <h3 class="method-title">Evaluamos</h3>
-                    <p class="method-desc">Analizamos tu marca, tu mercado y a tu competencia. Entendemos quién eres,
-                        dónde estás y adónde querés ir.</p>
+                    <h3 class="method-title" data-i18n="method.step1.title">Evaluamos</h3>
+                    <p class="method-desc" data-i18n="method.step1.desc">Analizamos tu marca, tu mercado y a tu
+                        competencia. Entendemos quién eres, dónde estás y adónde querés ir.</p>
                 </div>
                 <div class="method-arrow" aria-hidden="true">→</div>
                 <div class="method-step reveal-item" role="listitem">
                     <div class="method-number" aria-hidden="true">02</div>
                     <div class="method-icon" aria-hidden="true"></div>
-                    <h3 class="method-title">Detectamos</h3>
-                    <p class="method-desc">Identificamos desalineaciones, inconsistencias y oportunidades de mejora.
-                        Mapeamos lo que funciona y lo que frena.</p>
+                    <h3 class="method-title" data-i18n="method.step2.title">Detectamos</h3>
+                    <p class="method-desc" data-i18n="method.step2.desc">Identificamos desalineaciones, inconsistencias
+                        y oportunidades de mejora. Mapeamos lo que funciona y lo que frena.</p>
                 </div>
                 <div class="method-arrow" aria-hidden="true">→</div>
                 <div class="method-step reveal-item" role="listitem">
                     <div class="method-number" aria-hidden="true">03</div>
                     <div class="method-icon" aria-hidden="true"></div>
-                    <h3 class="method-title">Definimos</h3>
-                    <p class="method-desc">Establecemos la dirección estratégica. El concepto, el posicionamiento
-                        deseado y la hoja de ruta de comunicación.</p>
+                    <h3 class="method-title" data-i18n="method.step3.title">Definimos</h3>
+                    <p class="method-desc" data-i18n="method.step3.desc">Establecemos la dirección estratégica. El
+                        concepto, el posicionamiento deseado y la hoja de ruta de comunicación.</p>
                 </div>
                 <div class="method-arrow" aria-hidden="true">→</div>
                 <div class="method-step reveal-item" role="listitem">
                     <div class="method-number" aria-hidden="true">04</div>
                     <div class="method-icon" aria-hidden="true"></div>
-                    <h3 class="method-title">Construimos</h3>
-                    <p class="method-desc">Desarrollamos el sistema completo: identidad, mensajes, piezas, canales. Todo
-                        conectado. Todo con propósito.</p>
+                    <h3 class="method-title" data-i18n="method.step4.title">Construimos</h3>
+                    <p class="method-desc" data-i18n="method.step4.desc">Desarrollamos el sistema completo: identidad,
+                        mensajes, piezas, canales. Todo conectado. Todo con propósito.</p>
                 </div>
             </div>
 
@@ -462,25 +531,26 @@
             <div class="differencial-box reveal-item">
                 <div class="diff-inner">
                     <div class="diff-left">
-                        <p class="diff-quote">"No diseñamos piezas.</p>
-                        <p class="diff-quote accent">Construimos sistemas que sostienen la marca en el tiempo."</p>
+                        <p class="diff-quote" data-i18n="diff.quote1">"No diseñamos piezas.</p>
+                        <p class="diff-quote accent" data-i18n="diff.quote2">Construimos sistemas que sostienen la marca
+                            en el tiempo."</p>
                     </div>
                     <div class="diff-right">
                         <div class="diff-vs">
                             <div class="diff-col">
-                                <h4>El mercado ofrece</h4>
+                                <h4 data-i18n="diff.market.title">El mercado ofrece</h4>
                                 <ul>
-                                    <li>Estética sin estrategia</li>
-                                    <li>Métricas sin dirección</li>
-                                    <li>Ejecución sin planificación</li>
+                                    <li data-i18n="diff.market.li1">Estética sin estrategia</li>
+                                    <li data-i18n="diff.market.li2">Métricas sin dirección</li>
+                                    <li data-i18n="diff.market.li3">Ejecución sin planificación</li>
                                 </ul>
                             </div>
                             <div class="diff-col kreär-col">
-                                <h4 class="text-accent">Kreär ofrece</h4>
+                                <h4 class="text-accent" data-i18n="diff.krear.title">Kreär ofrece</h4>
                                 <ul>
-                                    <li>Estrategia + Creatividad</li>
-                                    <li>Dirección + Ejecución</li>
-                                    <li>Sistema + Coherencia</li>
+                                    <li data-i18n="diff.krear.li1">Estrategia + Creatividad</li>
+                                    <li data-i18n="diff.krear.li2">Dirección + Ejecución</li>
+                                    <li data-i18n="diff.krear.li3">Sistema + Coherencia</li>
                                 </ul>
                             </div>
                         </div>
@@ -500,33 +570,37 @@
                     <div class="about-ring" aria-hidden="true"></div>
                 </div>
                 <div class="about-tags" aria-label="Pilares de Kreär">
-                    <span class="about-tag">Estrategia</span>
-                    <span class="about-tag">Creatividad</span>
-                    <span class="about-tag">Dirección</span>
+                    <span class="about-tag" data-i18n="about.tag1">Estrategia</span>
+                    <span class="about-tag" data-i18n="about.tag2">Creatividad</span>
+                    <span class="about-tag" data-i18n="about.tag3">Dirección</span>
                 </div>
             </div>
             <div class="about-content reveal-item">
-                <span class="section-label">Quiénes somos</span>
-                <h2 class="section-title" style="text-align:left;">Somos el estudio<br /><span class="text-accent">que
-                        faltaba en Chaco.</span></h2>
-                <p class="about-text">En Kreär trabajamos con empresas que <strong>ya están en movimiento,</strong>
-                    pero cuya comunicación no evolucionó al mismo ritmo que su negocio.
-                    Eso crea una brecha entre lo que son y lo que proyectan. Cerramos esa brecha.</p>
-                <p class="about-text">No comenzamos diseñando. Comenzamos <strong>analizando, pensando y
-                        estructurando</strong>. Porque la coherencia genera confianza, la claridad reduce fricción y la
-                    dirección precede a la ejecución.</p>
-                <p class="about-text">Nuestra visión es convertirnos en el estudio estratégico de referencia que
-                    <strong>ordenó la comunicación empresarial del Chaco</strong> — y desde ahí, escalar.
+                <span class="section-label" data-i18n="about.label">Quiénes somos</span>
+                <h2 class="section-title" style="text-align:left;"><span data-i18n="about.title">Somos el
+                        estudio</span><br /><span class="text-accent" data-i18n="about.title.accent">que te
+                        faltaba.</span></h2>
+                <p class="about-text"><span data-i18n="about.p1">En Kreär trabajamos con empresas que</span> <strong
+                        data-i18n="about.p1.strong">ya están en movimiento,</strong> <span
+                        data-i18n="about.p1.rest">pero cuya comunicación no evolucionó al mismo ritmo que su negocio.
+                        Eso crea una brecha entre lo que son y lo que proyectan. Cerramos esa brecha.</span></p>
+                <p class="about-text"><span data-i18n="about.p2">No comenzamos diseñando. Comenzamos</span> <strong
+                        data-i18n="about.p2.strong">analizando, pensando y estructurando</strong>. <span
+                        data-i18n="about.p2.rest">Porque la coherencia genera confianza, la claridad reduce fricción y
+                        la dirección precede a la ejecución.</span></p>
+                <p class="about-text"><span data-i18n="about.p3">Nuestra visión es convertirnos en el estudio
+                        estratégico de referencia que</span> <strong data-i18n="about.p3.strong">ordenó la comunicación
+                        empresarial de la región</strong> <span data-i18n="about.p3.rest">— y desde ahí, escalar.</span>
                 </p>
                 <div class="about-philosophy">
-                    <blockquote class="philosophy-quote">
+                    <blockquote class="philosophy-quote" data-i18n="about.quote">
                         "Una marca ordenada vende sin gritar."
                     </blockquote>
                 </div>
                 <div class="about-cta">
-                    <a href="#contacto" class="btn-primary" id="about-cta">Trabajemos juntos</a>
+                    <a href="#contacto" class="btn-primary" id="about-cta" data-i18n="about.cta">Trabajemos juntos</a>
                     <div class="about-location">
-                        Resistencia, Chaco · Argentina
+                        <span data-i18n="about.location">Resistencia, Chaco · Argentina</span>
                     </div>
                 </div>
             </div>
@@ -537,36 +611,35 @@
     <section class="testimonials" id="testimonios" aria-label="Lo que dicen nuestros clientes">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Lo que dicen</span>
-                <h2 class="section-title">Empresas que ya<br /><span class="text-accent">ordenaron su
-                        comunicación</span></h2>
+                <span class="section-label" data-i18n="test.label">Lo que dicen</span>
+                <h2 class="section-title"><span data-i18n="test.title">Empresas que ya</span><br /><span
+                        class="text-accent" data-i18n="test.title.accent">ordenaron su comunicación</span></h2>
             </div>
 
             <div class="testimonials-grid" role="list">
 
                 <article class="testimonial-card reveal-item" role="listitem">
                     <div class="test-stars" aria-label="5 de 5 estrellas">★★★★★</div>
-                    <p class="test-quote">"Kreär hizo algo que ninguna agencia anterior había logrado: entender cómo
-                        funciona realmente nuestra empresa y traducirlo en una comunicación que nos representa con
-                        claridad.
-                        <strong>La diferencia no solo estuvo en lo visual, sino en la dirección.</strong>"
+                    <p class="test-quote" data-i18n="test.q1">"Kreär hizo algo que ninguna agencia anterior había
+                        logrado: entender cómo funciona realmente nuestra empresa y traducirlo en una comunicación que
+                        nos representa con claridad. <strong>La diferencia no solo estuvo en lo visual, sino en la
+                            dirección.</strong>"
                     </p>
                 </article>
 
                 <article class="testimonial-card reveal-item" role="listitem">
                     <div class="test-stars" aria-label="5 de 5 estrellas">★★★★★</div>
-                    <p class="test-quote">"Lo que más valoro es que no empiezan diseñando, empiezan pensando.
-                        El diagnóstico fue preciso y nos permitió detectar problemas que llevábamos años sin ver.
-                        <strong>A partir de ahí, todo empezó a tener sentido."</strong>
+                    <p class="test-quote" data-i18n="test.q2">"Lo que más valoro es que no empiezan diseñando, empiezan
+                        pensando. El diagnóstico fue preciso y nos permitió detectar problemas que llevábamos años sin
+                        ver. <strong>A partir de ahí, todo empezó a tener sentido."</strong>
                     </p>
                 </article>
 
                 <article class="testimonial-card reveal-item" role="listitem">
                     <div class="test-stars" aria-label="5 de 5 estrellas">★★★★★</div>
-                    <p class="test-quote">"Después de trabajar con Kreär, nuestra comunicación empezó a reflejar
-                        lo que <strong>realmente somos</strong>. Esa coherencia entre lo que hacemos y lo que
-                        proyectamos fortaleció
-                        la percepción de la marca frente a nuestros clientes."</p>
+                    <p class="test-quote" data-i18n="test.q3">"Después de trabajar con Kreär, nuestra comunicación
+                        empezó a reflejar lo que <strong>realmente somos</strong>. Esa coherencia entre lo que hacemos y
+                        lo que proyectamos fortaleció la percepción de la marca frente a nuestros clientes."</p>
                 </article>
 
             </div>
@@ -577,15 +650,16 @@
     <section class="final-cta" id="contacto" aria-label="Contacto y llamada a la acción">
         <div class="cta-bg-glow" aria-hidden="true"></div>
         <div class="container cta-inner">
-            <span class="section-label">¿Listo para el cambio?</span>
-            <h2 class="cta-title">¿Tu comunicación está<br /><span class="text-accent">a la altura de tu empresa?</span>
+            <span class="section-label" data-i18n="cta.label">¿Listo para el cambio?</span>
+            <h2 class="cta-title"><span data-i18n="cta.title">¿Tu comunicación está</span><br /><span
+                    class="text-accent" data-i18n="cta.title.accent">a la altura de tu empresa?</span>
             </h2>
-            <p class="cta-subtitle">Si tu negocio creció pero tu comunicación se quedó atrás, es momento de ordenar.
-                Empezamos con un diagnóstico.</p>
+            <p class="cta-subtitle" data-i18n="cta.subtitle">Si tu negocio creció pero tu comunicación se quedó atrás,
+                es momento de ordenar. Empezamos con un diagnóstico.</p>
             <a href="https://wa.me/543624522359?text=Hola%2C%20les%20escribo%20desde%20la%20p%C3%A1gina%20de%20Kre%C3%A4r.%0AMe%20gustar%C3%ADa%20recibir%20informaci%C3%B3n."
-                class="btn-primary btn-large pulse-glow" id="cta-main-button">Quiero mi
+                class="btn-primary btn-large pulse-glow" id="cta-main-button" data-i18n="cta.button">Quiero mi
                 diagnóstico</a>
-            <p class="cta-note">Sin compromiso · Respuesta en 24hs · 100% estratégico</p>
+            <p class="cta-note" data-i18n="cta.note">Sin compromiso · Respuesta en 24hs · 100% estratégico</p>
             <div class="cta-contact-options">
                 <a href="https://wa.me/543624522359?text=Hola%2C%20les%20escribo%20desde%20la%20p%C3%A1gina%20de%20Kre%C3%A4r.%0AMe%20gustar%C3%ADa%20recibir%20informaci%C3%B3n."
                     class="contact-chip" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
@@ -613,7 +687,8 @@
                 <a href="#inicio" class="nav-logo" aria-label="Kreär - Volver al inicio">
                     <img src="images/logo.png" alt="Kreär" class="logo-img" />
                 </a>
-                <p class="footer-tagline">Una marca ordenada <em>vende sin gritar.</em></p>
+                <p class="footer-tagline"><span data-i18n="footer.tagline">Una marca ordenada</span> <em
+                        data-i18n="footer.tagline.em">vende sin gritar.</em></p>
                 <div class="footer-socials" aria-label="Redes sociales">
                     <a href="https://www.instagram.com/estudio.krear/" class="social-link" target="_blank"
                         rel="noopener noreferrer" aria-label="Instagram">IG</a>
@@ -624,27 +699,27 @@
                 </div>
             </div>
             <nav class="footer-col" aria-label="Servicios">
-                <h4 class="footer-col-title">Servicios</h4>
+                <h4 class="footer-col-title" data-i18n="footer.col1.title">Servicios</h4>
                 <ul role="list">
-                    <li><a href="#servicios">Diagnóstico de Marca</a></li>
-                    <li><a href="#servicios">Identidad Visual</a></li>
-                    <li><a href="#servicios">Sistemas de Comunicación</a></li>
-                    <li><a href="#servicios">Gestión de Redes</a></li>
-                    <li><a href="#servicios">Campañas Ads</a></li>
-                    <li><a href="#servicios">Dirección Conceptual</a></li>
+                    <li><a href="#servicios" data-i18n="svc1.title.short">Diagnóstico de Marca</a></li>
+                    <li><a href="#servicios" data-i18n="svc2.title">Identidad Visual</a></li>
+                    <li><a href="#servicios" data-i18n="svc3.title">Sistemas de Comunicación</a></li>
+                    <li><a href="#servicios" data-i18n="svc4.title">Gestión de Redes</a></li>
+                    <li><a href="#servicios" data-i18n="footer.svc5">Campañas Ads</a></li>
+                    <li><a href="#servicios" data-i18n="svc6.title">Dirección Conceptual</a></li>
                 </ul>
             </nav>
             <nav class="footer-col" aria-label="Estudio">
-                <h4 class="footer-col-title">Estudio</h4>
+                <h4 class="footer-col-title" data-i18n="footer.col2.title">Estudio</h4>
                 <ul role="list">
-                    <li><a href="#nosotros">Quiénes somos</a></li>
-                    <li><a href="#metodologia">Metodología</a></li>
-                    <li><a href="#testimonios">Clientes</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#nosotros" data-i18n="about.label">Quiénes somos</a></li>
+                    <li><a href="#metodologia" data-i18n="nav.methodology">Metodología</a></li>
+                    <li><a href="#testimonios" data-i18n="nav.clients">Clientes</a></li>
+                    <li><a href="#contacto" data-i18n="footer.contact.link">Contacto</a></li>
                 </ul>
             </nav>
             <div class="footer-col">
-                <h4 class="footer-col-title">Contacto</h4>
+                <h4 class="footer-col-title" data-i18n="footer.col3.title">Contacto</h4>
                 <ul role="list">
                     <li><a
                             href="mailto:krear.creativo@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%2C%20les%20escribo%20desde%20la%20p%C3%A1gina%20de%20Kre%C3%A4r.%0AMe%20gustar%C3%ADa%20recibir%20informaci%C3%B3n.">krear.creativo@gmail.com</a>
@@ -658,8 +733,9 @@
         </div>
         <div class="footer-bottom">
             <div class="container footer-bottom-inner">
-                <p>© 2026 Kreär. Todos los derechos reservados.</p>
-                <p class="footer-credits">Estrategia · Creatividad · Dirección</p>
+                <p><span data-i18n="footer.rights">© 2026 Kreär. Todos los derechos reservados.</span></p>
+                <p class="footer-credits"><span data-i18n="footer.credits">Estrategia · Creatividad · Dirección</span>
+                </p>
             </div>
         </div>
     </footer>

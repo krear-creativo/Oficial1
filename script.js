@@ -1028,7 +1028,7 @@ document.addEventListener('DOMContentLoaded', initFooterServiceLinks);
 /* ============================================================
    CONTACT FORM — Submit via n8n Webhook (JSON)
    ============================================================ */
-const N8N_ENDPOINT = 'https://krearestudiocreativo.app.n8n.cloud/webhook-test/025b9edd-c26d-4aa6-a9e6-ac357ef82f0f';
+const N8N_ENDPOINT = 'https://krearestudiocreativo.app.n8n.cloud/webhook/025b9edd-c26d-4aa6-a9e6-ac357ef82f0f';
 
 /* ── Source tracking: silently reads URL params + referrer ── */
 function getSourceData() {

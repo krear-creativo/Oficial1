@@ -1115,32 +1115,38 @@ function initContactForm() {
     submitBtn.classList.add('loading');
     submitBtn.disabled = true;
 
-    // Build JSON payload
-    // telefono = prefijo + numero sin espacios → llega completo y limpio a n8n
-    const payload = JSON.stringify({
+    // Cada campo llega como variable separada en n8n (no como bloque JSON)
+    const source = getSourceData();
+    const params = new URLSearchParams({
       nombre,
-      telefono,           // "+54 3624522359"  ← completo, listo para usar
-      prefijo,            // "+54"
-      numero: numeroLimpio, // "3624522359"  ← solo dígitos, sin espacios
+      telefono,
+      prefijo,
+      numero: numeroLimpio,
       email,
       consulta,
       timestamp: new Date().toISOString(),
-      source: getSourceData(),
+      // Source fields aplanados con prefijo source_
+      source_page_url: source.page_url,
+      source_referrer: source.referrer,
+      source_utm_source: source.utm_source,
+      source_utm_medium: source.utm_medium,
+      source_utm_campaign: source.utm_campaign,
+      source_utm_content: source.utm_content,
+      source_utm_term: source.utm_term,
     });
 
     try {
       await fetch(N8N_ENDPOINT, {
         method: 'POST',
-        mode: 'no-cors',          // evita bloqueo CORS en la respuesta
-        headers: { 'Content-Type': 'text/plain' },
-        body: payload,
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: params.toString(),
       });
       // Con no-cors la respuesta es opaca — si no hubo excepción, el request llegó
       feedback.textContent = dict['form.success'];
       feedback.className = 'form-feedback success visible';
       form.reset();
     } catch (err) {
-      // Solo entra aquí si hay un error real de red (sin internet, URL inválida)
       feedback.textContent = dict['form.error'];
       feedback.className = 'form-feedback error visible';
     } finally {

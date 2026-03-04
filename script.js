@@ -1028,7 +1028,7 @@ document.addEventListener('DOMContentLoaded', initFooterServiceLinks);
 /* ============================================================
    CONTACT FORM — Submit via n8n Webhook (JSON)
    ============================================================ */
-const N8N_ENDPOINT = 'https://krearestudiocreativo.app.n8n.cloud/webhook/b2e4f1dc-8090-4ebc-82b1-d95159729757';
+const N8N_ENDPOINT = 'https://krearestudiocreativo.app.n8n.cloud/webhook-test/025b9edd-c26d-4aa6-a9e6-ac357ef82f0f';
 
 /* ── Source tracking: silently reads URL params + referrer ── */
 function getSourceData() {
@@ -1129,22 +1129,18 @@ function initContactForm() {
     });
 
     try {
-      const response = await fetch(N8N_ENDPOINT, {
+      await fetch(N8N_ENDPOINT, {
         method: 'POST',
-        // text/plain avoids CORS preflight — n8n still parses the JSON body correctly
+        mode: 'no-cors',          // evita bloqueo CORS en la respuesta
         headers: { 'Content-Type': 'text/plain' },
         body: payload,
       });
-
-      // n8n returns 200 on success; we treat any 2xx as success
-      if (response.ok) {
-        feedback.textContent = dict['form.success'];
-        feedback.className = 'form-feedback success visible';
-        form.reset();
-      } else {
-        throw new Error('HTTP_' + response.status);
-      }
+      // Con no-cors la respuesta es opaca — si no hubo excepción, el request llegó
+      feedback.textContent = dict['form.success'];
+      feedback.className = 'form-feedback success visible';
+      form.reset();
     } catch (err) {
+      // Solo entra aquí si hay un error real de red (sin internet, URL inválida)
       feedback.textContent = dict['form.error'];
       feedback.className = 'form-feedback error visible';
     } finally {

@@ -493,7 +493,7 @@ const translations = {
     'form.message.placeholder': 'Contanos sobre tu proyecto o consulta...',
     'form.consent': 'Acepto el tratamiento de mis datos personales para recibir respuesta a mi consulta.',
     'form.submit': 'Enviar consulta',
-    'form.success': '¡Consulta enviada! Te respondemos en menos de 24hs.',
+    'form.success': 'Tu solicitud fue recibida por el equipo. ¡Te respondemos pronto!',
     'form.error': 'Hubo un error al enviar. Por favor intentá de nuevo o escribinos directamente.',
     'form.validation': 'Por favor completá todos los campos y aceptá los términos.',
 
@@ -662,7 +662,7 @@ const translations = {
     'form.message.placeholder': 'Tell us about your project or inquiry...',
     'form.consent': 'I agree to the processing of my personal data to receive a response to my inquiry.',
     'form.submit': 'Send inquiry',
-    'form.success': 'Inquiry sent! We\'ll get back to you within 24h.',
+    'form.success': 'Your request was received by the team. We\'ll be in touch soon!',
     'form.error': 'There was an error sending the form. Please try again or contact us directly.',
     'form.validation': 'Please fill in all fields and accept the terms.',
 
@@ -870,14 +870,41 @@ function initFooterServiceLinks() {
 document.addEventListener('DOMContentLoaded', initFooterServiceLinks);
 
 /* ============================================================
-   CONTACT FORM — Submit a Google Sheets via Apps Script
+   CONTACT FORM — Submit via n8n Webhook (JSON)
    ============================================================ */
-const SHEETS_ENDPOINT = 'TU_URL_DE_APPS_SCRIPT_AQUI';
+const N8N_ENDPOINT = 'https://krearestudiocreativo.app.n8n.cloud/webhook/3d7b0e9e-723f-48cb-882c-08d51c3a5d1f';
 
 function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
 
+  // ── Phone field: only allow digits, +, spaces and hyphens ──
+  const phoneInput = document.getElementById('form-phone');
+  if (phoneInput) {
+    phoneInput.addEventListener('keydown', (e) => {
+      // Allow: backspace, delete, tab, escape, enter, arrows, home, end
+      const allowed = ['Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'];
+      if (allowed.includes(e.key)) return;
+      // Allow: Ctrl/Cmd + A, C, V, X
+      if ((e.ctrlKey || e.metaKey) && ['a', 'c', 'v', 'x'].includes(e.key.toLowerCase())) return;
+      // Allow: digits 0-9, +, space, hyphen
+      if (/^[0-9+\-\s]$/.test(e.key)) return;
+      // Block everything else
+      e.preventDefault();
+    });
+
+    // Also sanitize paste events
+    phoneInput.addEventListener('paste', (e) => {
+      e.preventDefault();
+      const pasted = (e.clipboardData || window.clipboardData).getData('text');
+      const sanitized = pasted.replace(/[^0-9+\-\s]/g, '');
+      const start = phoneInput.selectionStart;
+      const end = phoneInput.selectionEnd;
+      phoneInput.value = phoneInput.value.slice(0, start) + sanitized + phoneInput.value.slice(end);
+    });
+  }
+
+  // ── Form submission ──
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -901,7 +928,9 @@ function initContactForm() {
     let isValid = true;
     if (!nombre) { document.getElementById('form-name').classList.add('field-error'); isValid = false; }
     if (!numero) { document.getElementById('form-phone').classList.add('field-error'); isValid = false; }
-    if (!email || !/^[^@]+@[^@]+\.[^@]+$/.test(email)) { document.getElementById('form-email').classList.add('field-error'); isValid = false; }
+    if (!email || !/^[^@]+@[^@]+\.[^@]+$/.test(email)) {
+      document.getElementById('form-email').classList.add('field-error'); isValid = false;
+    }
     if (!consulta) { document.getElementById('form-message').classList.add('field-error'); isValid = false; }
     if (!consent) { isValid = false; }
 
@@ -915,37 +944,32 @@ function initContactForm() {
     submitBtn.classList.add('loading');
     submitBtn.disabled = true;
 
-    const payload = new FormData();
-    payload.append('nombre', nombre);
-    payload.append('numero', numero);
-    payload.append('email', email);
-    payload.append('consulta', consulta);
-    payload.append('timestamp', new Date().toISOString());
+    // Build JSON payload — one key per field
+    const payload = JSON.stringify({
+      nombre,
+      numero,
+      email,
+      consulta,
+      timestamp: new Date().toISOString(),
+    });
 
     try {
-      if (SHEETS_ENDPOINT === 'TU_URL_DE_APPS_SCRIPT_AQUI') {
-        // Modo demo sin endpoint configurado
-        await new Promise(res => setTimeout(res, 1200));
-        throw new Error('ENDPOINT_NOT_SET');
-      }
-      const response = await fetch(SHEETS_ENDPOINT, {
+      const response = await fetch(N8N_ENDPOINT, {
         method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: payload,
       });
-      const result = await response.json();
-      if (result.result === 'success') {
+
+      // n8n returns 200 on success; we treat any 2xx as success
+      if (response.ok) {
         feedback.textContent = dict['form.success'];
         feedback.className = 'form-feedback success visible';
         form.reset();
       } else {
-        throw new Error('SHEETS_ERROR');
+        throw new Error('HTTP_' + response.status);
       }
     } catch (err) {
-      if (err.message === 'ENDPOINT_NOT_SET') {
-        feedback.textContent = '⚠️ Endpoint no configurado. Seguí las instrucciones de Google Apps Script.';
-      } else {
-        feedback.textContent = dict['form.error'];
-      }
+      feedback.textContent = dict['form.error'];
       feedback.className = 'form-feedback error visible';
     } finally {
       submitBtn.classList.remove('loading');

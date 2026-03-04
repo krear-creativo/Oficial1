@@ -507,6 +507,8 @@ const translations = {
     'footer.col3.title': 'Contacto',
     'footer.rights': '© 2026 Kreär. Todos los derechos reservados.',
     'footer.credits': 'Estrategia · Creatividad · Dirección',
+    'footer.privacy': 'Política de Privacidad',
+    'form.consent.link': 'Ver política de privacidad.',
 
     // 4 service pillars
     'pillar1.title': 'Dirección',
@@ -676,6 +678,8 @@ const translations = {
     'footer.col3.title': 'Contact',
     'footer.rights': '© 2026 Kreär. All rights reserved.',
     'footer.credits': 'Strategy · Creativity · Direction',
+    'footer.privacy': 'Privacy Policy',
+    'form.consent.link': 'View privacy policy.',
 
     // 4 service pillars
     'pillar1.title': 'Direction',

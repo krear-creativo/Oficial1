@@ -2068,6 +2068,17 @@ body {
     color: rgba(var(--accent-rgb), 0.4);
 }
 
+.footer-privacy-link {
+    font-size: 13px;
+    color: var(--text-quaternary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.footer-privacy-link:hover {
+    color: var(--accent-400);
+}
+
 /* ============================================================
    13. RESPONSIVE
    ============================================================ */

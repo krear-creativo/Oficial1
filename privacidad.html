@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Política de Privacidad — Kreär Estudio Estratégico Creativo</title>
+    <meta name="description"
+        content="Política de privacidad de Kreär Estudio Estratégico Creativo. Conocé cómo recopilamos, usamos y protegemos tus datos personales." />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href="https://www.krearestudiocreativo.com/privacidad.html" />
+
+    <!-- Adobe Fonts (Typekit) -->
+    <link rel="stylesheet" href="https://use.typekit.net/jru0lzd.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/favicon.png">
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+        /* ── Page-specific overrides ── */
+        .privacy-page {
+            min-height: 100vh;
+            padding: 120px 0 80px;
+            position: relative;
+        }
+
+        .privacy-page::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse at 20% 20%, rgba(0, 2, 77, 0.8) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 80%, rgba(217, 231, 60, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .privacy-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .privacy-header {
+            margin-bottom: 56px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .privacy-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(217, 231, 60, 0.06);
+            border: 1px solid rgba(217, 231, 60, 0.15);
+            border-radius: 999px;
+            padding: 6px 16px;
+            font-family: "mundial", sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent-400);
+            margin-bottom: 24px;
+        }
+
+        .privacy-title {
+            font-family: "new-order", sans-serif;
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .privacy-title span {
+            color: var(--accent-500);
+        }
+
+        .privacy-meta {
+            font-size: 13px;
+            color: var(--text-quaternary);
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .privacy-meta span::before {
+            content: '·';
+            margin-right: 8px;
+            color: var(--accent-500);
+        }
+
+        .privacy-meta span:first-child::before {
+            display: none;
+        }
+
+        /* Sections */
+        .privacy-section {
+            margin-bottom: 48px;
+        }
+
+        .privacy-section h2 {
+            font-family: "new-order", sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            text-align: left !important;
+        }
+
+        .privacy-section h3 {
+            font-family: "mundial", sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--accent-400);
+            margin: 24px 0 10px;
+            text-align: left !important;
+        }
+
+        .privacy-section p {
+            font-size: 15px;
+            color: var(--text-tertiary);
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+
+        .privacy-section ul,
+        .privacy-section ol {
+            margin: 12px 0 16px 20px;
+        }
+
+        .privacy-section ul li,
+        .privacy-section ol li {
+            font-size: 15px;
+            color: var(--text-tertiary);
+            line-height: 1.75;
+            margin-bottom: 8px;
+        }
+
+        .privacy-section ul li::marker {
+            color: var(--accent-500);
+        }
+
+        .privacy-section ol li::marker {
+            color: var(--accent-500);
+            font-weight: 600;
+        }
+
+        .privacy-section strong {
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .privacy-section a {
+            color: var(--accent-400);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(217, 231, 60, 0.2);
+            transition: border-color 0.2s;
+        }
+
+        .privacy-section a:hover {
+            border-color: var(--accent-400);
+        }
+
+        /* Highlight box */
+        .privacy-highlight {
+            background: rgba(217, 231, 60, 0.04);
+            border: 1px solid rgba(217, 231, 60, 0.1);
+            border-left: 3px solid var(--accent-500);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            padding: 20px 24px;
+            margin: 24px 0;
+        }
+
+        .privacy-highlight p {
+            margin-bottom: 0;
+            font-size: 14px;
+        }
+
+        /* Rights grid */
+        .rights-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .right-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: var(--radius-md);
+            padding: 18px 20px;
+        }
+
+        .right-item strong {
+            display: block;
+            font-family: "mundial", sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent-400);
+            margin-bottom: 6px;
+        }
+
+        .right-item p {
+            font-size: 13px;
+            color: var(--text-quaternary);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* Back link */
+        .privacy-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: "mundial", sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-quaternary);
+            text-decoration: none;
+            margin-bottom: 48px;
+            transition: color 0.2s;
+        }
+
+        .privacy-back:hover {
+            color: var(--accent-400);
+        }
+
+        .privacy-back::before {
+            content: '←';
+            font-size: 16px;
+        }
+
+        /* Footer simple */
+        .privacy-footer-bar {
+            margin-top: 72px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .privacy-footer-bar p {
+            font-size: 13px;
+            color: var(--text-quaternary);
+        }
+
+        .privacy-footer-bar a {
+            font-size: 13px;
+            color: var(--accent-400);
+            text-decoration: none;
+        }
+
+        @media (max-width: 640px) {
+            .rights-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .privacy-meta {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar scrolled" id="navbar" role="navigation" aria-label="Navegación principal">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-logo" aria-label="Kreär - Inicio">
+                <img src="images/logo2.png" alt="Kreär Logo" class="logo-img" />
+            </a>
+            <ul class="nav-links" role="list">
+                <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
+                <li><a href="index.html#metodologia" class="nav-link">Metodología</a></li>
+                <li><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
+                <li><a href="index.html#testimonios" class="nav-link">Clientes</a></li>
+                <li><a href="index.html#contacto" class="nav-link nav-link-cta">Hablemos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===================== CONTENT ===================== -->
+    <main class="privacy-page" role="main">
+        <div class="privacy-container">
+
+            <a href="index.html" class="privacy-back">Volver al inicio</a>
+
+            <!-- Header -->
+            <header class="privacy-header">
+                <div class="privacy-badge">Legal</div>
+                <h1 class="privacy-title">Política de <span>Privacidad</span></h1>
+                <div class="privacy-meta">
+                    <span>Kreär Estudio Estratégico Creativo</span>
+                    <span>Resistencia, Chaco · Argentina</span>
+                    <span>Última actualización: 4 de marzo de 2026</span>
+                </div>
+            </header>
+
+            <!-- Intro -->
+            <section class="privacy-section">
+                <p>En <strong>Kreär Estudio Estratégico Creativo</strong> ("Kreär", "nosotros", "nuestro") nos
+                    comprometemos a proteger la privacidad de las personas que interactúan con nuestro sitio web y
+                    servicios. Esta Política de Privacidad describe qué datos personales recopilamos, cómo los
+                    utilizamos, con quién los compartimos y cuáles son tus derechos como titular de esa información.</p>
+                <p>Al utilizar nuestro sitio web <strong>krearestudiocreativo.com</strong> o completar nuestros
+                    formularios de contacto, aceptás los términos descritos en esta política.</p>
+
+                <div class="privacy-highlight">
+                    <p>🔒 <strong>Resumen rápido:</strong> Solo recopilamos los datos que nos brindás voluntariamente
+                        mediante el formulario de contacto. Los usamos exclusivamente para responder tu consulta. No los
+                        vendemos ni los cedemos a terceros con fines comerciales.</p>
+                </div>
+            </section>
+
+            <!-- 1. Responsable -->
+            <section class="privacy-section">
+                <h2>1. Responsable del tratamiento</h2>
+                <p><strong>Kreär Estudio Estratégico Creativo</strong><br>
+                    Resistencia, Chaco, Argentina<br>
+                    Email: <a href="mailto:krear.creativo@gmail.com">krear.creativo@gmail.com</a><br>
+                    WhatsApp: <a href="https://wa.me/543624522359" target="_blank" rel="noopener noreferrer">+54 362
+                        452-2359</a></p>
+            </section>
+
+            <!-- 2. Datos que recopilamos -->
+            <section class="privacy-section">
+                <h2>2. Datos que recopilamos</h2>
+
+                <h3>Datos que nos proporcionás directamente</h3>
+                <p>Cuando completás el formulario de contacto de nuestro sitio, recopilamos:</p>
+                <ul>
+                    <li><strong>Nombre</strong></li>
+                    <li><strong>Número de teléfono</strong> (con prefijo de país)</li>
+                    <li><strong>Dirección de correo electrónico</strong></li>
+                    <li><strong>Consulta o mensaje</strong> que nos enviás</li>
+                </ul>
+
+                <h3>Datos recopilados automáticamente</h3>
+                <p>Junto con los datos del formulario, registramos automáticamente información técnica de contexto para
+                    mejorar nuestro servicio:</p>
+                <ul>
+                    <li><strong>URL de la página</strong> desde donde se realizó la consulta</li>
+                    <li><strong>Referencia de origen</strong> (sitio web que te derivó a nosotros, si aplica)</li>
+                    <li><strong>Parámetros UTM</strong> de campañas publicitarias (utm_source, utm_medium,
+                        utm_campaign), si estuvieras llegando desde un anuncio</li>
+                    <li><strong>Fecha y hora</strong> del envío</li>
+                </ul>
+
+                <h3>Cookies y tecnologías de seguimiento</h3>
+                <p>Nuestro sitio puede utilizar cookies de terceros a través de los siguientes servicios:</p>
+                <ul>
+                    <li><strong>Google Analytics (GA4)</strong>: análisis de tráfico y comportamiento anónimo</li>
+                    <li><strong>Google Tag Manager</strong>: gestión de etiquetas de seguimiento</li>
+                    <li><strong>Meta Pixel (Facebook)</strong>: medición de conversiones y remarketing</li>
+                </ul>
+                <p>Podés desactivar las cookies desde la configuración de tu navegador en cualquier momento.</p>
+            </section>
+
+            <!-- 3. Finalidad -->
+            <section class="privacy-section">
+                <h2>3. Finalidad del tratamiento</h2>
+                <p>Utilizamos tus datos personales para los siguientes fines:</p>
+                <ol>
+                    <li><strong>Responder tu consulta</strong>: contactarte por email, teléfono o WhatsApp para darte
+                        información sobre nuestros servicios.</li>
+                    <li><strong>Gestión comercial</strong>: hacer seguimiento de la propuesta o presupuesto que te
+                        hayamos presentado.</li>
+                    <li><strong>Analítica interna</strong>: entender el origen de las consultas para mejorar nuestras
+                        comunicaciones y campañas.</li>
+                    <li><strong>Cumplimiento legal</strong>: conservar registros según lo exija la legislación argentina
+                        vigente.</li>
+                </ol>
+
+                <div class="privacy-highlight">
+                    <p>No utilizamos tus datos para enviarte comunicaciones de marketing masivo sin tu consentimiento
+                        previo y explícito.</p>
+                </div>
+            </section>
+
+            <!-- 4. Base jurídica -->
+            <section class="privacy-section">
+                <h2>4. Base jurídica del tratamiento</h2>
+                <p>El tratamiento de tus datos se basa en:</p>
+                <ul>
+                    <li><strong>Tu consentimiento expreso</strong>: al marcar la casilla de aceptación en el formulario
+                        y al escribirnos voluntariamente.</li>
+                    <li><strong>Interés legítimo</strong>: para mantener registros de comunicaciones comerciales y
+                        cumplir con obligaciones contractuales.</li>
+                    <li><strong>Cumplimiento legal</strong>: según lo establecido por la <strong>Ley N° 25.326 de
+                            Protección de Datos Personales</strong> de la República Argentina y sus modificatorias.</li>
+                </ul>
+            </section>
+
+            <!-- 5. Conservación -->
+            <section class="privacy-section">
+                <h2>5. Período de conservación</h2>
+                <p>Conservamos tus datos durante el tiempo necesario para cumplir con la finalidad para la que fueron
+                    recopilados, y en todo caso:</p>
+                <ul>
+                    <li>Mientras exista una relación comercial activa o potencial con vos.</li>
+                    <li>Por un máximo de <strong>3 años</strong> desde el último contacto, salvo que solicités su
+                        eliminación antes.</li>
+                    <li>Por el tiempo que la ley argentina exija conservar registros de comunicaciones comerciales.</li>
+                </ul>
+            </section>
+
+            <!-- 6. Compartición -->
+            <section class="privacy-section">
+                <h2>6. Compartición de datos</h2>
+                <p>Tus datos personales son procesados internamente por el equipo de Kreär. En algunos casos pueden ser
+                    accedidos por:</p>
+                <ul>
+                    <li><strong>n8n</strong> (plataforma de automatización): recibe los datos del formulario para
+                        dirigirlos al equipo correspondiente. Actúa como encargado del tratamiento bajo nuestras
+                        instrucciones.</li>
+                    <li><strong>Google (Analytics, Tag Manager)</strong>: datos de navegación anónimos o seudonimizados.
+                    </li>
+                    <li><strong>Meta (Pixel)</strong>: datos de comportamiento en el sitio para medición de campañas.
+                    </li>
+                </ul>
+                <p><strong>No vendemos, alquilamos ni cedemos tus datos personales a terceros</strong> con fines
+                    comerciales propios.</p>
+            </section>
+
+            <!-- 7. Derechos -->
+            <section class="privacy-section">
+                <h2>7. Tus derechos como titular</h2>
+                <p>De acuerdo con la Ley N° 25.326 y el Reglamento General de Protección de Datos (GDPR para usuarios de
+                    la UE), tenés los siguientes derechos:</p>
+
+                <div class="rights-grid">
+                    <div class="right-item">
+                        <strong>Acceso</strong>
+                        <p>Conocer qué datos tuyos tenemos almacenados.</p>
+                    </div>
+                    <div class="right-item">
+                        <strong>Rectificación</strong>
+                        <p>Corregir datos inexactos o incompletos.</p>
+                    </div>
+                    <div class="right-item">
+                        <strong>Cancelación / Supresión</strong>
+                        <p>Solicitar que eliminemos tus datos personales.</p>
+                    </div>
+                    <div class="right-item">
+                        <strong>Oposición</strong>
+                        <p>Oponerte al tratamiento de tus datos en ciertos casos.</p>
+                    </div>
+                    <div class="right-item">
+                        <strong>Portabilidad</strong>
+                        <p>Recibir tus datos en un formato estructurado y legible.</p>
+                    </div>
+                    <div class="right-item">
+                        <strong>Revocación</strong>
+                        <p>Retirar tu consentimiento en cualquier momento.</p>
+                    </div>
+                </div>
+
+                <p>Para ejercer cualquiera de estos derechos, escribinos a: <a
+                        href="mailto:krear.creativo@gmail.com?subject=Solicitud%20de%20privacidad">krear.creativo@gmail.com</a>
+                    con el asunto <strong>"Solicitud de privacidad"</strong>. Responderemos dentro de los <strong>30
+                        días hábiles</strong>.</p>
+
+                <p>También podés presentar una reclamación ante la <strong>Dirección Nacional de Protección de Datos
+                        Personales (DNPDP)</strong> de Argentina: <a
+                        href="https://www.argentina.gob.ar/aaip/datospersonales" target="_blank"
+                        rel="noopener noreferrer">www.argentina.gob.ar/aaip/datospersonales</a></p>
+            </section>
+
+            <!-- 8. Seguridad -->
+            <section class="privacy-section">
+                <h2>8. Seguridad de los datos</h2>
+                <p>Implementamos medidas técnicas y organizativas razonables para proteger tus datos contra accesos no
+                    autorizados, pérdida o divulgación. Las transmisiones de datos se realizan mediante conexiones
+                    seguras <strong>HTTPS</strong>.</p>
+                <p>Sin embargo, ningún sistema de transmisión de datos por internet es 100% seguro, por lo que no
+                    podemos garantizar seguridad absoluta.</p>
+            </section>
+
+            <!-- 9. Menores -->
+            <section class="privacy-section">
+                <h2>9. Menores de edad</h2>
+                <p>Nuestros servicios están dirigidos a empresas y profesionales. No recopilamos intencionalmente datos
+                    personales de menores de 18 años. Si sos menor de edad, por favor no completes nuestros formularios
+                    sin el consentimiento de tus padres o tutores.</p>
+            </section>
+
+            <!-- 10. Cambios -->
+            <section class="privacy-section">
+                <h2>10. Cambios en esta política</h2>
+                <p>Podemos actualizar esta Política de Privacidad periódicamente. Cuando lo hagamos, revisaremos la
+                    fecha de "Última actualización" en la parte superior de esta página. Te recomendamos revisarla
+                    ocasionalmente para estar al tanto de cualquier cambio.</p>
+                <p>El uso continuado del sitio web tras dichos cambios implica la aceptación de la nueva versión de esta
+                    política.</p>
+            </section>
+
+            <!-- 11. Contacto -->
+            <section class="privacy-section">
+                <h2>11. Contacto</h2>
+                <p>Si tenés preguntas, dudas o consultas sobre esta Política de Privacidad o sobre el tratamiento de tus
+                    datos personales, podés comunicarte con nosotros:</p>
+                <ul>
+                    <li>📧 <a href="mailto:krear.creativo@gmail.com">krear.creativo@gmail.com</a></li>
+                    <li>💬 <a href="https://wa.me/543624522359" target="_blank" rel="noopener noreferrer">WhatsApp: +54
+                            362 452-2359</a></li>
+                    <li>📍 Resistencia, Chaco, Argentina</li>
+                </ul>
+            </section>
+
+            <!-- Footer bar -->
+            <div class="privacy-footer-bar">
+                <p>© 2026 Kreär Estudio Estratégico Creativo. Todos los derechos reservados.</p>
+                <a href="index.html">← Volver al sitio</a>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        // Keep navbar always in scrolled state on this page
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.getElementById('navbar');
+            if (navbar) navbar.classList.add('scrolled');
+        });
+    </script>
+</body>
+
+</html>

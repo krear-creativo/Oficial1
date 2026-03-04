@@ -731,7 +731,10 @@
                             <input type="checkbox" id="form-consent" name="consent" required />
                             <span class="consent-checkbox" aria-hidden="true"></span>
                             <span data-i18n="form.consent">Acepto el tratamiento de mis datos personales para recibir
-                                respuesta a mi consulta.</span>
+                                respuesta a mi consulta. <a href="privacidad.html" target="_blank"
+                                    rel="noopener noreferrer" data-i18n="form.consent.link"
+                                    style="color:var(--accent-400);border-bottom:1px solid rgba(217,231,60,0.3);text-decoration:none;">Ver
+                                    política de privacidad.</a></span>
                         </label>
                     </div>
                     <button type="submit" class="btn-primary btn-form-submit" id="form-submit-btn">
@@ -805,8 +808,12 @@
         <div class="footer-bottom">
             <div class="container footer-bottom-inner">
                 <p><span data-i18n="footer.rights">© 2026 Kreär. Todos los derechos reservados.</span></p>
-                <p class="footer-credits"><span data-i18n="footer.credits">Estrategia · Creatividad · Dirección</span>
-                </p>
+                <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+                    <a href="privacidad.html" class="footer-privacy-link" data-i18n="footer.privacy">Política de
+                        Privacidad</a>
+                    <p class="footer-credits"><span data-i18n="footer.credits">Estrategia · Creatividad ·
+                            Dirección</span></p>
+                </div>
             </div>
         </div>
     </footer>

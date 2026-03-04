@@ -1639,6 +1639,70 @@ body {
     gap: 16px;
 }
 
+/* Phone prefix + number combo */
+.phone-input-group {
+    display: flex;
+    align-items: stretch;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.phone-input-group:focus-within {
+    border-color: rgba(var(--accent-rgb), 0.5);
+    box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.08);
+}
+
+.phone-prefix-select {
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0 10px;
+    font-family: "mundial", sans-serif;
+    font-size: 13px;
+    color: var(--text-primary);
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    /* custom arrow */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='rgba(255,255,255,0.3)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    padding-right: 26px;
+    max-width: 100px;
+}
+
+.phone-prefix-select:focus {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.phone-prefix-select option {
+    background: #1a1a2e;
+    color: var(--text-primary);
+}
+
+/* Override input inside phone-input-group: no own border */
+.phone-input-group input[type="tel"] {
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0;
+    padding: 14px 14px;
+}
+
+.phone-input-group input[type="tel"]:focus {
+    background: transparent;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+
 .form-group {
     display: flex;
     flex-direction: column;

@@ -679,9 +679,40 @@
                         </div>
                         <div class="form-group">
                             <label for="form-phone" data-i18n="form.phone.label">Número</label>
-                            <input type="tel" id="form-phone" name="numero" autocomplete="tel"
-                                placeholder="+54 362 000 0000" data-i18n-placeholder="form.phone.placeholder"
-                                required />
+                            <div class="phone-input-group">
+                                <select id="form-phone-prefix" name="prefijo" class="phone-prefix-select"
+                                    aria-label="Prefijo de país">
+                                    <option value="+54" data-flag="🇦🇷" selected>🇦🇷 +54</option>
+                                    <option value="+598" data-flag="🇺🇾">🇺🇾 +598</option>
+                                    <option value="+595" data-flag="🇵🇾">🇵🇾 +595</option>
+                                    <option value="+56" data-flag="🇨🇱">🇨🇱 +56</option>
+                                    <option value="+591" data-flag="🇧🇴">🇧🇴 +591</option>
+                                    <option value="+51" data-flag="🇵🇪">🇵🇪 +51</option>
+                                    <option value="+593" data-flag="🇪🇨">🇪🇨 +593</option>
+                                    <option value="+57" data-flag="🇨🇴">🇨🇴 +57</option>
+                                    <option value="+58" data-flag="🇻🇪">🇻🇪 +58</option>
+                                    <option value="+55" data-flag="🇧🇷">🇧🇷 +55</option>
+                                    <option value="+52" data-flag="🇲🇽">🇲🇽 +52</option>
+                                    <option value="+34" data-flag="🇪🇸">🇪🇸 +34</option>
+                                    <option value="+1" data-flag="🇺🇸">🇺🇸 +1</option>
+                                    <option value="+44" data-flag="🇬🇧">🇬🇧 +44</option>
+                                    <option value="+49" data-flag="🇩🇪">🇩🇪 +49</option>
+                                    <option value="+33" data-flag="🇫🇷">🇫🇷 +33</option>
+                                    <option value="+39" data-flag="🇮🇹">🇮🇹 +39</option>
+                                    <option value="+351" data-flag="🇵🇹">🇵🇹 +351</option>
+                                    <option value="+507" data-flag="🇵🇦">🇵🇦 +507</option>
+                                    <option value="+506" data-flag="🇨🇷">🇨🇷 +506</option>
+                                    <option value="+503" data-flag="🇸🇻">🇸🇻 +503</option>
+                                    <option value="+502" data-flag="🇬🇹">🇬🇹 +502</option>
+                                    <option value="+504" data-flag="🇭🇳">🇭🇳 +504</option>
+                                    <option value="+505" data-flag="🇳🇮">🇳🇮 +505</option>
+                                    <option value="+53" data-flag="🇨🇺">🇨🇺 +53</option>
+                                    <option value="+1-809" data-flag="🇩🇴">🇩🇴 +1-809</option>
+                                </select>
+                                <input type="tel" id="form-phone" name="numero" autocomplete="tel"
+                                    placeholder="362 000 0000" data-i18n-placeholder="form.phone.placeholder"
+                                    required />
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">

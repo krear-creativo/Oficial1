@@ -874,30 +874,41 @@ document.addEventListener('DOMContentLoaded', initFooterServiceLinks);
    ============================================================ */
 const N8N_ENDPOINT = 'https://krearestudiocreativo.app.n8n.cloud/webhook/3d7b0e9e-723f-48cb-882c-08d51c3a5d1f';
 
+/* ── Source tracking: silently reads URL params + referrer ── */
+function getSourceData() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    page_url: window.location.href,
+    referrer: document.referrer || 'directo',
+    utm_source: params.get('utm_source') || '',
+    utm_medium: params.get('utm_medium') || '',
+    utm_campaign: params.get('utm_campaign') || '',
+    utm_content: params.get('utm_content') || '',
+    utm_term: params.get('utm_term') || '',
+  };
+}
+
 function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
 
-  // ── Phone field: only allow digits, +, spaces and hyphens ──
+  // ── Phone field: only allow digits, spaces and hyphens (prefix handled by select) ──
   const phoneInput = document.getElementById('form-phone');
+  const phonePrefix = document.getElementById('form-phone-prefix');
+
   if (phoneInput) {
     phoneInput.addEventListener('keydown', (e) => {
-      // Allow: backspace, delete, tab, escape, enter, arrows, home, end
       const allowed = ['Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'];
       if (allowed.includes(e.key)) return;
-      // Allow: Ctrl/Cmd + A, C, V, X
       if ((e.ctrlKey || e.metaKey) && ['a', 'c', 'v', 'x'].includes(e.key.toLowerCase())) return;
-      // Allow: digits 0-9, +, space, hyphen
-      if (/^[0-9+\-\s]$/.test(e.key)) return;
-      // Block everything else
+      if (/^[0-9\-\s]$/.test(e.key)) return;
       e.preventDefault();
     });
 
-    // Also sanitize paste events
     phoneInput.addEventListener('paste', (e) => {
       e.preventDefault();
       const pasted = (e.clipboardData || window.clipboardData).getData('text');
-      const sanitized = pasted.replace(/[^0-9+\-\s]/g, '');
+      const sanitized = pasted.replace(/[^0-9\-\s]/g, '');
       const start = phoneInput.selectionStart;
       const end = phoneInput.selectionEnd;
       phoneInput.value = phoneInput.value.slice(0, start) + sanitized + phoneInput.value.slice(end);
@@ -912,7 +923,9 @@ function initContactForm() {
     const dict = translations[lang];
 
     const nombre = document.getElementById('form-name').value.trim();
-    const numero = document.getElementById('form-phone').value.trim();
+    const prefijo = phonePrefix ? phonePrefix.value : '+54';
+    const numero = phoneInput ? phoneInput.value.trim() : '';
+    const telefono = prefijo + ' ' + numero;   // full number sent to n8n
     const email = document.getElementById('form-email').value.trim();
     const consulta = document.getElementById('form-message').value.trim();
     const consent = document.getElementById('form-consent').checked;
@@ -927,7 +940,7 @@ function initContactForm() {
     // Validation
     let isValid = true;
     if (!nombre) { document.getElementById('form-name').classList.add('field-error'); isValid = false; }
-    if (!numero) { document.getElementById('form-phone').classList.add('field-error'); isValid = false; }
+    if (!numero) { phoneInput && phoneInput.classList.add('field-error'); isValid = false; }
     if (!email || !/^[^@]+@[^@]+\.[^@]+$/.test(email)) {
       document.getElementById('form-email').classList.add('field-error'); isValid = false;
     }
@@ -944,13 +957,16 @@ function initContactForm() {
     submitBtn.classList.add('loading');
     submitBtn.disabled = true;
 
-    // Build JSON payload — one key per field
+    // Build JSON payload — one key per field + source data
     const payload = JSON.stringify({
       nombre,
-      numero,
+      telefono,          // e.g. "+54 362 000 0000"
+      prefijo,           // e.g. "+54"
+      numero,            // e.g. "362 000 0000"
       email,
       consulta,
       timestamp: new Date().toISOString(),
+      source: getSourceData(),
     });
 
     try {
@@ -979,3 +995,4 @@ function initContactForm() {
 }
 
 document.addEventListener('DOMContentLoaded', initContactForm);
+

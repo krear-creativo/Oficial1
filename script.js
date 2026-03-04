@@ -1082,8 +1082,9 @@ function initContactForm() {
     const prefijo = phonePrefix ? phonePrefix.value.trim() : '+54';
     // Strip all spaces and hyphens from local number, then re-join cleanly
     const numeroRaw = phoneInput ? phoneInput.value.trim() : '';
-    const numeroLimpio = numeroRaw.replace(/[\s\-]/g, '');          // e.g. "3624522359"
-    const telefono = prefijo + ' ' + numeroLimpio;             // e.g. "+54 3624522359"
+    const numeroLimpio = numeroRaw.replace(/[\s\-]/g, '');                    // solo dígitos
+    const prefijoDigits = prefijo.replace(/[^\d]/g, '');                       // saca el +
+    const telefono = prefijoDigits + numeroLimpio;                        // "543624522359"
     const email = document.getElementById('form-email').value.trim();
     const consulta = document.getElementById('form-message').value.trim();
     const consent = document.getElementById('form-consent').checked;

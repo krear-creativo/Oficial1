@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Política de Privacidad — Kreär Estudio Estratégico Creativo</title>
+    <title>Política de Privacidad — Kreär Estudio Creativo</title>
     <meta name="description"
-        content="Política de privacidad de Kreär Estudio Estratégico Creativo. Conocé cómo recopilamos, usamos y protegemos tus datos personales." />
+        content="Política de privacidad de Kreär Estudio Creativo. Conocé cómo recopilamos, usamos y protegemos tus datos personales." />
     <meta name="robots" content="noindex, follow" />
     <link rel="canonical" href="https://www.krearestudiocreativo.com/privacidad.html" />
 
@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="styles.css" />
 
     <style>
-        /* ── Page-specific overrides ── */
         .privacy-page {
             min-height: 100vh;
             padding: 120px 0 80px;
@@ -106,7 +105,6 @@
             display: none;
         }
 
-        /* Sections */
         .privacy-section {
             margin-bottom: 48px;
         }
@@ -178,7 +176,6 @@
             border-color: var(--accent-400);
         }
 
-        /* Highlight box */
         .privacy-highlight {
             background: rgba(217, 231, 60, 0.04);
             border: 1px solid rgba(217, 231, 60, 0.1);
@@ -193,7 +190,6 @@
             font-size: 14px;
         }
 
-        /* Rights grid */
         .rights-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -224,7 +220,6 @@
             margin-bottom: 0;
         }
 
-        /* Back link */
         .privacy-back {
             display: inline-flex;
             align-items: center;
@@ -247,7 +242,6 @@
             font-size: 16px;
         }
 
-        /* Footer simple */
         .privacy-footer-bar {
             margin-top: 72px;
             padding-top: 24px;
@@ -291,12 +285,18 @@
                 <img src="images/logo2.png" alt="Kreär Logo" class="logo-img" />
             </a>
             <ul class="nav-links" role="list">
-                <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
-                <li><a href="index.html#metodologia" class="nav-link">Metodología</a></li>
-                <li><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
-                <li><a href="index.html#testimonios" class="nav-link">Clientes</a></li>
-                <li><a href="index.html#contacto" class="nav-link nav-link-cta">Hablemos</a></li>
+                <li><a href="index.html#servicios" class="nav-link" data-i18n="nav.services">Servicios</a></li>
+                <li><a href="index.html#metodologia" class="nav-link" data-i18n="nav.methodology">Metodología</a></li>
+                <li><a href="index.html#nosotros" class="nav-link" data-i18n="nav.about">Nosotros</a></li>
+                <li><a href="index.html#testimonios" class="nav-link" data-i18n="nav.clients">Clientes</a></li>
+                <li><a href="index.html#contacto" class="nav-link nav-link-cta" data-i18n="nav.cta">Hablemos</a></li>
             </ul>
+            <!-- Selector de idioma -->
+            <div class="lang-switcher" id="lang-switcher" role="group" aria-label="Selector de idioma" data-active="es">
+                <div class="lang-pill" aria-hidden="true"></div>
+                <button class="lang-btn lang-active" id="btn-lang-es" data-lang="es" aria-label="Español">ES</button>
+                <button class="lang-btn" id="btn-lang-en" data-lang="en" aria-label="English">EN</button>
+            </div>
         </div>
     </nav>
 
@@ -304,239 +304,266 @@
     <main class="privacy-page" role="main">
         <div class="privacy-container">
 
-            <a href="index.html" class="privacy-back">Volver al inicio</a>
+            <a href="index.html" class="privacy-back" data-i18n="privacy.back">Volver al inicio</a>
 
             <!-- Header -->
             <header class="privacy-header">
-                <div class="privacy-badge">Legal</div>
-                <h1 class="privacy-title">Política de <span>Privacidad</span></h1>
+                <div class="privacy-badge" data-i18n="privacy.badge">Legal</div>
+                <h1 class="privacy-title">
+                    <span data-i18n="privacy.title">Política de </span><span
+                        data-i18n="privacy.title.accent">Privacidad</span>
+                </h1>
                 <div class="privacy-meta">
-                    <span>Kreär Estudio Estratégico Creativo</span>
+                    <span>Kreär Estudio Creativo</span>
                     <span>Resistencia, Chaco · Argentina</span>
-                    <span>Última actualización: 4 de marzo de 2026</span>
+                    <span data-i18n="privacy.updated">Última actualización: 4 de marzo de 2026</span>
                 </div>
             </header>
 
             <!-- Intro -->
             <section class="privacy-section">
-                <p>En <strong>Kreär Estudio Estratégico Creativo</strong> ("Kreär", "nosotros", "nuestro") nos
-                    comprometemos a proteger la privacidad de las personas que interactúan con nuestro sitio web y
-                    servicios. Esta Política de Privacidad describe qué datos personales recopilamos, cómo los
-                    utilizamos, con quién los compartimos y cuáles son tus derechos como titular de esa información.</p>
-                <p>Al utilizar nuestro sitio web <strong>krearestudiocreativo.com</strong> o completar nuestros
-                    formularios de contacto, aceptás los términos descritos en esta política.</p>
+                <p data-i18n="privacy.intro1">En <strong>Kreär Estudio Creativo</strong> ("Kreär", "nosotros",
+                    "nuestro") nos comprometemos a proteger la privacidad de las personas que interactúan con nuestro
+                    sitio web y servicios. Esta Política de Privacidad describe qué datos personales recopilamos, cómo
+                    los utilizamos, con quién los compartimos y cuáles son tus derechos como titular de esa información.
+                </p>
+                <p data-i18n="privacy.intro2">Al utilizar nuestro sitio web <strong>krearestudiocreativo.com</strong> o
+                    completar nuestros formularios de contacto, aceptás los términos descritos en esta política.</p>
 
                 <div class="privacy-highlight">
-                    <p>🔒 <strong>Resumen rápido:</strong> Solo recopilamos los datos que nos brindás voluntariamente
-                        mediante el formulario de contacto. Los usamos exclusivamente para responder tu consulta. No los
-                        vendemos ni los cedemos a terceros con fines comerciales.</p>
+                    <p data-i18n="privacy.summary"><strong>Resumen rápido:</strong> Solo recopilamos los datos que nos
+                        brindás voluntariamente mediante el formulario de contacto. Los usamos exclusivamente para
+                        responder tu consulta. No los vendemos ni los cedemos a terceros con fines comerciales.</p>
                 </div>
             </section>
 
             <!-- 1. Responsable -->
             <section class="privacy-section">
-                <h2>1. Responsable del tratamiento</h2>
-                <p><strong>Kreär Estudio Estratégico Creativo</strong><br>
+                <h2 data-i18n="privacy.s1.title">1. Responsable del tratamiento</h2>
+                <p><strong>Kreär Estudio Creativo</strong><br>
                     Resistencia, Chaco, Argentina<br>
                     Email: <a href="mailto:krear.creativo@gmail.com">krear.creativo@gmail.com</a><br>
                     WhatsApp: <a href="https://wa.me/543624522359" target="_blank" rel="noopener noreferrer">+54 362
-                        452-2359</a></p>
+                        452-2359</a>
+                </p>
             </section>
 
             <!-- 2. Datos que recopilamos -->
             <section class="privacy-section">
-                <h2>2. Datos que recopilamos</h2>
+                <h2 data-i18n="privacy.s2.title">2. Datos que recopilamos</h2>
 
-                <h3>Datos que nos proporcionás directamente</h3>
-                <p>Cuando completás el formulario de contacto de nuestro sitio, recopilamos:</p>
+                <h3 data-i18n="privacy.s2.h3a">Datos que nos proporcionás directamente</h3>
+                <p data-i18n="privacy.s2.p1">Cuando completás el formulario de contacto de nuestro sitio, recopilamos:
+                </p>
                 <ul>
-                    <li><strong>Nombre</strong></li>
-                    <li><strong>Número de teléfono</strong> (con prefijo de país)</li>
-                    <li><strong>Dirección de correo electrónico</strong></li>
-                    <li><strong>Consulta o mensaje</strong> que nos enviás</li>
+                    <li><strong data-i18n="privacy.s2.li1">Nombre</strong></li>
+                    <li><strong data-i18n="privacy.s2.li2">Número de teléfono</strong> <span
+                            data-i18n="privacy.s2.li2b">(con prefijo de país)</span></li>
+                    <li><strong data-i18n="privacy.s2.li3">Dirección de correo electrónico</strong></li>
+                    <li><strong data-i18n="privacy.s2.li4">Consulta o mensaje</strong> <span
+                            data-i18n="privacy.s2.li4b">que nos enviás</span></li>
                 </ul>
 
-                <h3>Datos recopilados automáticamente</h3>
-                <p>Junto con los datos del formulario, registramos automáticamente información técnica de contexto para
-                    mejorar nuestro servicio:</p>
+                <h3 data-i18n="privacy.s2.h3b">Datos recopilados automáticamente</h3>
+                <p data-i18n="privacy.s2.p2">Junto con los datos del formulario, registramos automáticamente información
+                    técnica de contexto para mejorar nuestro servicio:</p>
                 <ul>
-                    <li><strong>URL de la página</strong> desde donde se realizó la consulta</li>
-                    <li><strong>Referencia de origen</strong> (sitio web que te derivó a nosotros, si aplica)</li>
-                    <li><strong>Parámetros UTM</strong> de campañas publicitarias (utm_source, utm_medium,
-                        utm_campaign), si estuvieras llegando desde un anuncio</li>
-                    <li><strong>Fecha y hora</strong> del envío</li>
+                    <li><strong data-i18n="privacy.s2.auto1">URL de la página</strong> <span
+                            data-i18n="privacy.s2.auto1b">desde donde se realizó la consulta</span></li>
+                    <li><strong data-i18n="privacy.s2.auto2">Referencia de origen</strong> <span
+                            data-i18n="privacy.s2.auto2b">(sitio web que te derivó a nosotros, si aplica)</span></li>
+                    <li><strong data-i18n="privacy.s2.auto3">Parámetros UTM</strong> <span
+                            data-i18n="privacy.s2.auto3b">de campañas publicitarias (utm_source, utm_medium,
+                            utm_campaign), si estuvieras llegando desde un anuncio</span></li>
+                    <li><strong data-i18n="privacy.s2.auto4">Fecha y hora</strong> <span
+                            data-i18n="privacy.s2.auto4b">del envío</span></li>
                 </ul>
 
-                <h3>Cookies y tecnologías de seguimiento</h3>
-                <p>Nuestro sitio puede utilizar cookies de terceros a través de los siguientes servicios:</p>
+                <h3 data-i18n="privacy.s2.h3c">Cookies y tecnologías de seguimiento</h3>
+                <p data-i18n="privacy.s2.cookies">Nuestro sitio puede utilizar cookies de terceros a través de los
+                    siguientes servicios:</p>
                 <ul>
-                    <li><strong>Google Analytics (GA4)</strong>: análisis de tráfico y comportamiento anónimo</li>
-                    <li><strong>Google Tag Manager</strong>: gestión de etiquetas de seguimiento</li>
-                    <li><strong>Meta Pixel (Facebook)</strong>: medición de conversiones y remarketing</li>
+                    <li><strong>Google Analytics (GA4)</strong>: <span data-i18n="privacy.s2.ga">análisis de tráfico y
+                            comportamiento anónimo</span></li>
+                    <li><strong>Google Tag Manager</strong>: <span data-i18n="privacy.s2.gtm">gestión de etiquetas de
+                            seguimiento</span></li>
+                    <li><strong>Meta Pixel (Facebook)</strong>: <span data-i18n="privacy.s2.meta">medición de
+                            conversiones y remarketing</span></li>
                 </ul>
-                <p>Podés desactivar las cookies desde la configuración de tu navegador en cualquier momento.</p>
+                <p data-i18n="privacy.s2.cookies2">Podés desactivar las cookies desde la configuración de tu navegador
+                    en cualquier momento.</p>
             </section>
 
             <!-- 3. Finalidad -->
             <section class="privacy-section">
-                <h2>3. Finalidad del tratamiento</h2>
-                <p>Utilizamos tus datos personales para los siguientes fines:</p>
+                <h2 data-i18n="privacy.s3.title">3. Finalidad del tratamiento</h2>
+                <p data-i18n="privacy.s3.p1">Utilizamos tus datos personales para los siguientes fines:</p>
                 <ol>
-                    <li><strong>Responder tu consulta</strong>: contactarte por email, teléfono o WhatsApp para darte
-                        información sobre nuestros servicios.</li>
-                    <li><strong>Gestión comercial</strong>: hacer seguimiento de la propuesta o presupuesto que te
-                        hayamos presentado.</li>
-                    <li><strong>Analítica interna</strong>: entender el origen de las consultas para mejorar nuestras
-                        comunicaciones y campañas.</li>
-                    <li><strong>Cumplimiento legal</strong>: conservar registros según lo exija la legislación argentina
-                        vigente.</li>
+                    <li><strong data-i18n="privacy.s3.li1a">Responder tu consulta</strong>: <span
+                            data-i18n="privacy.s3.li1b">contactarte por email, teléfono o WhatsApp para darte
+                            información sobre nuestros servicios.</span></li>
+                    <li><strong data-i18n="privacy.s3.li2a">Gestión comercial</strong>: <span
+                            data-i18n="privacy.s3.li2b">hacer seguimiento de la propuesta o presupuesto que te hayamos
+                            presentado.</span></li>
+                    <li><strong data-i18n="privacy.s3.li3a">Analítica interna</strong>: <span
+                            data-i18n="privacy.s3.li3b">entender el origen de las consultas para mejorar nuestras
+                            comunicaciones y campañas.</span></li>
+                    <li><strong data-i18n="privacy.s3.li4a">Cumplimiento legal</strong>: <span
+                            data-i18n="privacy.s3.li4b">conservar registros según lo exija la legislación argentina
+                            vigente.</span></li>
                 </ol>
-
                 <div class="privacy-highlight">
-                    <p>No utilizamos tus datos para enviarte comunicaciones de marketing masivo sin tu consentimiento
-                        previo y explícito.</p>
+                    <p data-i18n="privacy.s3.note">No utilizamos tus datos para enviarte comunicaciones de marketing
+                        masivo sin tu consentimiento previo y explícito.</p>
                 </div>
             </section>
 
             <!-- 4. Base jurídica -->
             <section class="privacy-section">
-                <h2>4. Base jurídica del tratamiento</h2>
-                <p>El tratamiento de tus datos se basa en:</p>
+                <h2 data-i18n="privacy.s4.title">4. Base jurídica del tratamiento</h2>
+                <p data-i18n="privacy.s4.p1">El tratamiento de tus datos se basa en:</p>
                 <ul>
-                    <li><strong>Tu consentimiento expreso</strong>: al marcar la casilla de aceptación en el formulario
-                        y al escribirnos voluntariamente.</li>
-                    <li><strong>Interés legítimo</strong>: para mantener registros de comunicaciones comerciales y
-                        cumplir con obligaciones contractuales.</li>
-                    <li><strong>Cumplimiento legal</strong>: según lo establecido por la <strong>Ley N° 25.326 de
-                            Protección de Datos Personales</strong> de la República Argentina y sus modificatorias.</li>
+                    <li><strong data-i18n="privacy.s4.li1a">Tu consentimiento expreso</strong>: <span
+                            data-i18n="privacy.s4.li1b">al marcar la casilla de aceptación en el formulario y al
+                            escribirnos voluntariamente.</span></li>
+                    <li><strong data-i18n="privacy.s4.li2a">Interés legítimo</strong>: <span
+                            data-i18n="privacy.s4.li2b">para mantener registros de comunicaciones comerciales y cumplir
+                            con obligaciones contractuales.</span></li>
+                    <li><strong data-i18n="privacy.s4.li3a">Cumplimiento legal</strong>: <span
+                            data-i18n="privacy.s4.li3b">según lo establecido por la <strong>Ley N° 25.326 de Protección
+                                de Datos Personales</strong> de la República Argentina y sus modificatorias.</span></li>
                 </ul>
             </section>
 
             <!-- 5. Conservación -->
             <section class="privacy-section">
-                <h2>5. Período de conservación</h2>
-                <p>Conservamos tus datos durante el tiempo necesario para cumplir con la finalidad para la que fueron
-                    recopilados, y en todo caso:</p>
+                <h2 data-i18n="privacy.s5.title">5. Período de conservación</h2>
+                <p data-i18n="privacy.s5.p1">Conservamos tus datos durante el tiempo necesario para cumplir con la
+                    finalidad para la que fueron recopilados, y en todo caso:</p>
                 <ul>
-                    <li>Mientras exista una relación comercial activa o potencial con vos.</li>
-                    <li>Por un máximo de <strong>3 años</strong> desde el último contacto, salvo que solicités su
-                        eliminación antes.</li>
-                    <li>Por el tiempo que la ley argentina exija conservar registros de comunicaciones comerciales.</li>
+                    <li data-i18n="privacy.s5.li1">Mientras exista una relación comercial activa o potencial con vos.
+                    </li>
+                    <li><span data-i18n="privacy.s5.li2a">Por un máximo de <strong>3 años</strong> desde el último
+                            contacto,</span> <span data-i18n="privacy.s5.li2b">salvo que solicités su eliminación
+                            antes.</span></li>
+                    <li data-i18n="privacy.s5.li3">Por el tiempo que la ley argentina exija conservar registros de
+                        comunicaciones comerciales.</li>
                 </ul>
             </section>
 
             <!-- 6. Compartición -->
             <section class="privacy-section">
-                <h2>6. Compartición de datos</h2>
-                <p>Tus datos personales son procesados internamente por el equipo de Kreär. En algunos casos pueden ser
-                    accedidos por:</p>
+                <h2 data-i18n="privacy.s6.title">6. Compartición de datos</h2>
+                <p data-i18n="privacy.s6.p1">Tus datos personales son procesados internamente por el equipo de Kreär. En
+                    algunos casos pueden ser accedidos por:</p>
                 <ul>
-                    <li><strong>n8n</strong> (plataforma de automatización): recibe los datos del formulario para
-                        dirigirlos al equipo correspondiente. Actúa como encargado del tratamiento bajo nuestras
-                        instrucciones.</li>
-                    <li><strong>Google (Analytics, Tag Manager)</strong>: datos de navegación anónimos o seudonimizados.
-                    </li>
-                    <li><strong>Meta (Pixel)</strong>: datos de comportamiento en el sitio para medición de campañas.
-                    </li>
+                    <li><strong>n8n</strong> <span data-i18n="privacy.s6.n8n">(plataforma de automatización): recibe los
+                            datos del formulario para dirigirlos al equipo correspondiente. Actúa como encargado del
+                            tratamiento bajo nuestras instrucciones.</span></li>
+                    <li><strong>Google (Analytics, Tag Manager)</strong>: <span data-i18n="privacy.s6.google">datos de
+                            navegación anónimos o seudonimizados.</span></li>
+                    <li><strong>Meta (Pixel)</strong>: <span data-i18n="privacy.s6.meta">datos de comportamiento en el
+                            sitio para medición de campañas.</span></li>
                 </ul>
-                <p><strong>No vendemos, alquilamos ni cedemos tus datos personales a terceros</strong> con fines
-                    comerciales propios.</p>
+                <p data-i18n="privacy.s6.note"><strong>No vendemos, alquilamos ni cedemos tus datos personales a
+                        terceros</strong> con fines comerciales propios.</p>
             </section>
 
             <!-- 7. Derechos -->
             <section class="privacy-section">
-                <h2>7. Tus derechos como titular</h2>
-                <p>De acuerdo con la Ley N° 25.326 y el Reglamento General de Protección de Datos (GDPR para usuarios de
-                    la UE), tenés los siguientes derechos:</p>
+                <h2 data-i18n="privacy.s7.title">7. Tus derechos como titular</h2>
+                <p data-i18n="privacy.s7.p1">De acuerdo con la Ley N° 25.326 y el Reglamento General de Protección de
+                    Datos (GDPR para usuarios de la UE), tenés los siguientes derechos:</p>
 
                 <div class="rights-grid">
                     <div class="right-item">
-                        <strong>Acceso</strong>
-                        <p>Conocer qué datos tuyos tenemos almacenados.</p>
+                        <strong data-i18n="privacy.right1.title">Acceso</strong>
+                        <p data-i18n="privacy.right1.desc">Conocer qué datos tuyos tenemos almacenados.</p>
                     </div>
                     <div class="right-item">
-                        <strong>Rectificación</strong>
-                        <p>Corregir datos inexactos o incompletos.</p>
+                        <strong data-i18n="privacy.right2.title">Rectificación</strong>
+                        <p data-i18n="privacy.right2.desc">Corregir datos inexactos o incompletos.</p>
                     </div>
                     <div class="right-item">
-                        <strong>Cancelación / Supresión</strong>
-                        <p>Solicitar que eliminemos tus datos personales.</p>
+                        <strong data-i18n="privacy.right3.title">Cancelación / Supresión</strong>
+                        <p data-i18n="privacy.right3.desc">Solicitar que eliminemos tus datos personales.</p>
                     </div>
                     <div class="right-item">
-                        <strong>Oposición</strong>
-                        <p>Oponerte al tratamiento de tus datos en ciertos casos.</p>
+                        <strong data-i18n="privacy.right4.title">Oposición</strong>
+                        <p data-i18n="privacy.right4.desc">Oponerte al tratamiento de tus datos en ciertos casos.</p>
                     </div>
                     <div class="right-item">
-                        <strong>Portabilidad</strong>
-                        <p>Recibir tus datos en un formato estructurado y legible.</p>
+                        <strong data-i18n="privacy.right5.title">Portabilidad</strong>
+                        <p data-i18n="privacy.right5.desc">Recibir tus datos en un formato estructurado y legible.</p>
                     </div>
                     <div class="right-item">
-                        <strong>Revocación</strong>
-                        <p>Retirar tu consentimiento en cualquier momento.</p>
+                        <strong data-i18n="privacy.right6.title">Revocación</strong>
+                        <p data-i18n="privacy.right6.desc">Retirar tu consentimiento en cualquier momento.</p>
                     </div>
                 </div>
 
-                <p>Para ejercer cualquiera de estos derechos, escribinos a: <a
+                <p><span data-i18n="privacy.s7.contact">Para ejercer cualquiera de estos derechos, escribinos a:</span>
+                    <a
                         href="mailto:krear.creativo@gmail.com?subject=Solicitud%20de%20privacidad">krear.creativo@gmail.com</a>
-                    con el asunto <strong>"Solicitud de privacidad"</strong>. Responderemos dentro de los <strong>30
-                        días hábiles</strong>.</p>
-
-                <p>También podés presentar una reclamación ante la <strong>Dirección Nacional de Protección de Datos
-                        Personales (DNPDP)</strong> de Argentina: <a
+                    <span data-i18n="privacy.s7.contact2">con el asunto <strong>"Solicitud de privacidad"</strong>.
+                        Responderemos dentro de los <strong>30 días hábiles</strong>.</span></p>
+                <p><span data-i18n="privacy.s7.dnpdp">También podés presentar una reclamación ante la <strong>Dirección
+                            Nacional de Protección de Datos Personales (DNPDP)</strong> de Argentina:</span> <a
                         href="https://www.argentina.gob.ar/aaip/datospersonales" target="_blank"
                         rel="noopener noreferrer">www.argentina.gob.ar/aaip/datospersonales</a></p>
             </section>
 
             <!-- 8. Seguridad -->
             <section class="privacy-section">
-                <h2>8. Seguridad de los datos</h2>
-                <p>Implementamos medidas técnicas y organizativas razonables para proteger tus datos contra accesos no
-                    autorizados, pérdida o divulgación. Las transmisiones de datos se realizan mediante conexiones
-                    seguras <strong>HTTPS</strong>.</p>
-                <p>Sin embargo, ningún sistema de transmisión de datos por internet es 100% seguro, por lo que no
-                    podemos garantizar seguridad absoluta.</p>
+                <h2 data-i18n="privacy.s8.title">8. Seguridad de los datos</h2>
+                <p data-i18n="privacy.s8.p1">Implementamos medidas técnicas y organizativas razonables para proteger tus
+                    datos contra accesos no autorizados, pérdida o divulgación. Las transmisiones de datos se realizan
+                    mediante conexiones seguras <strong>HTTPS</strong>.</p>
+                <p data-i18n="privacy.s8.p2">Sin embargo, ningún sistema de transmisión de datos por internet es 100%
+                    seguro, por lo que no podemos garantizar seguridad absoluta.</p>
             </section>
 
             <!-- 9. Menores -->
             <section class="privacy-section">
-                <h2>9. Menores de edad</h2>
-                <p>Nuestros servicios están dirigidos a empresas y profesionales. No recopilamos intencionalmente datos
-                    personales de menores de 18 años. Si sos menor de edad, por favor no completes nuestros formularios
-                    sin el consentimiento de tus padres o tutores.</p>
+                <h2 data-i18n="privacy.s9.title">9. Menores de edad</h2>
+                <p data-i18n="privacy.s9.p1">Nuestros servicios están dirigidos a empresas y profesionales. No
+                    recopilamos intencionalmente datos personales de menores de 18 años. Si sos menor de edad, por favor
+                    no completes nuestros formularios sin el consentimiento de tus padres o tutores.</p>
             </section>
 
             <!-- 10. Cambios -->
             <section class="privacy-section">
-                <h2>10. Cambios en esta política</h2>
-                <p>Podemos actualizar esta Política de Privacidad periódicamente. Cuando lo hagamos, revisaremos la
-                    fecha de "Última actualización" en la parte superior de esta página. Te recomendamos revisarla
-                    ocasionalmente para estar al tanto de cualquier cambio.</p>
-                <p>El uso continuado del sitio web tras dichos cambios implica la aceptación de la nueva versión de esta
-                    política.</p>
+                <h2 data-i18n="privacy.s10.title">10. Cambios en esta política</h2>
+                <p data-i18n="privacy.s10.p1">Podemos actualizar esta Política de Privacidad periódicamente. Cuando lo
+                    hagamos, revisaremos la fecha de "Última actualización" en la parte superior de esta página. Te
+                    recomendamos revisarla ocasionalmente para estar al tanto de cualquier cambio.</p>
+                <p data-i18n="privacy.s10.p2">El uso continuado del sitio web tras dichos cambios implica la aceptación
+                    de la nueva versión de esta política.</p>
             </section>
 
             <!-- 11. Contacto -->
             <section class="privacy-section">
-                <h2>11. Contacto</h2>
-                <p>Si tenés preguntas, dudas o consultas sobre esta Política de Privacidad o sobre el tratamiento de tus
-                    datos personales, podés comunicarte con nosotros:</p>
+                <h2 data-i18n="privacy.s11.title">11. Contacto</h2>
+                <p data-i18n="privacy.s11.p1">Si tenés preguntas, dudas o consultas sobre esta Política de Privacidad o
+                    sobre el tratamiento de tus datos personales, podés comunicarte con nosotros:</p>
                 <ul>
-                    <li>📧 <a href="mailto:krear.creativo@gmail.com">krear.creativo@gmail.com</a></li>
-                    <li>💬 <a href="https://wa.me/543624522359" target="_blank" rel="noopener noreferrer">WhatsApp: +54
-                            362 452-2359</a></li>
-                    <li>📍 Resistencia, Chaco, Argentina</li>
+                    <li><a href="mailto:krear.creativo@gmail.com">krear.creativo@gmail.com</a></li>
+                    <li><a href="https://wa.me/543624522359" target="_blank" rel="noopener noreferrer">WhatsApp: +54 362
+                            452-2359</a></li>
+                    <li><span data-i18n="privacy.s11.location">Resistencia, Chaco, Argentina</span></li>
                 </ul>
             </section>
 
             <!-- Footer bar -->
             <div class="privacy-footer-bar">
-                <p>© 2026 Kreär Estudio Estratégico Creativo. Todos los derechos reservados.</p>
-                <a href="index.html">← Volver al sitio</a>
+                <p data-i18n="privacy.footer.rights">© 2026 Kreär Estudio Creativo. Todos los derechos reservados.</p>
+                <a href="index.html" data-i18n="privacy.footer.back">← Volver al sitio</a>
             </div>
 
         </div>
     </main>
 
+    <script src="script.js"></script>
     <script>
         // Keep navbar always in scrolled state on this page
         document.addEventListener('DOMContentLoaded', () => {

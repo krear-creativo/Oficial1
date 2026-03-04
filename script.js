@@ -1079,9 +1079,11 @@ function initContactForm() {
     const dict = translations[lang];
 
     const nombre = document.getElementById('form-name').value.trim();
-    const prefijo = phonePrefix ? phonePrefix.value : '+54';
-    const numero = phoneInput ? phoneInput.value.trim() : '';
-    const telefono = prefijo + ' ' + numero;   // full number sent to n8n
+    const prefijo = phonePrefix ? phonePrefix.value.trim() : '+54';
+    // Strip all spaces and hyphens from local number, then re-join cleanly
+    const numeroRaw = phoneInput ? phoneInput.value.trim() : '';
+    const numeroLimpio = numeroRaw.replace(/[\s\-]/g, '');          // e.g. "3624522359"
+    const telefono = prefijo + ' ' + numeroLimpio;             // e.g. "+54 3624522359"
     const email = document.getElementById('form-email').value.trim();
     const consulta = document.getElementById('form-message').value.trim();
     const consent = document.getElementById('form-consent').checked;
@@ -1096,7 +1098,7 @@ function initContactForm() {
     // Validation
     let isValid = true;
     if (!nombre) { document.getElementById('form-name').classList.add('field-error'); isValid = false; }
-    if (!numero) { phoneInput && phoneInput.classList.add('field-error'); isValid = false; }
+    if (!numeroLimpio) { phoneInput && phoneInput.classList.add('field-error'); isValid = false; }
     if (!email || !/^[^@]+@[^@]+\.[^@]+$/.test(email)) {
       document.getElementById('form-email').classList.add('field-error'); isValid = false;
     }
@@ -1113,12 +1115,13 @@ function initContactForm() {
     submitBtn.classList.add('loading');
     submitBtn.disabled = true;
 
-    // Build JSON payload — one key per field + source data
+    // Build JSON payload
+    // telefono = prefijo + numero sin espacios → llega completo y limpio a n8n
     const payload = JSON.stringify({
       nombre,
-      telefono,          // e.g. "+54 362 000 0000"
-      prefijo,           // e.g. "+54"
-      numero,            // e.g. "362 000 0000"
+      telefono,           // "+54 3624522359"  ← completo, listo para usar
+      prefijo,            // "+54"
+      numero: numeroLimpio, // "3624522359"  ← solo dígitos, sin espacios
       email,
       consulta,
       timestamp: new Date().toISOString(),

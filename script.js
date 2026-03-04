@@ -1131,7 +1131,8 @@ function initContactForm() {
     try {
       const response = await fetch(N8N_ENDPOINT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        // text/plain avoids CORS preflight — n8n still parses the JSON body correctly
+        headers: { 'Content-Type': 'text/plain' },
         body: payload,
       });
 

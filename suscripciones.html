@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9609EGJC6X"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9609EGJC6X');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suscripciones | Kreär — Estudio Estratégico Creativo</title>
+
+    <!-- SEO Core -->
+    <meta name="description" content="Niveles de suscripción y planes de desarrollo web estratégico." />
+    <link rel="canonical" href="https://www.krearestudiocreativo.com/suscripciones.html" />
+
+    <!-- Adobe Fonts (Typekit) -->
+    <link rel="stylesheet" href="https://use.typekit.net/jru0lzd.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/favicon.png">
+
+    <link rel="stylesheet" href="styles.css" />
+    
+    <style>
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 0;
+        }
+        .pricing {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        .pricing-card {
+            background: rgba(var(--primary-rgb), 0.78);
+            border: 1px solid rgba(255, 255, 255, 0.11);
+            border-radius: var(--radius-xl);
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .pricing-card:hover {
+            border-color: rgba(var(--accent-rgb), 0.82);
+            transform: translateY(-4px);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(var(--accent-rgb), 0.34);
+        }
+        .pricing-level {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 0.5rem;
+        }
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-400);
+            margin-bottom: 1.5rem;
+            font-family: tempel-grotesk, sans-serif;
+            line-height: 1.1;
+            transition: color 0.25s ease;
+        }
+        .pricing-price span {
+            display: block;
+            margin-top: 0.35rem;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 400;
+            font-family: objektiv-mk3, sans-serif;
+            transition: color 0.25s ease;
+        }
+        .pricing-card:not(.featured) .pricing-price {
+            color: rgba(255, 255, 255, 0.92);
+        }
+        .pricing-card:not(.featured) .pricing-price span {
+            color: rgba(255, 255, 255, 0.62);
+        }
+        .pricing-card:not(.featured):hover .pricing-price {
+            color: var(--accent-500);
+        }
+        .pricing-card:not(.featured):hover .pricing-price span {
+            color: rgba(255, 255, 255, 0.92);
+        }
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+            flex-grow: 1;
+        }
+        .pricing-features li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.95rem;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.8);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .pricing-features li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-400);
+        }
+        .pricing-cta {
+            margin-top: auto;
+            width: 100%;
+            text-align: center;
+        }
+        /* Highlight specific card */
+        .pricing-card.featured {
+            border-color: var(--accent-500);
+            background: rgba(217, 231, 60, 0.05);
+        }
+        .pricing-card.featured::before {
+            content: "Recomendado";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-500);
+            color: var(--primary-600);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 0.25rem 1rem;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ===================== PARTICLES ===================== -->
+    <div id="particles-container" class="particles-container" aria-hidden="true"></div>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Navegación principal">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-logo" aria-label="Kreär - Inicio">
+                <img src="images/logo2.png" alt="Kreär Logo" class="logo-img" />
+            </a>
+            <ul class="nav-links" id="nav-links" role="list">
+                <li><a href="index.html" class="nav-link" data-i18n="nav.home">Inicio</a></li>
+                <li><a href="servicios.html" class="nav-link" data-i18n="nav.services">Servicios</a></li>
+                <li><a href="suscripciones.html" class="nav-link" style="color:var(--accent-400);" data-i18n="nav.subscriptions">Suscripciones</a></li>
+                <li><a href="estudio.html" class="nav-link" data-i18n="nav.studio">Estudio</a></li>
+                <li><a href="#contacto" class="nav-link nav-link-cta" data-i18n="nav.cta">Hablemos</a></li>
+            </ul>
+            <div class="lang-switcher" id="lang-switcher" role="group" aria-label="Selector de idioma" data-active="es">
+                <div class="lang-pill" aria-hidden="true"></div>
+                <button class="lang-btn lang-active" id="btn-lang-es" data-lang="es" aria-label="Español">ES</button>
+                <button class="lang-btn" id="btn-lang-en" data-lang="en" aria-label="English">EN</button>
+            </div>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+            <ul role="list">
+                <li><a href="index.html" class="nav-link" data-i18n="nav.home">Inicio</a></li>
+                <li><a href="servicios.html" class="nav-link" data-i18n="nav.services">Servicios</a></li>
+                <li><a href="suscripciones.html" class="nav-link" data-i18n="nav.subscriptions">Suscripciones</a></li>
+                <li><a href="estudio.html" class="nav-link" data-i18n="nav.studio">Estudio</a></li>
+                <li><a href="#contacto" class="nav-link" data-i18n="nav.cta">Hablemos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===================== PAGE HEADER ===================== -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="section-label" data-i18n="subpage.label">Planes Estratégicos</span>
+            <h1 class="section-title" data-i18n="subpage.title">Modelos de <span class="text-accent">Suscripción</span></h1>
+            <p class="section-subtitle" data-i18n="subpage.subtitle">Infraestructura como servicio. Elegí el nivel que mejor acompañe el estado actual de tu empresa para escalar sin fricción.</p>
+        </div>
+    </section>
+
+    <!-- ===================== PRICING GRID ===================== -->
+    <section class="pricing" id="precios" aria-label="Nuestras suscripciones">
+        <div class="container">
+            <div class="pricing-grid">
+                
+                <!-- Nivel 1 -->
+                <div class="pricing-card reveal-item">
+                    <span class="pricing-level" data-i18n="subpage.p1.level">Nivel 1</span>
+                    <h3 data-i18n="subpage.p1.title">Esencial</h3>
+                    <div class="pricing-price" data-i18n="subpage.p1.price">$60.000 <span data-i18n="subpage.price.mo">ARS/mes</span></div>
+                    <ul class="pricing-features">
+                        <li data-i18n="subpage.p1.f1">Landing page estratégica</li>
+                        <li data-i18n="subpage.p1.f2">Conversión a WhatsApp</li>
+                        <li data-i18n="subpage.p1.f3">Hosting y dominio incluidos</li>
+                        <li data-i18n="subpage.p1.f4">Diseño responsive/mobile</li>
+                        <li data-i18n="subpage.p1.f5">1 ajuste menor por mes</li>
+                        <li data-i18n="subpage.p1.f6">Reporte básico mensual</li>
+                    </ul>
+                    <a href="https://wa.me/543624522359?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20Nivel%201%20Esencial." target="_blank" rel="noopener noreferrer" class="btn-outline pricing-cta" data-i18n="subpage.btn">Seleccionar Plan</a>
+                </div>
+
+                <!-- Nivel 2 -->
+                <div class="pricing-card reveal-item">
+                    <span class="pricing-level" data-i18n="subpage.p2.level">Nivel 2</span>
+                    <h3 data-i18n="subpage.p2.title">Profesional</h3>
+                    <div class="pricing-price" data-i18n="subpage.p2.price">$90.000 <span data-i18n="subpage.price.mo">ARS/mes</span></div>
+                    <ul class="pricing-features">
+                        <li data-i18n="subpage.p2.f1">Sitio web de 3 a 5 páginas</li>
+                        <li data-i18n="subpage.p2.f2">Formularios de contacto</li>
+                        <li data-i18n="subpage.p2.f3">Integración con WhatsApp</li>
+                        <li data-i18n="subpage.p2.f4">Automatización básica</li>
+                        <li data-i18n="subpage.p2.f5">2 ajustes mensuales</li>
+                        <li data-i18n="subpage.p1.f6">Reporte básico mensual</li>
+                    </ul>
+                    <a href="https://wa.me/543624522359?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20Nivel%202%20Profesional." target="_blank" rel="noopener noreferrer" class="btn-outline pricing-cta" data-i18n="subpage.btn">Seleccionar Plan</a>
+                </div>
+
+                <!-- Nivel 3 -->
+                <div class="pricing-card featured reveal-item">
+                    <span class="pricing-level" data-i18n="subpage.p3.level">Nivel 3</span>
+                    <h3 data-i18n="subpage.p3.title">Sistema</h3>
+                    <div class="pricing-price" data-i18n="subpage.p3.price">$160.000 <span data-i18n="subpage.price.mo">ARS/mes</span></div>
+                    <ul class="pricing-features">
+                        <li data-i18n="subpage.p3.f1">Todo lo del Nivel 2</li>
+                        <li data-i18n="subpage.p4.f4">Automatizaciones avanzadas</li>
+                        <li data-i18n="subpage.p3.f3">Gestión de consultas</li>
+                        <li data-i18n="subpage.p3.f4">Lógica de conversión</li>
+                        <li data-i18n="subpage.p3.f5">Métricas y seguimiento</li>
+                        <li data-i18n="subpage.p3.f6">3 ajustes mensuales</li>
+                    </ul>
+                    <a href="https://wa.me/543624522359?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20Nivel%203%20Sistema." target="_blank" rel="noopener noreferrer" class="btn-primary pricing-cta" data-i18n="subpage.btn">Seleccionar Plan</a>
+                </div>
+
+                <!-- Nivel 4 -->
+                <div class="pricing-card reveal-item">
+                    <span class="pricing-level" data-i18n="subpage.p4.level">Nivel 4</span>
+                    <h3 data-i18n="subpage.p4.title">Empresarial</h3>
+                    <div class="pricing-price" data-i18n="subpage.p4.price">Cotización <span data-i18n="subpage.price.custom">Personalizada</span></div>
+                    <ul class="pricing-features">
+                        <li data-i18n="subpage.p4.f1">Todo lo del Nivel 3</li>
+                        <li data-i18n="subpage.p4.f2">Sistemas más complejos</li>
+                        <li data-i18n="subpage.p4.f3">Integraciones de pago</li>
+                        <li data-i18n="subpage.p4.f4">Automatizaciones avanzadas</li>
+                        <li data-i18n="subpage.p4.f5">Flujos personalizados</li>
+                        <li data-i18n="subpage.p4.f6">Soporte prioritario</li>
+                    </ul>
+                    <a href="#contacto" class="btn-outline pricing-cta" data-i18n="subpage.btn.contact">Contactar</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CTA FINAL ===================== -->
+    <section class="final-cta" id="contacto" aria-label="Contacto y llamada a la acción">
+        <div class="cta-bg-glow" aria-hidden="true"></div>
+        <div class="container cta-grid">
+            <div class="cta-left reveal-item">
+                <span class="section-label" data-i18n="cta.label.doubt">¿Dudas sobre qué plan elegir?</span>
+                <h2 class="cta-title" style="text-align:left;" data-i18n="cta.title_full">
+                    <span>¿Tu sistema</span><br />
+                    <span>está a la altura de</span><br />
+                    <span class="text-accent">tu empresa?</span>
+                </h2>
+                <div class="cta-contact-options" style="justify-content:flex-start; margin-top: 2rem;">
+                    <a href="https://wa.me/543624522359" class="contact-chip" target="_blank" rel="noopener noreferrer">
+                        <img src="images/logo-whatsapp_1@2x.png" alt="WhatsApp" class="contact-icon" />
+                    </a>
+                    <a href="mailto:krear.creativo@gmail.com" class="contact-chip">
+                        <img src="images/logo-mail_1@2x.png" alt="Email" class="contact-icon" />
+                    </a>
+                </div>
+            </div>
+            <div class="cta-form-wrapper reveal-item">
+                <form id="contact-form" class="cta-form" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="form-name" data-i18n="form.name.label">Nombre</label>
+                            <input type="text" id="form-name" data-i18n-placeholder="form.name.placeholder" placeholder="Tu nombre" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="form-phone" data-i18n="form.phone.label">Teléfono</label>
+                            <div class="phone-input-group">
+                                <select id="form-phone-prefix" name="prefijo" class="phone-prefix-select" aria-label="Prefijo de país">
+                                    <option value="+54" data-flag="🇦🇷" selected>🇦🇷 +54</option>
+                                    <option value="+598" data-flag="🇺🇾">🇺🇾 +598</option>
+                                    <option value="+595" data-flag="🇵🇾">🇵🇾 +595</option>
+                                    <option value="+56" data-flag="🇨🇱">🇨🇱 +56</option>
+                                    <option value="+591" data-flag="🇧🇴">🇧🇴 +591</option>
+                                    <option value="+51" data-flag="🇵🇪">🇵🇪 +51</option>
+                                    <option value="+593" data-flag="🇪🇨">🇪🇨 +593</option>
+                                    <option value="+57" data-flag="🇨🇴">🇨🇴 +57</option>
+                                    <option value="+58" data-flag="🇻🇪">🇻🇪 +58</option>
+                                    <option value="+55" data-flag="🇧🇷">🇧🇷 +55</option>
+                                    <option value="+52" data-flag="🇲🇽">🇲🇽 +52</option>
+                                    <option value="+34" data-flag="🇪🇸">🇪🇸 +34</option>
+                                    <option value="+1" data-flag="🇺🇸">🇺🇸 +1</option>
+                                    <option value="+44" data-flag="🇬🇧">🇬🇧 +44</option>
+                                    <option value="+49" data-flag="🇩🇪">🇩🇪 +49</option>
+                                    <option value="+33" data-flag="🇫🇷">🇫🇷 +33</option>
+                                    <option value="+39" data-flag="🇮🇹">🇮🇹 +39</option>
+                                    <option value="+351" data-flag="🇵🇹">🇵🇹 +351</option>
+                                    <option value="+507" data-flag="🇵🇦">🇵🇦 +507</option>
+                                    <option value="+506" data-flag="🇨🇷">🇨🇷 +506</option>
+                                    <option value="+503" data-flag="🇸🇻">🇸🇻 +503</option>
+                                    <option value="+502" data-flag="🇬🇹">🇬🇹 +502</option>
+                                    <option value="+504" data-flag="🇭🇳">🇭🇳 +504</option>
+                                    <option value="+505" data-flag="🇳🇮">🇳🇮 +505</option>
+                                    <option value="+53" data-flag="🇨🇺">🇨🇺 +53</option>
+                                    <option value="+1-809" data-flag="🇩🇴">🇩🇴 +1-809</option>
+                                </select>
+                                <input type="tel" id="form-phone" data-i18n-placeholder="form.phone.placeholder" placeholder="Tu número" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="form-email" data-i18n="form.email.label">Email</label>
+                        <input type="email" id="form-email" data-i18n-placeholder="form.email.placeholder" placeholder="tu@empresa.com" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="form-message" data-i18n="form.message.label">Consulta</label>
+                        <textarea id="form-message" rows="4" data-i18n-placeholder="form.message.placeholder" placeholder="Contanos sobre tu proyecto..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary btn-form-submit" id="form-submit-btn">
+                        <span class="btn-text" data-i18n="form.submit">Enviar consulta</span>
+                    </button>
+                    <div class="form-feedback" id="form-feedback"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer" role="contentinfo">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="nav-logo">
+                    <img src="images/logo.png" alt="Kreär" class="logo-img" />
+                </a>
+                <p class="footer-tagline" data-i18n="footer.tagline.full">Sistema ordenado <span class="text-accent">convierte.</span></p>
+                <div class="footer-socials">
+                    <a href="https://instagram.com/krear.creativo" class="social-link" target="_blank" rel="noopener noreferrer">Ig</a>
+                    <a href="#" class="social-link">In</a>
+                    <a href="https://wa.me/543624522359" class="social-link" target="_blank" rel="noopener noreferrer">Wa</a>
+                    <a href="mailto:krear.creativo@gmail.com" class="social-link">@</a>
+                </div>
+            </div>
+            <nav class="footer-col">
+                <h4 class="footer-col-title" data-i18n="footer.col.sitemap">Mapa del Sitio</h4>
+                <ul role="list">
+                    <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
+                    <li><a href="servicios.html" data-i18n="nav.services">Servicios</a></li>
+                    <li><a href="suscripciones.html" data-i18n="nav.subscriptions">Suscripciones</a></li>
+                    <li><a href="estudio.html" data-i18n="footer.link.studio">El Estudio</a></li>
+                </ul>
+            </nav>
+            <div class="footer-col">
+                <h4 class="footer-col-title" data-i18n="footer.col.contact">Contacto</h4>
+                <ul role="list">
+                    <li><a href="mailto:krear.creativo@gmail.com">krear.creativo@gmail.com</a></li>
+                    <li><a href="https://wa.me/543624522359" target="_blank">+54 362 452-2359</a></li>
+                    <li><span data-i18n="footer.contact.location">Resistencia, Chaco, Argentina</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner">
+                <p data-i18n="footer.rights">© 2026 Kreär. Todos los derechos reservados.</p>
+                <a href="privacidad.html" class="footer-privacy-link" data-i18n="footer.privacy">Política de Privacidad</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

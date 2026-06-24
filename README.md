@@ -1,118 +1,129 @@
 # Kreär — Estudio Estratégico Creativo
-## Landing Page Premium Dark Mode
+
+Sitio web oficial de **Kreär**, estudio estratégico creativo con sede en Resistencia, Chaco, Argentina.
+
+🌐 **[krearestudiocreativo.com](https://www.krearestudiocreativo.com)**
 
 ---
 
-### 📋 Descripción del proyecto
-Landing page profesional en dark mode para **Kreär**, estudio creativo estratégico orientado a empresas que necesitan ordenar y potenciar su comunicación. Diseño de tipo **Dark Luxury Creative** con animaciones premium y sistema de flip cards interactivo.
+## Descripción
+
+Kreär construye infraestructura digital estratégica para empresas: diagnóstico de marca, identidad visual, desarrollo web, automatizaciones con IA y campañas digitales.
+
+Este repositorio contiene el sitio web completo — 5 páginas HTML estáticas con sistema de diseño propio, bilingüe ES/EN y formulario de contacto integrado.
 
 ---
 
-### 🎨 Paleta de colores
+## Tech Stack
 
-| Nombre | Hex | Uso |
-|--------|-----|-----|
-| Navy Primario | `#00024D` | Fondos, glow principal, gradientes |
-| Lima Acento | `#D9E73C` | CTAs, highlights, textos de acento |
-| Negro Puro | `#000000` | Fondo base |
-| Gris Ultra Oscuro | `#020208` | Secciones alternas |
-| Blanco | `#FFFFFF` | Textos principales |
-| Gris Medio | `#A1A1AA` | Textos secundarios |
+| Capa | Tecnología |
+|------|-----------|
+| Markup | HTML5 semántico |
+| Estilos | CSS3 + Custom Properties |
+| Lógica | JavaScript ES6+ Vanilla |
+| Fuentes | Adobe Typekit (`mundial` + `new-order`) |
+| Hosting | GitHub Pages |
+| Dominio | krearestudiocreativo.com (CNAME) |
+| Formulario | Google Apps Script |
+| Analytics | GA4 + GTM + Meta Pixel |
 
----
-
-### 📸 Imágenes generadas con IA
-
-```
-images/
-├── logo.png          → Logo de Kreär (K + icono geométrico)
-├── hero_visual.png   → Grid estructural 3D con luz lima
-├── service_1.png     → Diagnóstico Estratégico (radar holográfico)
-├── service_2.png     → Identidad Visual (branding system 3D)
-├── service_3.png     → Sistemas de Comunicación (red de nodos)
-└── service_4.png     → Gestión de Redes (dashboard holográfico)
-```
-
-> **Nota:** Los servicios 5 (Campañas Ads) y 6 (Dirección Conceptual) usan placeholders CSS animados por limitación de cuota de imagen. Se pueden reemplazar fácilmente con imágenes reales.
+**Sin frameworks. Sin npm. Sin bundler.**
 
 ---
 
-### 📁 Estructura del proyecto
+## Estructura del Proyecto
 
 ```
 /
-├── index.html      → Estructura HTML semántica completa
-├── styles.css      → Sistema de diseño + animaciones CSS
-├── script.js       → Interactividad + animaciones JS
-├── README.md       → Este archivo
-└── images/
-    ├── logo.png
-    ├── hero_visual.png
-    ├── service_1.png
-    ├── service_2.png
-    ├── service_3.png
-    └── service_4.png
+├── index.html              # Landing principal
+├── servicios.html          # Servicios (6 etapas)
+├── suscripciones.html      # Planes (4 niveles)
+├── estudio.html            # Sobre el estudio
+├── privacidad.html         # Política de privacidad
+├── styles.css              # Sistema de diseño (3221 líneas)
+├── script.js               # Interactividad + i18n ES/EN
+├── google-apps-script.js   # Backend del formulario (referencia)
+├── CLAUDE.md               # Contexto para Claude Code
+├── images/                 # Logos, favicon, og-cover
+├── FONT/                   # Fuentes locales de respaldo
+├── Panel/                  # Recursos de diseño internos
+└── docs/                   # Documentación del equipo
+    ├── DEVELOPMENT.md
+    ├── DESIGN.md
+    ├── MARKETING.md
+    ├── SEO.md
+    └── CHANGELOG.md
 ```
 
 ---
 
-### ✨ Características
+## Setup Local
 
-- **Dark Luxury Creative** — Modo oscuro premium con glassmorphism
-- **Flip Cards Interactivas** — Hover en desktop, tap en mobile
-- **Sistema de Partículas** — 50 partículas flotantes con color lima
-- **Navbar Sticky** — Con blur y border al scroll
-- **Contadores Animados** — Stats animadas al entrar en viewport
-- **Scroll Reveal** — Secciones aparecen con efecto de entrada
-- **Parallax Sutil** — Movimiento de fondo en hero
-- **Mouse Tracking 3D** — Hero visual reacciona al cursor
-- **100% Responsive** — Desktop XL → Mobile
-- **Menú Hamburguesa** — Para mobile y tablet
-- **Smooth Scroll** — Navegación suave entre secciones
-- **SEO Optimizado** — Meta tags, Open Graph, HTML semántico
-- **Accesibilidad** — ARIA labels, navegación por teclado, prefers-reduced-motion
-
----
-
-### 🔧 Cómo personalizar
-
-#### Cambiar datos de contacto
-En `index.html`, busca y reemplaza:
-- `hola@krear.studio` → tu email real
-- `https://wa.me/543624000000` → tu número de WhatsApp real
-- `https://instagram.com/krear.studio` → tu Instagram real
-
-#### Cambiar los colores
-En `styles.css`, las líneas 14-16:
-```css
---primary-600: #00024D;   /* Cambia el navy */
---accent-500: #D9E73C;    /* Cambia el lima */
+```bash
+# Clonar el repositorio
+git clone https://github.com/krear-creativo/Oficial1.git
+cd Oficial1
 ```
 
-#### Reemplazar imágenes de servicios 5 y 6
-Coloca archivos `service_5.png` y `service_6.png` en la carpeta `images/` y actualiza el HTML reemplazando las secciones `.service-card-css` por el mismo patrón de las primeras 4 cards.
+**Opción A — VS Code Live Server (recomendado)**
+1. Instalar extensión [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+2. Click derecho en `index.html` → "Open with Live Server"
+3. Abrir `http://127.0.0.1:5500`
 
-#### Cambiar estadísticas del Hero
-En `index.html`, busca `data-target="50"` y modifica los números según tu realidad.
+**Opción B — Python**
+```bash
+python3 -m http.server 8000
+# Abrir http://localhost:8000
+```
 
----
-
-### 🚀 Para publicar
-
-1. Sube todos los archivos a tu hosting (Netlify, Vercel, cPanel, etc.)
-2. Asegúrate de mantener la estructura de carpetas intacta
-3. No necesita backend — es 100% HTML/CSS/JS estático
-4. Compatible con todos los navegadores modernos
+> Siempre usar un servidor local (no `file://`). Las fuentes y scripts de tracking requieren HTTP.
 
 ---
 
-### 👤 Créditos
+## Sistema de Diseño
 
-- **Diseño y desarrollo:** Kreär — Estudio Estratégico Creativo
-- **Imágenes:** Generadas con IA (Google Imagen)
-- **Fuentes:** Plus Jakarta Sans + Inter (Google Fonts)
-- **Año:** 2026
+**Colores principales:**
+- Navy: `#00024D` (`--primary-600`)
+- Lima: `#D9E73C` (`--accent-500`)
+
+**Fuentes:** `mundial` (body) + `new-order` (headings) via Adobe Typekit.
+
+Ver [`docs/DESIGN.md`](docs/DESIGN.md) para el sistema de diseño completo.
 
 ---
 
-*© 2026 Kreär. Todos los derechos reservados.*
+## Deployment
+
+El deploy es **automático**:
+```bash
+git push origin main
+# GitHub Pages publica en ~30 segundos
+```
+
+No hay CI/CD ni builds. Lo que se pushea a `main` es lo que se ve en producción.
+
+---
+
+## Documentación del Equipo
+
+| Área | Archivo |
+|------|---------|
+| Desarrollo | [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md) |
+| Diseño | [`docs/DESIGN.md`](docs/DESIGN.md) |
+| Marketing | [`docs/MARKETING.md`](docs/MARKETING.md) |
+| SEO | [`docs/SEO.md`](docs/SEO.md) |
+| Historial | [`docs/CHANGELOG.md`](docs/CHANGELOG.md) |
+| Claude Code | [`CLAUDE.md`](CLAUDE.md) |
+
+---
+
+## Contacto
+
+- **Email:** krear.creativo@gmail.com
+- **WhatsApp:** +54 362 452-2359
+- **Instagram:** [@estudio.krear](https://instagram.com/krear.creativo)
+- **Ubicación:** Resistencia, Chaco, Argentina
+
+---
+
+© 2026 Kreär Estudio Creativo. Todos los derechos reservados.

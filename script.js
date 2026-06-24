@@ -1366,9 +1366,11 @@ function initFooterServiceLinks() {
 document.addEventListener('DOMContentLoaded', initFooterServiceLinks);
 
 /* ============================================================
-   CONTACT FORM — Submit via n8n Webhook (JSON)
+   CONTACT FORM — Submit via Google Apps Script
+   Reemplazá la URL por la que genera el deploy del GAS.
+   Ver instrucciones en google-apps-script.js
    ============================================================ */
-const N8N_ENDPOINT = 'https://krearestudiocreativo.app.n8n.cloud/webhook/025b9edd-c26d-4aa6-a9e6-ac357ef82f0f';
+const CONTACT_ENDPOINT = 'REEMPLAZAR_CON_URL_DE_GOOGLE_APPS_SCRIPT';
 
 /* ── Source tracking: silently reads URL params + referrer ── */
 function getSourceData() {
@@ -1427,7 +1429,8 @@ function initContactForm() {
     const telefono = prefijoDigits + numeroLimpio;                        // "543624522359"
     const email = document.getElementById('form-email').value.trim();
     const consulta = document.getElementById('form-message').value.trim();
-    const consent = document.getElementById('form-consent').checked;
+    const consentEl = document.getElementById('form-consent');
+    const consent = consentEl ? consentEl.checked : true;
     const feedback = document.getElementById('form-feedback');
     const submitBtn = document.getElementById('form-submit-btn');
 
@@ -1444,7 +1447,7 @@ function initContactForm() {
       document.getElementById('form-email').classList.add('field-error'); isValid = false;
     }
     if (!consulta) { document.getElementById('form-message').classList.add('field-error'); isValid = false; }
-    if (!consent) { isValid = false; }
+    if (consentEl && !consent) { isValid = false; }
 
     if (!isValid) {
       feedback.textContent = dict['form.validation'];
@@ -1477,7 +1480,7 @@ function initContactForm() {
     });
 
     try {
-      await fetch(N8N_ENDPOINT, {
+      await fetch(CONTACT_ENDPOINT, {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },

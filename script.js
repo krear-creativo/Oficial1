@@ -1370,7 +1370,7 @@ document.addEventListener('DOMContentLoaded', initFooterServiceLinks);
    Reemplazá la URL por la que genera el deploy del GAS.
    Ver instrucciones en google-apps-script.js
    ============================================================ */
-const CONTACT_ENDPOINT = 'REEMPLAZAR_CON_URL_DE_GOOGLE_APPS_SCRIPT';
+const CONTACT_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzahJLyHnuzjX8LMCN6aPpyURHDUHnGgWOItr-eeqyYBR5wG57EFCYoW6MeR808cmuX-g/exec';
 
 /* ── Source tracking: silently reads URL params + referrer ── */
 function getSourceData() {
